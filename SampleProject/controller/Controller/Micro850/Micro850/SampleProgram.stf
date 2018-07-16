@@ -1,0 +1,76 @@
+PROGRAM SampleProgram
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Enable:En*)(*EnablePower*) (**)  , (*Enable_Positive:EnPO*)(*true*) (**)  , (*Enable_Negative:EnNE*)(*true*) (**)  , (*__DTI_AxisIn:_DTI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Status:Stat*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  XIC  [1,0] (*MC_Power_1.Status*) (*Stat*)  
+ BST  XIO  [2,0] (*ExecuteWriteParam*) (**)  OTE  [3,0] (*ExecuteWriteParam*) (**)
+   NXB  FB  [2,1] (*MC_WriteParameter*) (*MC_WriteParameter_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Execute:Exec*)(*ExecuteWriteParam*) (**)  , (*ParameterNumber:Num*)(*1005*) (**)  , (*Value:Val*)(*DutyCycle*) (**)  , (*MC_ExecutionMode:Mode*)(*0*) (**)  , (*__DTI_AxisIn:_DTI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,18] (**) (**)  FB  [1,0] (*MC_MoveVelocity*) (*MC_MoveVelocity_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Execute:Exec*)(*ExecuteMotion*) (**)  , (*Velocity:Velo*)(*1000.0*) (**)  , (*Acceleration:Acce*)(*5000.0*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*DirectionIn:Dir*)(*1*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*InVelocity:InVe*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*Direction:Dir*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,28] (**) (**)  
+ BST  XIC  [1,0] (*MoveFwd*) (**)
+   NXB  XIC  [1,1] (*_IO_X1_DO_05*) (**)
+ BND
+  XIO  [2,0] (*Stop*) (**)  
+ BST  OTS  [3,0] (*ExecuteMotion*) (**)
+   NXB  
+ BST  OTE  [3,1] (*_IO_X1_DO_05*) (**)
+   NXB  OTE  [3,2] (*FwdDir*) (**)
+ BND
+
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,32] (**) (**)  
+ BST  XIC  [1,0] (*MoveRev*) (**)
+   NXB  XIC  [1,1] (*_IO_X1_DO_04*) (**)
+ BND
+  XIO  [2,0] (*Stop*) (**)  
+ BST  OTS  [3,0] (*ExecuteMotion*) (**)
+   NXB  
+ BST  OTE  [3,1] (*_IO_X1_DO_04*) (**)
+   NXB  OTE  [3,2] (*RevDir*) (**)
+ BND
+
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,36] (**) (**)  XIC  [1,0] (*Stop*) (**)  OTR  [2,0] (*ExecuteMotion*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,38] (**) (**)  FB  [1,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Execute:Exec*)(*Stop*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+EOR [4,0]
+EOF
+#end_info
+END_PROGRAM

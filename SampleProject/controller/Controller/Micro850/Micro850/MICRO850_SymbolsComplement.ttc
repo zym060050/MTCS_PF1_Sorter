@@ -1,0 +1,26 @@
+[BEGIN FB INPUTS]
+I1=micro850.micro850.sampleprogram/mc_movevelocity_1.axisin,0xFFFFFFFF,AXIS_REF
+I2=micro850.micro850.sampleprogram/mc_movevelocity_1.execute,0x4BB,BOOL
+I3=micro850.micro850.sampleprogram/mc_movevelocity_1.velocity,0x18F0,REAL
+I4=micro850.micro850.sampleprogram/mc_movevelocity_1.acceleration,0x18F4,REAL
+I5=micro850.micro850.sampleprogram/mc_movevelocity_1.deceleration,0x18F4,REAL
+I6=micro850.micro850.sampleprogram/mc_movevelocity_1.jerk,0x18F8,REAL
+I7=micro850.micro850.sampleprogram/mc_movevelocity_1.directionin,0x18D5,SINT
+I8=micro850.micro850.sampleprogram/mc_halt_1.axisin,0xFFFFFFFF,AXIS_REF
+I9=micro850.micro850.sampleprogram/mc_halt_1.execute,0x4BC,BOOL
+I10=micro850.micro850.sampleprogram/mc_halt_1.deceleration,0x18F4,REAL
+I11=micro850.micro850.sampleprogram/mc_halt_1.jerk,0x18F8,REAL
+I12=micro850.micro850.sampleprogram/mc_power_1.axisin,0xFFFFFFFF,AXIS_REF
+I13=micro850.micro850.sampleprogram/mc_power_1.enable,0x4BD,BOOL
+I14=micro850.micro850.sampleprogram/mc_power_1.enable_positive,0x4B4,BOOL
+I15=micro850.micro850.sampleprogram/mc_power_1.enable_negative,0x4B4,BOOL
+I16=micro850.micro850.sampleprogram/mc_power_1.__dti_axisin,0xFFFFFFFF,DINT
+I17=micro850.micro850.sampleprogram/mc_writeparameter_1.axisin,0xFFFFFFFF,AXIS_REF
+I18=micro850.micro850.sampleprogram/mc_writeparameter_1.execute,0x4BA,BOOL
+I19=micro850.micro850.sampleprogram/mc_writeparameter_1.parameternumber,0x18E8,DINT
+I20=micro850.micro850.sampleprogram/mc_writeparameter_1.value,0x4C8,REAL
+I21=micro850.micro850.sampleprogram/mc_writeparameter_1.mc_executionmode,0x18D4,SINT
+I22=micro850.micro850.sampleprogram/mc_writeparameter_1.__dti_axisin,0xFFFFFFFF,DINT
+I23=micro850.micro850.sampleprogram/mc_movevelocity_1.buffermode,0x18FD,SINT
+I24=micro850.micro850.sampleprogram/mc_halt_1.buffermode,0x18FD,SINT
+[END]

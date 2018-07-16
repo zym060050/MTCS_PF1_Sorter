@@ -1,0 +1,21 @@
+---------- Controller change started: SampleProject ----------
+
+---------- Importing Project : controller\Controller.acfproj ----------
+Changing controller type: 2080-LC50-48QVB (Version 8) to 2080-LC50-48QBB (Version 8)
+
+Import Controller Complete -- 0 Errors, 0 Warnings
+
+---------- Importing Project : UDCProject\UDCProject.acfproj ----------
+Import Project Complete -- 0 Errors, 0 Warnings
+
+---------- Importing Project : PVc Project\PVc Project.acfproj ----------
+Import Project Complete -- 0 Errors, 0 Warnings
+
+---------- End of project conversion ----------
+
+The source project has been saved in 
+"C:\Users\zthant\Documents\CCW\SampleProject_1\SampleProject_1.ccwsln"
+
+Log file has been written in
+c:\users\zthant\documents\ccw\sampleproject\Conversion-201634-114545.txt
+========== Controller Change: 3 succeeded, 0 failed ==========

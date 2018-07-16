@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ccb7b80b-6407-4ad5-b2ab-52aeb91d06e7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyRootNamespace</RootNamespace>
+    <AssemblyName>MyAssemblyName</AssemblyName>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <CAMProjectFile>Library.idf</CAMProjectFile>
+    <UniqueProjectId>{ccb7b80b-6407-4ad5-b2ab-52aeb91d06e7}</UniqueProjectId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Online' ">
+    <OutputPath>bin\Online\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Simulation' " />
+  <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.ISaGRAF5.targets" />
+  <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.CCW.targets" />
+</Project>
