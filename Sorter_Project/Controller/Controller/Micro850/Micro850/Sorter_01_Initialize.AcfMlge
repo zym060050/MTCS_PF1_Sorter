@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root Version="7">
+  <LanguageContainerStyle DisplayGrid="false" FunctionBlockInstanceName="true" VariableDisplayMode="NameAndAlias" VariableAlpha="255" VariableTextColor="windowtext" VariableOnlineTextColor="Red" VariableBackgroundColor="SteelBlue" VariableGradientColor="LightSteelBlue" Font="Microsoft Sans Serif, 8pt" CellWidth="80" CellHeight="60" NbCellsShapeWidth="4" NbCellsShapeHeight="1" CoilAllAligned="true" RungColor="WhiteSmoke" LabelColor="LightGoldenrodYellow" CommentColor="LightGreen" TextCommentColor="Green" PowerRailColor="#FFCCCFE8" DisplayBlockImage="true" DisplayComment="false" PenWidth="3" DisplayLabel="false" OperatorBlockBackgroundColor="buttonface" OperatorBlockGradientColor="buttonface" FunctionBackgroundColor="Ivory" FunctionGradientColor="Ivory" FunctionBlockBackgroundColor="Silver" FunctionBlockGradientColor="Silver" Index="0">
+    <ShapeStyle Type="ISaGRAF.Workbench.Mlge.LanguageContainer.LD.Shape.WbLdRungShape" Assembly="ISaGRAF.Workbench.Mlge.LanguageContainer.LD" PowerRailColor="#FFCCCFE8" DisplayLabel="false" RungColor="WhiteSmoke" CommentColor="LightGreen" LabelColor="LightGoldenrodYellow" DisplayComment="false" Key="[0,1]" />
+  </LanguageContainerStyle>
+</Root>

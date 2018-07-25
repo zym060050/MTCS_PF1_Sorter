@@ -1,0 +1,9 @@
+Controller.Micro850.Micro850.UDFB_EXEC_MOTION.UDFB_IN_MOTION_CTL
+Controller.Micro850.Micro850.UDFB_EXEC_MOTION.MC_WriteParameter_1
+Controller.Micro850.Micro850.UDFB_EXEC_MOTION.LOCAL_WriteParameter
+Controller.Micro850.Micro850.UDFB_EXEC_MOTION.UDFB_IN_AXIS
+Controller.Micro850.Micro850.UDFB_EXEC_MOTION.MC_MoveVelocity_1
+Controller.Micro850.Micro850.Sorter_02_Axis_1.MC_Power_1
+Controller.Micro850.Micro850.Sorter_02_Axis_1.MC_Halt_1
+Controller.Micro850.Micro850.Sorter_02_Axis_1.UDFB_EXEC_MOTION_1
+Controller.Micro850.Micro850.Sorter_02_Axis_1.LOCAL_AXIS_1_MC_CTL

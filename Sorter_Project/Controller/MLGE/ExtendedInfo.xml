@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectElements>
+  <AcfElementGuid Guid="438c4309-f8ea-464a-a16d-d4063a891489">
+    <File>UDFB_EXEC_MOTION.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="96d9842d-e916-41d4-bac7-fd98f1409387">
+    <File>Sorter_01_Initialize.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="ed586f39-7f82-4c75-a47c-5954472a651f">
+    <File>Sorter_02_Axis_1.AcfMlge</File>
+  </AcfElementGuid>
+</ProjectElements>
