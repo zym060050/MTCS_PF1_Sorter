@@ -35,7 +35,55 @@ SOR  [0,7] (**) (**)  XIC  [1,0] (*HMI_MoveFwd*) (**)  FB  [2,0] (*R_TRIG*) (*R_
  BST  OTS  [5,2] (*_IO_X1_DO_05*) (**)
    NXB  
  BST  OTR  [5,3] (*HMI_MoveRev*) (**)
-   NXB  OTR  [5,4] (*_IO_X1_DO_04*) (**)
+   NXB  
+ BST  OTR  [5,4] (*_IO_X1_DO_04*) (**)
+   NXB  
+ BST  OTS  [5,5] (*_IO_X1_DO_00*) (**)
+   NXB  
+ BST  OTR  [5,6] (*_IO_X1_DO_01*) (**)
+   NXB  
+ BST  OTS  [5,7] (*_IO_X1_DO_02*) (**)
+   NXB  
+ BST  OTR  [5,8] (*_IO_X1_DO_03*) (**)
+   NXB  
+ BST  OTS  [5,9] (*_IO_X1_DO_06*) (**)
+   NXB  
+ BST  OTR  [5,10] (*_IO_X1_DO_07*) (**)
+   NXB  
+ BST  OTS  [5,11] (*_IO_X1_DO_08*) (**)
+   NXB  
+ BST  OTR  [5,12] (*_IO_X1_DO_09*) (**)
+   NXB  
+ BST  OTS  [5,13] (*_IO_X1_DO_12*) (**)
+   NXB  
+ BST  OTR  [5,14] (*_IO_X1_DO_13*) (**)
+   NXB  
+ BST  OTS  [5,15] (*_IO_X1_DO_14*) (**)
+   NXB  OTR  [5,16] (*_IO_X1_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
  BND
 
  BND
@@ -49,7 +97,7 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,13] (**) (**)  XIC  [1,0] (*HMI_MoveRev*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_2*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+SOR  [0,25] (**) (**)  XIC  [1,0] (*HMI_MoveRev*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_2*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
  BST  OTS  [5,0] (*HMI_IND_RevDir*) (**)
    NXB  
  BST  OTR  [5,1] (*HMI_IND_FwdDir*) (**)
@@ -57,7 +105,55 @@ SOR  [0,13] (**) (**)  XIC  [1,0] (*HMI_MoveRev*) (**)  FB  [2,0] (*R_TRIG*) (*R
  BST  OTS  [5,2] (*_IO_X1_DO_04*) (**)
    NXB  
  BST  OTR  [5,3] (*HMI_MoveFwd*) (**)
-   NXB  OTR  [5,4] (*_IO_X1_DO_05*) (**)
+   NXB  
+ BST  OTR  [5,4] (*_IO_X1_DO_05*) (**)
+   NXB  
+ BST  OTS  [5,5] (*_IO_X1_DO_01*) (**)
+   NXB  
+ BST  OTR  [5,6] (*_IO_X1_DO_00*) (**)
+   NXB  
+ BST  OTS  [5,7] (*_IO_X1_DO_03*) (**)
+   NXB  
+ BST  OTR  [5,8] (*_IO_X1_DO_02*) (**)
+   NXB  
+ BST  OTS  [5,9] (*_IO_X1_DO_07*) (**)
+   NXB  
+ BST  OTR  [5,10] (*_IO_X1_DO_06*) (**)
+   NXB  
+ BST  OTS  [5,11] (*_IO_X1_DO_09*) (**)
+   NXB  
+ BST  OTR  [5,12] (*_IO_X1_DO_08*) (**)
+   NXB  
+ BST  OTS  [5,13] (*_IO_X1_DO_13*) (**)
+   NXB  
+ BST  OTR  [5,14] (*_IO_X1_DO_12*) (**)
+   NXB  
+ BST  OTS  [5,15] (*_IO_X1_DO_15*) (**)
+   NXB  OTR  [5,16] (*_IO_X1_DO_14*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
  BND
 
  BND
