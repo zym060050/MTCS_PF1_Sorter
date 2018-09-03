@@ -3,10 +3,16 @@
   <AcfElementGuid Guid="438c4309-f8ea-464a-a16d-d4063a891489">
     <File>UDFB_EXEC_MOTION.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="96d9842d-e916-41d4-bac7-fd98f1409387">
+  <AcfElementGuid Guid="cdd83f53-4252-4c30-8e92-ac013f4dbef4">
     <File>Sorter_01_Initialize.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="d276f8e0-8aef-4dbb-932f-ef281839ce2e">
+    <File>Sorter_02_StopLogic.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="ed586f39-7f82-4c75-a47c-5954472a651f">
-    <File>Sorter_02_Axis_1.AcfMlge</File>
+    <File>Sorter_03_Axis_1.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="fc92fe5f-0d35-4dff-b472-4652ab6564e8">
+    <File>Sorter_02_Others.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>

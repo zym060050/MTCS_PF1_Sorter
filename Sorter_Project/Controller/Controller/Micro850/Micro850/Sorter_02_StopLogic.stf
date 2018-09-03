@@ -1,0 +1,45 @@
+PROGRAM Sorter_02_StopLogic
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_Stop*) (**)  
+ BST  OTR  [2,0] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  OTR  [2,1] (*HMI_VIS_FWD*) (**)
+   NXB  OTR  [2,2] (*HMI_VIS_REV*) (**)
+ BND
+
+ BND
+
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  XIC  [1,0] (*HMI_Stop*) (**)  FB  [2,0] (*F_TRIG*) (*F_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTR  [5,0] (*HMI_Stop*) (**)
+   NXB  
+ BST  OTS  [5,1] (*HMI_VIS_START*) (**)
+   NXB  
+ BST  OTS  [5,2] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  OTS  [5,3] (*HMI_VIS_REV*) (**)
+   NXB  OTR  [5,4] (*HMI_VIS_STOP*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_PROGRAM

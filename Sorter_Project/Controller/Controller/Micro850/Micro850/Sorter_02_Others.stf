@@ -1,0 +1,67 @@
+PROGRAM Sorter_02_Others
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_StartExecuteMotion*) (**)  
+ BST  OTR  [2,0] (*HMI_Stop*) (**)
+   NXB  
+ BST  OTS  [2,1] (*HMI_VIS_STOP*) (**)
+   NXB  
+ BST  OTS  [2,2] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  OTS  [2,3] (*HMI_VIS_REV*) (**)
+   NXB  OTR  [2,4] (*HMI_VIS_START*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIC  [1,0] (*HMI_MoveFwd*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  
+ BST  OTS  [3,0] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  OTE  [3,1] (*HMI_IND_FwdDir*) (**)
+   NXB  
+ BST  OTR  [3,2] (*HMI_IND_RevDir*) (**)
+   NXB  OTE  [3,3] (*_IO_X1_DO_05*) (**)
+ BND
+
+ BND
+
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  XIC  [1,0] (*HMI_MoveRev*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  
+ BST  OTS  [3,0] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  OTE  [3,1] (*HMI_IND_RevDir*) (**)
+   NXB  
+ BST  OTR  [3,2] (*HMI_IND_FwdDir*) (**)
+   NXB  OTE  [3,3] (*_IO_X1_DO_04*) (**)
+ BND
+
+ BND
+
+ BND
+
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_PROGRAM
