@@ -16,9 +16,9 @@ SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)
    NXB  
  BST  OTR  [2,4] (*HMI_VIS_STOP*) (**)
    NXB  
- BST  OTS  [2,5] (*HMI_MoveFwd*) (**)
+ BST  OTR  [2,5] (*HMI_MoveFwd*) (**)
    NXB  
- BST  OTS  [2,6] (*HMI_IND_FwdDir*) (**)
+ BST  OTR  [2,6] (*HMI_IND_FwdDir*) (**)
    NXB  
  BST  OTR  [2,7] (*HMI_VIS_FWD*) (**)
    NXB  
@@ -129,7 +129,15 @@ SOR  [0,58] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG
  BST  OTS  [5,0] (*HMI_VIS_START*) (**)
    NXB  
  BST  OTS  [5,1] (*HMI_VIS_FWD*) (**)
-   NXB  OTS  [5,2] (*HMI_VIS_REV*) (**)
+   NXB  
+ BST  OTS  [5,2] (*HMI_VIS_REV*) (**)
+   NXB  
+ BST  OTS  [5,3] (*HMI_MoveFwd*) (**)
+   NXB  OTS  [5,4] (*HMI_IND_FwdDir*) (**)
+ BND
+
+ BND
+
  BND
 
  BND

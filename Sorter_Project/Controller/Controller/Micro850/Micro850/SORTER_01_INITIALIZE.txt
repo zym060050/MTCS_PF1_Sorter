@@ -35,13 +35,13 @@ HMI_VIS_STOP := FALSE ;
 END_IF ;
 __EDTB6 := __SYSVA_FIRST_SCAN ;
 IF __EDTB6 THEN
-(*Set coil*)
-HMI_MOVEFWD := TRUE ;
+(*Reset coil*)
+HMI_MOVEFWD := FALSE ;
 END_IF ;
 __EDTB7 := __SYSVA_FIRST_SCAN ;
 IF __EDTB7 THEN
-(*Set coil*)
-HMI_IND_FWDDIR := TRUE ;
+(*Reset coil*)
+HMI_IND_FWDDIR := FALSE ;
 END_IF ;
 __EDTB8 := __SYSVA_FIRST_SCAN ;
 IF __EDTB8 THEN
@@ -241,6 +241,16 @@ IF __EDTB32 THEN
 (*Set coil*)
 HMI_VIS_REV := TRUE ;
 END_IF ;
+__EDTB33 := R_TRIG_1.Q ;
+IF __EDTB33 THEN
+(*Set coil*)
+HMI_MOVEFWD := TRUE ;
+END_IF ;
+__EDTB34 := R_TRIG_1.Q ;
+IF __EDTB34 THEN
+(*Set coil*)
+HMI_IND_FWDDIR := TRUE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -283,4 +293,6 @@ __GL __LG0000 ;
 (* __EDTB30 *)
 (* __EDTB31 *)
 (* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
 

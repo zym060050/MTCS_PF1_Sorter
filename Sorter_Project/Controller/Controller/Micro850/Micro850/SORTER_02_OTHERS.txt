@@ -43,19 +43,33 @@ __STEPPRAGMA
 0,7
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB6 := HMI_MOVEFWD AND HMI_STARTEXECUTEMOTION ;
-__EDTB7 := __EDTB6 ;
-IF __EDTB7 THEN
+(* FB call: R_TRIG *)
+R_TRIG_1(HMI_MOVEFWD) ;
+__EDTB6 := R_TRIG_1.Q ;
+IF __EDTB6 THEN
 (*Set coil*)
-HMI_STARTEXECUTEMOTION := TRUE ;
+HMI_IND_FWDDIR := TRUE ;
 END_IF ;
-HMI_IND_FWDDIR := __EDTB6 ;
-__EDTB8 := __EDTB6 ;
-IF __EDTB8 THEN
+__EDTB7 := R_TRIG_1.Q ;
+IF __EDTB7 THEN
 (*Reset coil*)
 HMI_IND_REVDIR := FALSE ;
 END_IF ;
-_IO_X1_DO_05 := __EDTB6 ;
+__EDTB8 := R_TRIG_1.Q ;
+IF __EDTB8 THEN
+(*Set coil*)
+_IO_X1_DO_05 := TRUE ;
+END_IF ;
+__EDTB9 := R_TRIG_1.Q ;
+IF __EDTB9 THEN
+(*Reset coil*)
+HMI_MOVEREV := FALSE ;
+END_IF ;
+__EDTB10 := R_TRIG_1.Q ;
+IF __EDTB10 THEN
+(*Reset coil*)
+_IO_X1_DO_04 := FALSE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -63,22 +77,36 @@ _IO_X1_DO_05 := __EDTB6 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,12
+0,13
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB9 := HMI_MOVEREV AND HMI_STARTEXECUTEMOTION ;
-__EDTB10 := __EDTB9 ;
-IF __EDTB10 THEN
-(*Set coil*)
-HMI_STARTEXECUTEMOTION := TRUE ;
-END_IF ;
-HMI_IND_REVDIR := __EDTB9 ;
-__EDTB11 := __EDTB9 ;
+(* FB call: R_TRIG *)
+R_TRIG_2(HMI_MOVEREV) ;
+__EDTB11 := R_TRIG_2.Q ;
 IF __EDTB11 THEN
+(*Set coil*)
+HMI_IND_REVDIR := TRUE ;
+END_IF ;
+__EDTB12 := R_TRIG_2.Q ;
+IF __EDTB12 THEN
 (*Reset coil*)
 HMI_IND_FWDDIR := FALSE ;
 END_IF ;
-_IO_X1_DO_04 := __EDTB9 ;
+__EDTB13 := R_TRIG_2.Q ;
+IF __EDTB13 THEN
+(*Set coil*)
+_IO_X1_DO_04 := TRUE ;
+END_IF ;
+__EDTB14 := R_TRIG_2.Q ;
+IF __EDTB14 THEN
+(*Reset coil*)
+HMI_MOVEFWD := FALSE ;
+END_IF ;
+__EDTB15 := R_TRIG_2.Q ;
+IF __EDTB15 THEN
+(*Reset coil*)
+_IO_X1_DO_05 := FALSE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -100,4 +128,8 @@ __GL __LG0000 ;
 (* __EDTB9 *)
 (* __EDTB10 *)
 (* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
 
