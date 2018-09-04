@@ -37,6 +37,42 @@ EOR [4,0]
 
 SOR  [0,11] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_13*) (*Short Blue Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_09*) (*Short Blue Sorter IN2_2*)
 EOR [4,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,15] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,17] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTS  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTR  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTR  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,23] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTS  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
+EOR [4,0]
 EOF
 #end_info
 END_PROGRAM
