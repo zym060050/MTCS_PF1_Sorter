@@ -31,12 +31,6 @@ EOR [4,0]
 
 SOR  [0,14] (**) (**)  FB  [1,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Execute:Exec*)(*HMI_Stop*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
 EOR [4,0]
-
-
-(**)
-
-SOR  [0,23] (**) (**)
-EOR [1,0]
 EOF
 #end_info
 #info= ID_MAX
