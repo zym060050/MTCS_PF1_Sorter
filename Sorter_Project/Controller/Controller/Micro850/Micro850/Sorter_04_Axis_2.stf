@@ -5,74 +5,111 @@ BOF
 
 (**)
 
-SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_12*) (*Short Red Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_11*) (*Short Red Sorter IN1_2*)
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_12*) (*Short Red Color Sensor*)  FB  [3,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTS  [6,0] (*_IO_EM_DO_11*) (*Short Red Sorter IN1_2*)
+   NXB  FB  [6,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Counter_Short_R*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Short_R*) (**) )
+ BND
+
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,6] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_12*) (*Short Red Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_11*) (*Short Red Sorter IN1_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,3] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_12*) (*Short Red Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_11*) (*Short Red Sorter IN1_2*)
+SOR  [0,8] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_14*) (*Short Green Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_07*) (*Short Green Sorter IN1_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,5] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_14*) (*Short Green Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_07*) (*Short Green Sorter IN1_2*)
+SOR  [0,10] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_14*) (*Short Green Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_07*) (*Short Green Sorter IN1_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,7] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_14*) (*Short Green Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_07*) (*Short Green Sorter IN1_2*)
+SOR  [0,12] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_13*) (*Short Blue Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_09*) (*Short Blue Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,9] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_13*) (*Short Blue Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_09*) (*Short Blue Sorter IN2_2*)
+SOR  [0,14] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_13*) (*Short Blue Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_09*) (*Short Blue Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,11] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_13*) (*Short Blue Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_09*) (*Short Blue Sorter IN2_2*)
+SOR  [0,16] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,13] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTS  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
+SOR  [0,18] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,15] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_15*) (*Long Red Color Sensor*)  OTR  [3,0] (*_IO_EM_DO_17*) (*Long Red Sorter IN1_2*)
+SOR  [0,20] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTS  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,17] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTS  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
+SOR  [0,22] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTR  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,19] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_17*) (*Long Green Sensor*)  OTR  [3,0] (*_IO_EM_DO_13*) (*Long Green Sorter IN2_2*)
+SOR  [0,24] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTR  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,21] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTR  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
+SOR  [0,26] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTS  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,23] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_16*) (*Long Blue Sensor*)  OTS  [3,0] (*_IO_EM_DO_15*) (*Long Blue Sorter IN2_2*)
+SOR  [0,28] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b_SYS_Initialized*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.MC_POWERED*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,31] (**) (**)  FB  [1,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_DutyCycleSorters*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.DUTY_CYCLE*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,34] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_StartExecuteMotion*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.EXEC_MOTION*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,37] (**) (**)  FB  [1,0] (*UDFB_EXEC_MOTION*) (*UDFB_EXEC_MOTION_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_MOTION_CTL:*)(*LOCAL_AXIS_2_MC_CTL*) (**)  , (*UDFB_IN_AXIS:*)(*Axis2*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,41] (**) (**)  FB  [1,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis2*) (**)  , (*Execute:Exec*)(*HMI_Stop*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
 EOR [4,0]
 EOF
+#end_info
+#info= ID_MAX
+NextId=1
 #end_info
 END_PROGRAM

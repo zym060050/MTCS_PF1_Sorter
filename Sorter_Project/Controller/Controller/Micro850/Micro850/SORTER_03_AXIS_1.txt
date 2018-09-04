@@ -79,16 +79,6 @@ __MO_MC_HALT_1 := __EDTB5 ;
 (*************** Code for the end of Rung **************)
 
 
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,23
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-
-(*************** Code for the end of Rung **************)
-
-
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
