@@ -1,0 +1,31 @@
+PROGRAM Sorter_03_StartLogic
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_StartExecuteMotion*) (**)  
+ BST  OTR  [2,0] (*HMI_Stop*) (**)
+   NXB  
+ BST  OTS  [2,1] (*HMI_VIS_STOP*) (**)
+   NXB  
+ BST  OTS  [2,2] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  OTS  [2,3] (*HMI_VIS_REV*) (**)
+   NXB  OTR  [2,4] (*HMI_VIS_START*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [3,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_PROGRAM

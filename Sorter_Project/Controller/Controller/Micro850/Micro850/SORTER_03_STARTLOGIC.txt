@@ -1,0 +1,51 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := HMI_STARTEXECUTEMOTION ;
+IF __EDTB1 THEN
+(*Reset coil*)
+HMI_STOP := FALSE ;
+END_IF ;
+__EDTB2 := HMI_STARTEXECUTEMOTION ;
+IF __EDTB2 THEN
+(*Set coil*)
+HMI_VIS_STOP := TRUE ;
+END_IF ;
+__EDTB3 := HMI_STARTEXECUTEMOTION ;
+IF __EDTB3 THEN
+(*Set coil*)
+HMI_VIS_FWD := TRUE ;
+END_IF ;
+__EDTB4 := HMI_STARTEXECUTEMOTION ;
+IF __EDTB4 THEN
+(*Set coil*)
+HMI_VIS_REV := TRUE ;
+END_IF ;
+__EDTB5 := HMI_STARTEXECUTEMOTION ;
+IF __EDTB5 THEN
+(*Reset coil*)
+HMI_VIS_START := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+
