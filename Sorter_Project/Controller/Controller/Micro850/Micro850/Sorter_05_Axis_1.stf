@@ -1,0 +1,39 @@
+PROGRAM Sorter_05_Axis_1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b_SYS_Initialized*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_1_MC_CTL.MC_POWERED*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_DutyCycleConveyors*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_1_MC_CTL.DUTY_CYCLE*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_StartExecuteMotion*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_1_MC_CTL.EXEC_MOTION*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_MOVE_VELOCITY*) (*UDFB_EXEC_MOTION_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_MOTION_CTL:*)(*LOCAL_AXIS_1_MC_CTL*) (**)  , (*UDFB_IN_AXIS:*)(*Axis1*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,14] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_HALT*) (*UDFB_EXEC_MC_HALT_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_AXIS:*)(*Axis1*) (**)  , (*UDFB_IN_HALT:*)(*HMI_Stop*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_PROGRAM

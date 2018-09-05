@@ -1,0 +1,381 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_1(B_SYS_INITIALIZED AND _IO_EM_DI_12) ;
+__EDTB1 := R_TRIG_1.Q ;
+IF __EDTB1 THEN
+(*Set coil*)
+_IO_EM_DO_11 := TRUE ;
+END_IF ;
+__EDTB2 := R_TRIG_1.Q ;
+IF __EDTB2 THEN
+COUNTER_SHORT_R := (COUNTER_SHORT_R + 1) ;
+END_IF ;
+__MO_PLUS_1 := __EDTB2 ;
+__EDTB3 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,6
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_12) ;
+IF __EDTB4 THEN
+(*Reset coil*)
+_IO_EM_DO_11 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,8
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_2(B_SYS_INITIALIZED AND _IO_EM_DI_14) ;
+__EDTB5 := R_TRIG_2.Q ;
+IF __EDTB5 THEN
+(*Set coil*)
+_IO_EM_DO_07 := TRUE ;
+END_IF ;
+__EDTB6 := R_TRIG_2.Q ;
+IF __EDTB6 THEN
+COUNTER_SHORT_G := (COUNTER_SHORT_G + 1) ;
+END_IF ;
+__MO_PLUS_2 := __EDTB6 ;
+__EDTB7 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_14) ;
+IF __EDTB8 THEN
+(*Reset coil*)
+_IO_EM_DO_07 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,15
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_3(B_SYS_INITIALIZED AND _IO_EM_DI_13) ;
+__EDTB9 := R_TRIG_3.Q ;
+IF __EDTB9 THEN
+(*Set coil*)
+_IO_EM_DO_09 := TRUE ;
+END_IF ;
+__EDTB10 := R_TRIG_3.Q ;
+IF __EDTB10 THEN
+COUNTER_SHORT_B := (COUNTER_SHORT_B + 1) ;
+END_IF ;
+__MO_PLUS_3 := __EDTB10 ;
+__EDTB11 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,20
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_13) ;
+IF __EDTB12 THEN
+(*Reset coil*)
+_IO_EM_DO_09 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_4(B_SYS_INITIALIZED AND _IO_EM_DI_15) ;
+__EDTB13 := R_TRIG_4.Q ;
+IF __EDTB13 THEN
+(*Set coil*)
+_IO_EM_DO_17 := TRUE ;
+END_IF ;
+__EDTB14 := R_TRIG_4.Q ;
+IF __EDTB14 THEN
+COUNTER_LONG_R := (COUNTER_LONG_R + 1) ;
+END_IF ;
+__MO_PLUS_4 := __EDTB14 ;
+__EDTB15 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,27
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB16 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_15) ;
+IF __EDTB16 THEN
+(*Reset coil*)
+_IO_EM_DO_17 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,29
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_5(B_SYS_INITIALIZED AND _IO_EM_DI_17) ;
+__EDTB17 := R_TRIG_5.Q ;
+IF __EDTB17 THEN
+(*Set coil*)
+_IO_EM_DO_13 := TRUE ;
+END_IF ;
+__EDTB18 := R_TRIG_5.Q ;
+IF __EDTB18 THEN
+COUNTER_LONG_G := (COUNTER_LONG_G + 1) ;
+END_IF ;
+__MO_PLUS_5 := __EDTB18 ;
+__EDTB19 := __EDTB18 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,34
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB20 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_17) ;
+IF __EDTB20 THEN
+(*Reset coil*)
+_IO_EM_DO_13 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,36
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB21 := B_SYS_INITIALIZED AND NOT(_IO_EM_DI_16) ;
+IF __EDTB21 THEN
+(*Reset coil*)
+_IO_EM_DO_15 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,38
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_6(B_SYS_INITIALIZED AND _IO_EM_DI_16) ;
+__EDTB22 := R_TRIG_6.Q ;
+IF __EDTB22 THEN
+(*Set coil*)
+_IO_EM_DO_15 := TRUE ;
+END_IF ;
+__EDTB23 := R_TRIG_6.Q ;
+IF __EDTB23 THEN
+COUNTER_LONG_B := (COUNTER_LONG_B + 1) ;
+END_IF ;
+__MO_PLUS_6 := __EDTB23 ;
+__EDTB24 := __EDTB23 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,43
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_7(B_SYS_INITIALIZED AND _IO_EM_DI_19) ;
+__EDTB25 := R_TRIG_7.Q ;
+IF __EDTB25 THEN
+COUNTER_SHORT_REJECTED := (COUNTER_SHORT_REJECTED + 1) ;
+END_IF ;
+__MO_PLUS_7 := __EDTB25 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,47
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_8(B_SYS_INITIALIZED AND _IO_EM_DI_18) ;
+__EDTB26 := R_TRIG_8.Q ;
+IF __EDTB26 THEN
+COUNTER_LONG_REJECTED := (COUNTER_LONG_REJECTED + 1) ;
+END_IF ;
+__MO_PLUS_8 := __EDTB26 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,51
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB27 := TRUE ;
+IF __EDTB27 THEN
+LOCAL_AXIS_2_MC_CTL.MC_POWERED := (  B_SYS_INITIALIZED) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB27 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,54
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB28 := TRUE ;
+IF __EDTB28 THEN
+LOCAL_AXIS_2_MC_CTL.DUTY_CYCLE := (  HMI_DUTYCYCLESORTERS) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB28 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,57
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB29 := TRUE ;
+IF __EDTB29 THEN
+LOCAL_AXIS_2_MC_CTL.EXEC_MOTION := (  HMI_STARTEXECUTEMOTION) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB29 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,60
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB30 := TRUE ;
+IF __EDTB30 THEN
+(* FB call: UDFB_EXEC_MC_MOVE_VELOCITY *)
+UDFB_EXEC_MOTION_1(LOCAL_AXIS_2_MC_CTL, AXIS2) ;
+END_IF ;
+__MO_UDFB_EXEC_MC_MOVE_VELOCITY_1 := __EDTB30 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,64
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB31 := TRUE ;
+IF __EDTB31 THEN
+(* FB call: UDFB_EXEC_MC_HALT *)
+UDFB_EXEC_MC_HALT_1(AXIS2, HMI_STOP) ;
+END_IF ;
+__MO_UDFB_EXEC_MC_HALT_1 := __EDTB31 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+
