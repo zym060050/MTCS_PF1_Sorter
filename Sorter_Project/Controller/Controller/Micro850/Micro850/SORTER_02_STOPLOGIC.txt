@@ -23,6 +23,72 @@ IF __EDTB3 THEN
 (*Reset coil*)
 HMI_VIS_REV := FALSE ;
 END_IF ;
+__EDTB4 := HMI_STOP ;
+IF __EDTB4 THEN
+(*Set coil*)
+B_STARTHOMING := TRUE ;
+END_IF ;
+__EDTB6 := HMI_STOP ;
+IF __EDTB6 THEN
+(* Operator output on : >= with __EDTB5 *)
+__EDTB5 := (HSC_INFO.ACCUMULATOR >= CONST_BOTTOM_HSC_COUNT) ;
+ELSE
+__EDTB5 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB5 ;
+__EDTB7 := __EDTB5 ;
+IF __EDTB7 THEN
+(*Set coil*)
+B_LIFTHOMED := TRUE ;
+END_IF ;
+__EDTB8 := __EDTB5 ;
+IF __EDTB8 THEN
+(*Reset coil*)
+B_MOVELIFTDOWN := FALSE ;
+END_IF ;
+__EDTB9 := __EDTB5 ;
+IF __EDTB9 THEN
+(*Set coil*)
+B_MOVELIFTUP := TRUE ;
+END_IF ;
+__EDTB10 := __EDTB5 ;
+IF __EDTB10 THEN
+(*Reset coil*)
+B_STARTLIFTMOVEVELOCITY := FALSE ;
+END_IF ;
+__EDTB11 := __EDTB5 ;
+IF __EDTB11 THEN
+(*Set coil*)
+B_STOPLIFT := TRUE ;
+END_IF ;
+__EDTB13 := HMI_STOP ;
+IF __EDTB13 THEN
+(* Operator output on : < with __EDTB12 *)
+__EDTB12 := (HSC_INFO.ACCUMULATOR < CONST_BOTTOM_HSC_COUNT) ;
+ELSE
+__EDTB12 := FALSE ;
+END_IF ;
+__MO_LESS_1 := __EDTB12 ;
+__EDTB14 := __EDTB12 ;
+IF __EDTB14 THEN
+(*Reset coil*)
+B_LIFTHOMED := FALSE ;
+END_IF ;
+__EDTB15 := __EDTB12 ;
+IF __EDTB15 THEN
+(*Set coil*)
+B_MOVELIFTDOWN := TRUE ;
+END_IF ;
+__EDTB16 := __EDTB12 ;
+IF __EDTB16 THEN
+(*Reset coil*)
+B_MOVELIFTUP := FALSE ;
+END_IF ;
+__EDTB17 := __EDTB12 ;
+IF __EDTB17 THEN
+(*Set coil*)
+B_STARTLIFTMOVEVELOCITY := TRUE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -30,35 +96,60 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,5
+0,15
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-(* FB call: F_TRIG *)
-F_TRIG_1(HMI_STOP) ;
-__EDTB4 := F_TRIG_1.Q ;
-IF __EDTB4 THEN
+__EDTB18 := B_STARTHOMING AND B_LIFTHOMED ;
+IF __EDTB18 THEN
+(*Set coil*)
+B_SYS_STOPPED := TRUE ;
+END_IF ;
+__EDTB19 := B_STARTHOMING AND NOT(B_LIFTHOMED) ;
+IF __EDTB19 THEN
+(*Reset coil*)
+B_SYS_STOPPED := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_1(B_SYS_STOPPED) ;
+__EDTB20 := R_TRIG_1.Q ;
+IF __EDTB20 THEN
 (*Reset coil*)
 HMI_STOP := FALSE ;
 END_IF ;
-__EDTB5 := F_TRIG_1.Q ;
-IF __EDTB5 THEN
+__EDTB21 := R_TRIG_1.Q ;
+IF __EDTB21 THEN
 (*Set coil*)
 HMI_VIS_START := TRUE ;
 END_IF ;
-__EDTB6 := F_TRIG_1.Q ;
-IF __EDTB6 THEN
+__EDTB22 := R_TRIG_1.Q ;
+IF __EDTB22 THEN
 (*Set coil*)
 HMI_VIS_FWD := TRUE ;
 END_IF ;
-__EDTB7 := F_TRIG_1.Q ;
-IF __EDTB7 THEN
+__EDTB23 := R_TRIG_1.Q ;
+IF __EDTB23 THEN
 (*Set coil*)
 HMI_VIS_REV := TRUE ;
 END_IF ;
-__EDTB8 := F_TRIG_1.Q ;
-IF __EDTB8 THEN
+__EDTB24 := R_TRIG_1.Q ;
+IF __EDTB24 THEN
 (*Reset coil*)
 HMI_VIS_STOP := FALSE ;
+END_IF ;
+__EDTB25 := R_TRIG_1.Q ;
+IF __EDTB25 THEN
+(*Reset coil*)
+B_STARTHOMING := FALSE ;
 END_IF ;
 
 (*************** Code for the end of Rung **************)
@@ -78,4 +169,21 @@ __GL __LG0000 ;
 (* __EDTB6 *)
 (* __EDTB7 *)
 (* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
 

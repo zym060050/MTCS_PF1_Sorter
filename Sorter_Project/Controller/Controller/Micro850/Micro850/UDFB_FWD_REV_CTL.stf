@@ -1,0 +1,207 @@
+FUNCTION_BLOCK UDFB_FWD_REV_CTL
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  
+ BST  OTR  [2,0] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,1] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,2] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,3] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,4] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,5] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,6] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,7] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,8] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,9] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,10] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [2,11] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [2,12] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_1*) (**)
+   NXB  OTR  [2,13] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_2*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIC  [1,0] (*HMI_MoveFwd*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTS  [5,0] (*HMI_IND_FwdDir*) (**)
+   NXB  
+ BST  OTR  [5,1] (*HMI_IND_RevDir*) (**)
+   NXB  
+ BST  OTR  [5,2] (*HMI_MoveRev*) (**)
+   NXB  
+ BST  OTS  [5,3] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,4] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,5] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,6] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,7] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,8] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,9] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,10] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,11] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,12] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,13] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,14] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,15] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_1*) (**)
+   NXB  OTR  [5,16] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_2*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,34] (**) (**)  XIC  [1,0] (*HMI_MoveRev*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_2*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTS  [5,0] (*HMI_IND_RevDir*) (**)
+   NXB  
+ BST  OTR  [5,1] (*HMI_IND_FwdDir*) (**)
+   NXB  
+ BST  OTR  [5,2] (*HMI_MoveFwd*) (**)
+   NXB  
+ BST  OTR  [5,3] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,4] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,5] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,6] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTS  [5,7] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_1*) (**)
+   NXB  
+ BST  OTR  [5,8] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,9] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,10] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,11] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,12] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,13] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_1*) (**)
+   NXB  
+ BST  OTS  [5,14] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_2*) (**)
+   NXB  
+ BST  OTR  [5,15] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_1*) (**)
+   NXB  OTS  [5,16] (*UDFB_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_2*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_FUNCTION_BLOCK

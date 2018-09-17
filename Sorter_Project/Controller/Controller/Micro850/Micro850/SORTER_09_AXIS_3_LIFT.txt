@@ -1,0 +1,177 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+LOCAL_AXIS_3_MC_MOVE_VELOCITY.MC_POWERED := (  B_AXIS3_POWERED) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+LOCAL_AXIS_3_MC_MOVE_VELOCITY.DUTY_CYCLE := (  50.0) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := B_MOVELIFTUP AND B_SYS_INITIALIZED ;
+__EDTB4 := __EDTB3 ;
+IF __EDTB4 THEN
+(*Set coil*)
+_IO_EM_DO_18 := TRUE ;
+END_IF ;
+__EDTB5 := __EDTB3 ;
+IF __EDTB5 THEN
+(*Reset coil*)
+_IO_EM_DO_19 := FALSE ;
+END_IF ;
+__EDTB6 := __EDTB3 ;
+IF __EDTB6 THEN
+(*Reset coil*)
+B_MOVELIFTUP := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,11
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB7 := B_MOVELIFTDOWN AND B_SYS_INITIALIZED ;
+__EDTB8 := __EDTB7 ;
+IF __EDTB8 THEN
+(*Set coil*)
+_IO_EM_DO_19 := TRUE ;
+END_IF ;
+__EDTB9 := __EDTB7 ;
+IF __EDTB9 THEN
+(*Reset coil*)
+_IO_EM_DO_18 := FALSE ;
+END_IF ;
+__EDTB10 := __EDTB7 ;
+IF __EDTB10 THEN
+(*Reset coil*)
+B_MOVELIFTDOWN := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,15
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB11 := TRUE ;
+IF __EDTB11 THEN
+LOCAL_AXIS_3_MC_MOVE_VELOCITY.EXEC_MOTION := (  B_STARTLIFTMOVEVELOCITY) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := TRUE ;
+IF __EDTB12 THEN
+(* FB call: UDFB_EXEC_MC_MOVE_VELOCITY *)
+UDFB_EXEC_MOTION_1(LOCAL_AXIS_3_MC_MOVE_VELOCITY, AXIS3) ;
+END_IF ;
+__MO_UDFB_EXEC_MC_MOVE_VELOCITY_1 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := B_AXIS3_POWERED ;
+IF __EDTB13 THEN
+(* FB call: MC_Halt *)
+MC_Halt_1(AXIS3, B_STOPLIFT, 5000.0, 0.0, ) ;
+END_IF ;
+__MO_MC_HALT_1 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,31
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB14 := B_STOPLIFT AND MC_HALT_1.DONE ;
+__EDTB15 := __EDTB14 ;
+IF __EDTB15 THEN
+(*Reset coil*)
+B_STOPLIFT := FALSE ;
+END_IF ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
+(*Reset coil*)
+B_STARTLIFTMOVEVELOCITY := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+

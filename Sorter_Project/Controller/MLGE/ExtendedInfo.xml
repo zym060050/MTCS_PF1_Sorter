@@ -12,6 +12,15 @@
   <AcfElementGuid Guid="438c4309-f8ea-464a-a16d-d4063a891489">
     <File>UDFB_EXEC_MC_MOVE_VELOCITY.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="53c59e4e-9a93-4c3a-954e-40484510a068">
+    <File>Sorter_08_HSC.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="7d4ce94e-e054-4ed3-9134-029e600ee6ab">
+    <File>Sorter_20_SetupAndTest.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="8098a0b8-fb1a-4a95-914c-6ca2a4d89255">
+    <File>UDFB_FWD_REV_CTL.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="b5718a2b-1472-4d18-ab36-f5df2453ad70">
     <File>UDFB_EXEC_MC_HALT.AcfMlge</File>
   </AcfElementGuid>
@@ -22,16 +31,16 @@
     <File>Sorter_02_StopLogic.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="d5e27e5d-cb89-4123-86d8-1b6e13108b53">
-    <File>Sorter_08_CounterReset.AcfMlge</File>
+    <File>Sorter_07_CounterReset.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="e543d382-db59-4481-870b-5665946dde81">
     <File>UDFB_EXEC_MC_MOVE_ABSOLUTE.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="e66d7e27-c75a-4bf8-8e3c-b9497fd468e6">
-    <File>Sorter_07_Axis_3.AcfMlge</File>
+    <File>Sorter_09_Axis_3_Lift.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="ed586f39-7f82-4c75-a47c-5954472a651f">
-    <File>Sorter_05_Axis_1.AcfMlge</File>
+    <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="fc92fe5f-0d35-4dff-b472-4652ab6564e8">
     <File>Sorter_03_StartLogic.AcfMlge</File>

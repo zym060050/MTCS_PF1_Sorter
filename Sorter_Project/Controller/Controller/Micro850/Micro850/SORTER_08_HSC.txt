@@ -1,0 +1,199 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := __SYSVA_FIRST_SCAN ;
+IF __EDTB1 THEN
+(*Set coil*)
+B_HSC_ENABLE := TRUE ;
+END_IF ;
+__EDTB2 := __SYSVA_FIRST_SCAN ;
+IF __EDTB2 THEN
+(*Reset coil*)
+HSC_APPDATA.PLSENABLE := FALSE ;
+END_IF ;
+__EDTB3 := __SYSVA_FIRST_SCAN ;
+IF __EDTB3 THEN
+HSC_APPDATA.HSCID := (  0) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+__EDTB5 := __SYSVA_FIRST_SCAN ;
+IF __EDTB5 THEN
+HSC_APPDATA.HSCMODE := (  8) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB5 ;
+__EDTB6 := __EDTB5 ;
+__EDTB7 := __SYSVA_FIRST_SCAN ;
+IF __EDTB7 THEN
+HSC_APPDATA.OFSETTING := (  2000000000) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB7 ;
+__EDTB8 := __EDTB7 ;
+__EDTB9 := __SYSVA_FIRST_SCAN ;
+IF __EDTB9 THEN
+HSC_APPDATA.UFSETTING := (  -2000000000) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB9 ;
+__EDTB10 := __EDTB9 ;
+__EDTB11 := __SYSVA_FIRST_SCAN ;
+IF __EDTB11 THEN
+HSC_APPDATA.HPSETTING := (  CONST_BOTTOM_HSC_COUNT) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB11 ;
+__EDTB12 := __EDTB11 ;
+__EDTB13 := __SYSVA_FIRST_SCAN ;
+IF __EDTB13 THEN
+HSC_APPDATA.LPSETTING := (  CONST_TOP_HSC_COUNT) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+__EDTB15 := __SYSVA_FIRST_SCAN ;
+IF __EDTB15 THEN
+HSC_COMMAND := (  1) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB15 ;
+__EDTB16 := __EDTB15 ;
+__EDTB17 := (__EDTB14 OR __EDTB16) ;
+__EDTB18 := (__EDTB12 OR __EDTB17) ;
+__EDTB19 := (__EDTB10 OR __EDTB18) ;
+__EDTB20 := (__EDTB8 OR __EDTB19) ;
+__EDTB21 := (__EDTB6 OR __EDTB20) ;
+__EDTB22 := (__EDTB4 OR __EDTB21) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: HSC *)
+HSC_1(B_HSC_ENABLE, HSC_COMMAND, HSC_APPDATA, HSC_INFO, HSC_PLS, 0) ;
+HSC_STATUS := HSC_1.Sts ;
+__MO_HSC_1 := B_HSC_ENABLE ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB24 := B_HSC_ENABLE ;
+IF __EDTB24 THEN
+(* Operator output on : <= with __EDTB23 *)
+__EDTB23 := (HSC_INFO.ACCUMULATOR <= CONST_TOP_HSC_COUNT) ;
+ELSE
+__EDTB23 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB23 ;
+__EDTB25 := __EDTB23 ;
+IF __EDTB25 THEN
+(*Set coil*)
+B_MOVELIFTDOWN := TRUE ;
+END_IF ;
+__EDTB26 := __EDTB23 ;
+IF __EDTB26 THEN
+(*Reset coil*)
+B_MOVELIFTUP := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,29
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB28 := B_HSC_ENABLE ;
+IF __EDTB28 THEN
+(* Operator output on : >= with __EDTB27 *)
+__EDTB27 := (HSC_INFO.ACCUMULATOR >= CONST_BOTTOM_HSC_COUNT) ;
+ELSE
+__EDTB27 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB27 ;
+__EDTB29 := __EDTB27 ;
+IF __EDTB29 THEN
+(*Set coil*)
+B_MOVELIFTUP := TRUE ;
+END_IF ;
+__EDTB30 := __EDTB27 ;
+IF __EDTB30 THEN
+(*Reset coil*)
+B_MOVELIFTDOWN := FALSE ;
+END_IF ;
+__EDTB31 := __EDTB27 AND NOT(B_LIFTHOMED) ;
+__EDTB32 := __EDTB31 ;
+IF __EDTB32 THEN
+(*Reset coil*)
+B_STARTLIFTMOVEVELOCITY := FALSE ;
+END_IF ;
+__EDTB33 := __EDTB31 ;
+IF __EDTB33 THEN
+(*Set coil*)
+B_STOPLIFT := TRUE ;
+END_IF ;
+__EDTB34 := __EDTB31 ;
+IF __EDTB34 THEN
+(*Set coil*)
+B_LIFTHOMED := TRUE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+(* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
+

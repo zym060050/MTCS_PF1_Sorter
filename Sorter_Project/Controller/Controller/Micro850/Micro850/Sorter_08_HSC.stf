@@ -1,0 +1,85 @@
+PROGRAM Sorter_08_HSC
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  
+ BST  OTS  [2,0] (*b_HSC_ENABLE*) (**)
+   NXB  
+ BST  OTR  [2,1] (*HSC_AppData.PlsEnable*) (**)
+   NXB  
+ BST  FB  [2,2] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.HscID*) (**) )
+   NXB  
+ BST  FB  [2,4] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*8*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.HscMode*) (**) )
+   NXB  
+ BST  FB  [2,6] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2000000000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.OFSetting*) (**) )
+   NXB  
+ BST  FB  [2,8] (*1 gain*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*-2000000000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.UFSetting*) (**) )
+   NXB  
+ BST  FB  [2,10] (*1 gain*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.HPSetting*) (**) )
+   NXB  
+ BST  FB  [2,12] (*1 gain*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*CONST_TOP_HSC_COUNT*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.LPSetting*) (**) )
+   NXB  FB  [2,14] (*1 gain*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_Command*) (**) )
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,18] (**) (**)  XIC  [1,0] (*b_HSC_ENABLE*) (**)  FB  [2,0] (*HSC*) (*HSC_1*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*HSC_Command*) (**)  , (*HscAppData:HscA*)(*HSC_AppData*) (**)  , (*HscStsInfo:HscS*)(*HSC_Info*) (**)  , (*PlsData:PlsD*)(*HSC_PLS*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*HSC_Status*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  XIC  [1,0] (*b_HSC_ENABLE*) (**)  FB  [2,0] (*<=*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_TOP_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,0] (*b_MoveLiftDown*) (**)
+   NXB  OTR  [5,1] (*b_MoveLiftUp*) (**)
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,29] (**) (**)  XIC  [1,0] (*b_HSC_ENABLE*) (**)  FB  [2,0] (*>=*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,0] (*b_MoveLiftUp*) (**)
+   NXB  
+ BST  OTR  [5,1] (*b_MoveLiftDown*) (**)
+   NXB  XIO  [5,2] (*b_LiftHomed*) (**)  
+ BST  
+ BST  OTR  [6,2] (*b_StartLiftMoveVelocity*) (**)
+   NXB  OTS  [6,3] (*b_StopLift*) (**)
+ BND
+
+   NXB  OTS  [6,4] (*b_LiftHomed*) (**)
+ BND
+
+ BND
+
+ BND
+
+EOR [7,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=14
+#end_info
+END_PROGRAM

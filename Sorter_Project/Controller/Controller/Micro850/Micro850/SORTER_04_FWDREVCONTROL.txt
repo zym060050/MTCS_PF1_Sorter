@@ -8,93 +8,88 @@ __STEPPRAGMA
 0,1
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-(* FB call: R_TRIG *)
-R_TRIG_1(HMI_MOVEFWD) ;
-__EDTB1 := R_TRIG_1.Q ;
+__EDTB1 := TRUE ;
 IF __EDTB1 THEN
-(*Set coil*)
-HMI_IND_FWDDIR := TRUE ;
+(* FB call: UDFB_FWD_REV_CTL *)
+UDFB_FWD_REV_CTL_1() ;
+LOCAL_CONVEYOR_DIR_CTL_IO := UDFB_FWD_REV_CTL_1.UDFB_CONVEYOR_DIR_CTL_IO ;
 END_IF ;
-__EDTB2 := R_TRIG_1.Q ;
+__MO_UDFB_FWD_REV_CTL_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
 IF __EDTB2 THEN
-(*Reset coil*)
-HMI_IND_REVDIR := FALSE ;
+_IO_X1_DO_00 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_CONVEYOR_1) ;
 END_IF ;
-__EDTB3 := R_TRIG_1.Q ;
+__MO_1GAIN_1 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := TRUE ;
 IF __EDTB3 THEN
-(*Set coil*)
-_IO_X1_DO_05 := TRUE ;
+_IO_X1_DO_01 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_CONVEYOR_2) ;
 END_IF ;
-__EDTB4 := R_TRIG_1.Q ;
+__MO_1GAIN_2 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
 IF __EDTB4 THEN
-(*Reset coil*)
-HMI_MOVEREV := FALSE ;
+_IO_X1_DO_02 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_INCLINE_CONVEYOR_1) ;
 END_IF ;
-__EDTB5 := R_TRIG_1.Q ;
+__MO_1GAIN_3 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
 IF __EDTB5 THEN
-(*Reset coil*)
-_IO_X1_DO_04 := FALSE ;
+_IO_X1_DO_03 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_INCLINE_CONVEYOR_2) ;
 END_IF ;
-__EDTB6 := R_TRIG_1.Q ;
+__MO_1GAIN_4 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB6 := TRUE ;
 IF __EDTB6 THEN
-(*Set coil*)
-_IO_X1_DO_00 := TRUE ;
+_IO_X1_DO_04 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INCLINE_CONVEYOR_1) ;
 END_IF ;
-__EDTB7 := R_TRIG_1.Q ;
-IF __EDTB7 THEN
-(*Reset coil*)
-_IO_X1_DO_01 := FALSE ;
-END_IF ;
-__EDTB8 := R_TRIG_1.Q ;
-IF __EDTB8 THEN
-(*Set coil*)
-_IO_X1_DO_02 := TRUE ;
-END_IF ;
-__EDTB9 := R_TRIG_1.Q ;
-IF __EDTB9 THEN
-(*Reset coil*)
-_IO_X1_DO_03 := FALSE ;
-END_IF ;
-__EDTB10 := R_TRIG_1.Q ;
-IF __EDTB10 THEN
-(*Set coil*)
-_IO_X1_DO_06 := TRUE ;
-END_IF ;
-__EDTB11 := R_TRIG_1.Q ;
-IF __EDTB11 THEN
-(*Reset coil*)
-_IO_X1_DO_07 := FALSE ;
-END_IF ;
-__EDTB12 := R_TRIG_1.Q ;
-IF __EDTB12 THEN
-(*Set coil*)
-_IO_X1_DO_08 := TRUE ;
-END_IF ;
-__EDTB13 := R_TRIG_1.Q ;
-IF __EDTB13 THEN
-(*Reset coil*)
-_IO_X1_DO_09 := FALSE ;
-END_IF ;
-__EDTB14 := R_TRIG_1.Q ;
-IF __EDTB14 THEN
-(*Set coil*)
-_IO_X1_DO_12 := TRUE ;
-END_IF ;
-__EDTB15 := R_TRIG_1.Q ;
-IF __EDTB15 THEN
-(*Reset coil*)
-_IO_X1_DO_13 := FALSE ;
-END_IF ;
-__EDTB16 := R_TRIG_1.Q ;
-IF __EDTB16 THEN
-(*Set coil*)
-_IO_X1_DO_14 := TRUE ;
-END_IF ;
-__EDTB17 := R_TRIG_1.Q ;
-IF __EDTB17 THEN
-(*Reset coil*)
-_IO_X1_DO_15 := FALSE ;
-END_IF ;
+__MO_1GAIN_5 := __EDTB6 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -105,93 +100,131 @@ __STEPPRAGMA
 0,19
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-(* FB call: R_TRIG *)
-R_TRIG_2(HMI_MOVEREV) ;
-__EDTB18 := R_TRIG_2.Q ;
-IF __EDTB18 THEN
-(*Set coil*)
-HMI_IND_REVDIR := TRUE ;
+__EDTB7 := TRUE ;
+IF __EDTB7 THEN
+_IO_X1_DO_05 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_INCLINE_CONVEYOR_2) ;
 END_IF ;
-__EDTB19 := R_TRIG_2.Q ;
-IF __EDTB19 THEN
-(*Reset coil*)
-HMI_IND_FWDDIR := FALSE ;
+__MO_1GAIN_6 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+_IO_X1_DO_06 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_OUTFEED_CONVEYOR_1) ;
 END_IF ;
-__EDTB20 := R_TRIG_2.Q ;
-IF __EDTB20 THEN
-(*Set coil*)
-_IO_X1_DO_04 := TRUE ;
+__MO_1GAIN_7 := __EDTB8 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB9 := TRUE ;
+IF __EDTB9 THEN
+_IO_X1_DO_07 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_OUTFEED_CONVEYOR_2) ;
 END_IF ;
-__EDTB21 := R_TRIG_2.Q ;
-IF __EDTB21 THEN
-(*Reset coil*)
-HMI_MOVEFWD := FALSE ;
+__MO_1GAIN_8 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,28
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+_IO_X1_DO_08 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_SHORT_SORTER_CONVEYOR_1) ;
 END_IF ;
-__EDTB22 := R_TRIG_2.Q ;
-IF __EDTB22 THEN
-(*Reset coil*)
-_IO_X1_DO_05 := FALSE ;
+__MO_1GAIN_9 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,31
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB11 := TRUE ;
+IF __EDTB11 THEN
+_IO_X1_DO_09 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_SHORT_SORTER_CONVEYOR_2) ;
 END_IF ;
-__EDTB23 := R_TRIG_2.Q ;
-IF __EDTB23 THEN
-(*Set coil*)
-_IO_X1_DO_01 := TRUE ;
+__MO_1GAIN_10 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,34
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := TRUE ;
+IF __EDTB12 THEN
+_IO_X1_DO_12 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_SIZE_SORTER_CONVEYOR_1) ;
 END_IF ;
-__EDTB24 := R_TRIG_2.Q ;
-IF __EDTB24 THEN
-(*Reset coil*)
-_IO_X1_DO_00 := FALSE ;
+__MO_1GAIN_11 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,37
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := TRUE ;
+IF __EDTB13 THEN
+_IO_X1_DO_13 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_SIZE_SORTER_CONVEYOR_2) ;
 END_IF ;
-__EDTB25 := R_TRIG_2.Q ;
-IF __EDTB25 THEN
-(*Set coil*)
-_IO_X1_DO_03 := TRUE ;
+__MO_1GAIN_12 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,40
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB14 := TRUE ;
+IF __EDTB14 THEN
+_IO_X1_DO_14 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_LONG_SORTER_CONVEYOR_1) ;
 END_IF ;
-__EDTB26 := R_TRIG_2.Q ;
-IF __EDTB26 THEN
-(*Reset coil*)
-_IO_X1_DO_02 := FALSE ;
+__MO_1GAIN_13 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,43
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB15 := TRUE ;
+IF __EDTB15 THEN
+_IO_X1_DO_15 := (  LOCAL_CONVEYOR_DIR_CTL_IO.IO_LONG_SORTER_CONVEYOR_2) ;
 END_IF ;
-__EDTB27 := R_TRIG_2.Q ;
-IF __EDTB27 THEN
-(*Set coil*)
-_IO_X1_DO_07 := TRUE ;
-END_IF ;
-__EDTB28 := R_TRIG_2.Q ;
-IF __EDTB28 THEN
-(*Reset coil*)
-_IO_X1_DO_06 := FALSE ;
-END_IF ;
-__EDTB29 := R_TRIG_2.Q ;
-IF __EDTB29 THEN
-(*Set coil*)
-_IO_X1_DO_09 := TRUE ;
-END_IF ;
-__EDTB30 := R_TRIG_2.Q ;
-IF __EDTB30 THEN
-(*Reset coil*)
-_IO_X1_DO_08 := FALSE ;
-END_IF ;
-__EDTB31 := R_TRIG_2.Q ;
-IF __EDTB31 THEN
-(*Set coil*)
-_IO_X1_DO_13 := TRUE ;
-END_IF ;
-__EDTB32 := R_TRIG_2.Q ;
-IF __EDTB32 THEN
-(*Reset coil*)
-_IO_X1_DO_12 := FALSE ;
-END_IF ;
-__EDTB33 := R_TRIG_2.Q ;
-IF __EDTB33 THEN
-(*Set coil*)
-_IO_X1_DO_15 := TRUE ;
-END_IF ;
-__EDTB34 := R_TRIG_2.Q ;
-IF __EDTB34 THEN
-(*Reset coil*)
-_IO_X1_DO_14 := FALSE ;
-END_IF ;
+__MO_1GAIN_14 := __EDTB15 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -217,23 +250,4 @@ __GL __LG0000 ;
 (* __EDTB13 *)
 (* __EDTB14 *)
 (* __EDTB15 *)
-(* __EDTB16 *)
-(* __EDTB17 *)
-(* __EDTB18 *)
-(* __EDTB19 *)
-(* __EDTB20 *)
-(* __EDTB21 *)
-(* __EDTB22 *)
-(* __EDTB23 *)
-(* __EDTB24 *)
-(* __EDTB25 *)
-(* __EDTB26 *)
-(* __EDTB27 *)
-(* __EDTB28 *)
-(* __EDTB29 *)
-(* __EDTB30 *)
-(* __EDTB31 *)
-(* __EDTB32 *)
-(* __EDTB33 *)
-(* __EDTB34 *)
 

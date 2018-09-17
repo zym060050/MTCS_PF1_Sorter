@@ -15,8 +15,8 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,10] (**) (**)  XIO  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  FB  [2,0] (*MC_MoveAbsolute*) (*MC_MoveAbsolute_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*UDFB_IN_AXIS*) (**)  , (*Execute:Exec*)(*UDFB_IN_MOTION_CTL.EXEC_MOTION*) (**)  , (*Position:Pos*)(*UDFB_IN_POS*) (**)  , (*Velocity:Velo*)(*1000.0*) (**)  , (*Acceleration:Acce*)(*5000.0*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*Direction:Dir*)(*1*) (**)  , (*Buffermode:buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
-EOR [5,0]
+SOR  [0,10] (**) (**)  XIO  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  XIC  [2,0] (*UDFB_IN_MOTION_CTL.MC_POWERED*) (**)  FB  [3,0] (*MC_MoveAbsolute*) (*MC_MoveAbsolute_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*UDFB_IN_AXIS*) (**)  , (*Execute:Exec*)(*UDFB_IN_MOTION_CTL.EXEC_MOTION*) (**)  , (*Position:Pos*)(*UDFB_IN_POS*) (**)  , (*Velocity:Velo*)(*1000.0*) (**)  , (*Acceleration:Acce*)(*5000.0*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*Direction:Dir*)(*1*) (**)  , (*Buffermode:buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+EOR [6,0]
 EOF
 #end_info
 END_FUNCTION_BLOCK

@@ -7,10 +7,10 @@ BOF
 
 SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*_IO_EM_DI_12*) (*Short Red Color Sensor*)  FB  [3,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
  BST  OTS  [6,0] (*_IO_EM_DO_11*) (*Short Red Sorter IN1_2*)
-   NXB  FB  [6,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Counter_Short_R*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Short_R*) (**) )
+   NXB  XIC  [6,1] (*HMI_StartExecuteMotion*) (**)  FB  [7,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Counter_Short_R*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Short_R*) (**) )
  BND
 
-EOR [9,0]
+EOR [10,0]
 
 
 (**)
@@ -137,8 +137,8 @@ EOR [4,0]
 
 (**)
 
-SOR  [0,64] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_HALT*) (*UDFB_EXEC_MC_HALT_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_AXIS:*)(*Axis2*) (**)  , (*UDFB_IN_HALT:*)(*HMI_Stop*) (**) ; (*ENO:ENO*)(**) (**) )
-EOR [4,0]
+SOR  [0,64] (**) (**)  XIC  [1,0] (*b_Axis2_Powered*) (**)  FB  [2,0] (*UDFB_EXEC_MC_HALT*) (*UDFB_EXEC_MC_HALT_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_AXIS:*)(*Axis2*) (**)  , (*UDFB_IN_HALT:*)(*HMI_Stop*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [5,0]
 EOF
 #end_info
 #info= ID_MAX
