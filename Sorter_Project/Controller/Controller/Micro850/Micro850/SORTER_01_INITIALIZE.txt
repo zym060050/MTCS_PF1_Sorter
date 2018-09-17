@@ -168,59 +168,65 @@ IF __EDTB40 THEN
 (*Reset coil*)
 B_STARTHOMING := FALSE ;
 END_IF ;
-__EDTB42 := __SYSVA_FIRST_SCAN ;
-IF __EDTB42 THEN
-(* Operator output on : >= with __EDTB41 *)
-__EDTB41 := (HSC_INFO.ACCUMULATOR >= CONST_BOTTOM_HSC_COUNT) ;
-ELSE
-__EDTB41 := FALSE ;
+__EDTB41 := __SYSVA_FIRST_SCAN ;
+IF __EDTB41 THEN
+HMI_IND_LIFT_DIR := (  2) ;
 END_IF ;
-__MO_GREATEQUAL_1 := __EDTB41 ;
-__EDTB43 := __EDTB41 ;
-IF __EDTB43 THEN
+__MO_1GAIN_11 := __EDTB41 ;
+__EDTB42 := __EDTB41 ;
+__EDTB44 := __SYSVA_FIRST_SCAN ;
+IF __EDTB44 THEN
+(* Operator output on : >= with __EDTB43 *)
+__EDTB43 := (HSC_INFO.ACCUMULATOR >= CONST_BOTTOM_HSC_COUNT) ;
+ELSE
+__EDTB43 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB43 ;
+__EDTB45 := __EDTB43 ;
+IF __EDTB45 THEN
 (*Set coil*)
 B_LIFTHOMED := TRUE ;
 END_IF ;
-__EDTB44 := __EDTB41 ;
-IF __EDTB44 THEN
+__EDTB46 := __EDTB43 ;
+IF __EDTB46 THEN
 (*Set coil*)
 B_MOVELIFTUP := TRUE ;
 END_IF ;
-__EDTB45 := __EDTB41 ;
-IF __EDTB45 THEN
+__EDTB47 := __EDTB43 ;
+IF __EDTB47 THEN
 (*Reset coil*)
 B_MOVELIFTDOWN := FALSE ;
 END_IF ;
-__EDTB46 := __EDTB41 ;
-IF __EDTB46 THEN
+__EDTB48 := __EDTB43 ;
+IF __EDTB48 THEN
 (*Reset coil*)
 B_STARTLIFTMOVEVELOCITY := FALSE ;
 END_IF ;
-__EDTB48 := __SYSVA_FIRST_SCAN ;
-IF __EDTB48 THEN
-(* Operator output on : < with __EDTB47 *)
-__EDTB47 := (HSC_INFO.ACCUMULATOR < CONST_BOTTOM_HSC_COUNT) ;
+__EDTB50 := __SYSVA_FIRST_SCAN ;
+IF __EDTB50 THEN
+(* Operator output on : < with __EDTB49 *)
+__EDTB49 := (HSC_INFO.ACCUMULATOR < CONST_BOTTOM_HSC_COUNT) ;
 ELSE
-__EDTB47 := FALSE ;
+__EDTB49 := FALSE ;
 END_IF ;
-__MO_LESS_1 := __EDTB47 ;
-__EDTB49 := __EDTB47 ;
-IF __EDTB49 THEN
+__MO_LESS_1 := __EDTB49 ;
+__EDTB51 := __EDTB49 ;
+IF __EDTB51 THEN
 (*Reset coil*)
 B_LIFTHOMED := FALSE ;
 END_IF ;
-__EDTB50 := __EDTB47 ;
-IF __EDTB50 THEN
+__EDTB52 := __EDTB49 ;
+IF __EDTB52 THEN
 (*Reset coil*)
 B_MOVELIFTUP := FALSE ;
 END_IF ;
-__EDTB51 := __EDTB47 ;
-IF __EDTB51 THEN
+__EDTB53 := __EDTB49 ;
+IF __EDTB53 THEN
 (*Set coil*)
 B_MOVELIFTDOWN := TRUE ;
 END_IF ;
-__EDTB52 := __EDTB47 ;
-IF __EDTB52 THEN
+__EDTB54 := __EDTB49 ;
+IF __EDTB54 THEN
 (*Set coil*)
 B_STARTLIFTMOVEVELOCITY := TRUE ;
 END_IF ;
@@ -231,47 +237,15 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,50
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB53 := TRUE ;
-IF __EDTB53 THEN
-(* FB call: MC_Power *)
-MC_Power_1(AXIS1, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
-END_IF ;
-__MO_MC_POWER_1 := __EDTB53 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,58
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB54 := TRUE ;
-IF __EDTB54 THEN
-(* FB call: MC_Power *)
-MC_Power_2(AXIS2, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
-END_IF ;
-__MO_MC_POWER_2 := __EDTB54 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,66
+0,52
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB55 := TRUE ;
 IF __EDTB55 THEN
 (* FB call: MC_Power *)
-MC_Power_3(AXIS3, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
+MC_Power_1(AXIS1, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
 END_IF ;
-__MO_MC_POWER_3 := __EDTB55 ;
+__MO_MC_POWER_1 := __EDTB55 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -279,14 +253,15 @@ __MO_MC_POWER_3 := __EDTB55 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,74
+0,60
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB56 := TRUE ;
 IF __EDTB56 THEN
-B_AXIS1_POWERED := (  MC_POWER_1.STATUS) ;
+(* FB call: MC_Power *)
+MC_Power_2(AXIS2, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
 END_IF ;
-__MO_1GAIN_11 := __EDTB56 ;
+__MO_MC_POWER_2 := __EDTB56 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -294,14 +269,15 @@ __MO_1GAIN_11 := __EDTB56 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,77
+0,68
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB57 := TRUE ;
 IF __EDTB57 THEN
-B_AXIS2_POWERED := (  MC_POWER_2.STATUS) ;
+(* FB call: MC_Power *)
+MC_Power_3(AXIS3, HMI_INITENABLEPOWER, TRUE, TRUE, 0) ;
 END_IF ;
-__MO_1GAIN_12 := __EDTB57 ;
+__MO_MC_POWER_3 := __EDTB57 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -309,14 +285,14 @@ __MO_1GAIN_12 := __EDTB57 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,80
+0,76
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB58 := TRUE ;
 IF __EDTB58 THEN
-B_AXIS3_POWERED := (  MC_POWER_3.STATUS) ;
+B_AXIS1_POWERED := (  MC_POWER_1.STATUS) ;
 END_IF ;
-__MO_1GAIN_13 := __EDTB58 ;
+__MO_1GAIN_12 := __EDTB58 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -324,17 +300,47 @@ __MO_1GAIN_13 := __EDTB58 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,83
+0,79
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB59 := B_AXIS1_POWERED AND B_AXIS2_POWERED AND B_AXIS3_POWERED ;
-__EDTB60 := __EDTB59 ;
+__EDTB59 := TRUE ;
+IF __EDTB59 THEN
+B_AXIS2_POWERED := (  MC_POWER_2.STATUS) ;
+END_IF ;
+__MO_1GAIN_13 := __EDTB59 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,82
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB60 := TRUE ;
 IF __EDTB60 THEN
+B_AXIS3_POWERED := (  MC_POWER_3.STATUS) ;
+END_IF ;
+__MO_1GAIN_14 := __EDTB60 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,85
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB61 := B_AXIS1_POWERED AND B_AXIS2_POWERED AND B_AXIS3_POWERED ;
+__EDTB62 := __EDTB61 ;
+IF __EDTB62 THEN
 (*Set coil*)
 B_SYS_INITIALIZED := TRUE ;
 END_IF ;
-__EDTB61 := __EDTB59 ;
-IF __EDTB61 THEN
+__EDTB63 := __EDTB61 ;
+IF __EDTB63 THEN
 (*Reset coil*)
 HMI_VIS_INIT := FALSE ;
 END_IF ;
@@ -345,33 +351,33 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,86
+0,88
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: R_TRIG *)
 R_TRIG_1(B_SYS_INITIALIZED) ;
-__EDTB62 := R_TRIG_1.Q ;
-IF __EDTB62 THEN
-(*Set coil*)
-HMI_VIS_START := TRUE ;
-END_IF ;
-__EDTB63 := R_TRIG_1.Q ;
-IF __EDTB63 THEN
-(*Set coil*)
-HMI_VIS_FWD := TRUE ;
-END_IF ;
 __EDTB64 := R_TRIG_1.Q ;
 IF __EDTB64 THEN
 (*Set coil*)
-HMI_VIS_REV := TRUE ;
+HMI_VIS_START := TRUE ;
 END_IF ;
 __EDTB65 := R_TRIG_1.Q ;
 IF __EDTB65 THEN
 (*Set coil*)
-HMI_MOVEFWD := TRUE ;
+HMI_VIS_FWD := TRUE ;
 END_IF ;
 __EDTB66 := R_TRIG_1.Q ;
 IF __EDTB66 THEN
+(*Set coil*)
+HMI_VIS_REV := TRUE ;
+END_IF ;
+__EDTB67 := R_TRIG_1.Q ;
+IF __EDTB67 THEN
+(*Set coil*)
+HMI_MOVEFWD := TRUE ;
+END_IF ;
+__EDTB68 := R_TRIG_1.Q ;
+IF __EDTB68 THEN
 (*Set coil*)
 HMI_IND_FWDDIR := TRUE ;
 END_IF ;
@@ -451,4 +457,6 @@ __GL __LG0000 ;
 (* __EDTB64 *)
 (* __EDTB65 *)
 (* __EDTB66 *)
+(* __EDTB67 *)
+(* __EDTB68 *)
 

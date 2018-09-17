@@ -79,7 +79,9 @@ SOR  [0,18] (**) (**)  XIC  [1,0] (*b_SYS_Stopped*) (**)  FB  [2,0] (*R_TRIG*) (
  BST  OTS  [5,3] (*HMI_VIS_REV*) (**)
    NXB  
  BST  OTR  [5,4] (*HMI_VIS_STOP*) (**)
-   NXB  OTR  [5,5] (*b_StartHoming*) (**)
+   NXB  
+ BST  OTR  [5,5] (*b_StartHoming*) (**)
+   NXB  FB  [5,6] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
  BND
 
  BND
@@ -90,7 +92,9 @@ SOR  [0,18] (**) (**)  XIC  [1,0] (*b_SYS_Stopped*) (**)  FB  [2,0] (*R_TRIG*) (
 
  BND
 
-EOR [6,0]
+ BND
+
+EOR [8,0]
 EOF
 #end_info
 #info= ID_MAX

@@ -64,12 +64,12 @@ SOR  [0,29] (**) (**)  XIC  [1,0] (*b_HSC_ENABLE*) (**)  FB  [2,0] (*>=*) (*13*)
    NXB  
  BST  OTR  [5,1] (*b_MoveLiftDown*) (**)
    NXB  XIO  [5,2] (*b_LiftHomed*) (**)  
- BST  
  BST  OTR  [6,2] (*b_StartLiftMoveVelocity*) (**)
-   NXB  OTS  [6,3] (*b_StopLift*) (**)
+   NXB  
+ BST  OTS  [6,3] (*b_StopLift*) (**)
+   NXB  OTS  [6,4] (*b_LiftHomed*) (**)
  BND
 
-   NXB  OTS  [6,4] (*b_LiftHomed*) (**)
  BND
 
  BND

@@ -151,6 +151,12 @@ IF __EDTB25 THEN
 (*Reset coil*)
 B_STARTHOMING := FALSE ;
 END_IF ;
+__EDTB26 := R_TRIG_1.Q ;
+IF __EDTB26 THEN
+HMI_IND_LIFT_DIR := (  2) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB26 ;
+__EDTB27 := __EDTB26 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -186,4 +192,6 @@ __GL __LG0000 ;
 (* __EDTB23 *)
 (* __EDTB24 *)
 (* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
 

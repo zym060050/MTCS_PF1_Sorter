@@ -21,49 +21,73 @@ SOR  [0,7] (**) (**)  XIC  [1,0] (*b_MoveLiftUp*) (**)  XIC  [2,0] (*b_SYS_Initi
  BST  OTS  [3,0] (*_IO_EM_DO_18*) (**)
    NXB  
  BST  OTR  [3,1] (*_IO_EM_DO_19*) (**)
-   NXB  OTR  [3,2] (*b_MoveLiftUp*) (**)
+   NXB  
+ BST  OTR  [3,2] (*b_MoveLiftUp*) (**)
+   NXB  
+ BST  XIC  [3,3] (*HMI_StartExecuteMotion*) (**)  FB  [4,3] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+   NXB  
+ BST  XIO  [3,5] (*HMI_StartExecuteMotion*) (**)  XIC  [4,5] (*b_StartHoming*) (**)  FB  [5,5] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+   NXB  XIO  [3,7] (*HMI_StartExecuteMotion*) (**)  XIO  [4,7] (*b_StartHoming*) (**)  FB  [5,7] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
  BND
 
  BND
 
-EOR [4,0]
+ BND
+
+ BND
+
+ BND
+
+EOR [8,0]
 
 
 (**)
 
-SOR  [0,11] (**) (**)  XIC  [1,0] (*b_MoveLiftDown*) (**)  XIC  [2,0] (*b_SYS_Initialized*) (**)  
+SOR  [0,17] (**) (**)  XIC  [1,0] (*b_MoveLiftDown*) (**)  XIC  [2,0] (*b_SYS_Initialized*) (**)  
  BST  OTS  [3,0] (*_IO_EM_DO_19*) (**)
    NXB  
  BST  OTR  [3,1] (*_IO_EM_DO_18*) (**)
-   NXB  OTR  [3,2] (*b_MoveLiftDown*) (**)
+   NXB  
+ BST  OTR  [3,2] (*b_MoveLiftDown*) (**)
+   NXB  
+ BST  XIC  [3,3] (*HMI_StartExecuteMotion*) (**)  FB  [4,3] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+   NXB  
+ BST  XIO  [3,5] (*HMI_StartExecuteMotion*) (**)  XIC  [4,5] (*b_StartHoming*) (**)  FB  [5,5] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+   NXB  XIO  [3,7] (*HMI_StartExecuteMotion*) (**)  XIO  [4,7] (*b_StartHoming*) (**)  FB  [5,7] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
  BND
 
  BND
 
+ BND
+
+ BND
+
+ BND
+
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b_StartLiftMoveVelocity*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_3_MC_MOVE_VELOCITY.EXEC_MOTION*) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,15] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b_StartLiftMoveVelocity*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_3_MC_MOVE_VELOCITY.EXEC_MOTION*) (**) )
+SOR  [0,30] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_MOVE_VELOCITY*) (*UDFB_EXEC_MOTION_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_MOTION_CTL:*)(*LOCAL_AXIS_3_MC_MOVE_VELOCITY*) (**)  , (*UDFB_IN_AXIS:*)(*Axis3*) (**) ; (*ENO:ENO*)(**) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,18] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_MOVE_VELOCITY*) (*UDFB_EXEC_MOTION_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_MOTION_CTL:*)(*LOCAL_AXIS_3_MC_MOVE_VELOCITY*) (**)  , (*UDFB_IN_AXIS:*)(*Axis3*) (**) ; (*ENO:ENO*)(**) (**) )
-EOR [4,0]
-
-
-(**)
-
-SOR  [0,22] (**) (**)  XIC  [1,0] (*b_Axis3_Powered*) (**)  FB  [2,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis3*) (**)  , (*Execute:Exec*)(*b_StopLift*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+SOR  [0,34] (**) (**)  XIC  [1,0] (*b_Axis3_Powered*) (**)  FB  [2,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis3*) (**)  , (*Execute:Exec*)(*b_StopLift*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,31] (**) (**)  XIC  [1,0] (*b_StopLift*) (**)  XIC  [2,0] (*MC_Halt_1.Done*) (*Done*)  
+SOR  [0,43] (**) (**)  XIC  [1,0] (*b_StopLift*) (**)  XIC  [2,0] (*MC_Halt_1.Done*) (*Done*)  
  BST  OTR  [3,0] (*b_StopLift*) (**)
    NXB  OTR  [3,1] (*b_StartLiftMoveVelocity*) (**)
  BND
@@ -72,6 +96,6 @@ EOR [4,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=4
+NextId=5
 #end_info
 END_PROGRAM

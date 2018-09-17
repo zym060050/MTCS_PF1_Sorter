@@ -1,18 +1,6 @@
 [Version1]
 FullName,Value
 
-Controller.<.i1,
-Controller.<.i2,
-Controller.<.o1,
-Controller.<=.i1,
-Controller.<=.i2,
-Controller.<=.o1,
-Controller.>.i1,
-Controller.>.i2,
-Controller.>.o1,
-Controller.>=.i1,
-Controller.>=.i2,
-Controller.>=.o1,
 Controller.1 gain.i1,
 Controller.1 gain.o1,
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE,
@@ -189,6 +177,7 @@ Controller.Micro850.Micro850.HMI_CounterReset,
 Controller.Micro850.Micro850.HMI_DutyCycleConveyors,30.0
 Controller.Micro850.Micro850.HMI_DutyCycleSorters,30.0
 Controller.Micro850.Micro850.HMI_IND_FwdDir,
+Controller.Micro850.Micro850.HMI_IND_Lift_Dir,
 Controller.Micro850.Micro850.HMI_IND_RevDir,
 Controller.Micro850.Micro850.HMI_InitEnablePower,
 Controller.Micro850.Micro850.HMI_MoveFwd,
