@@ -1,8 +1,6 @@
 [Version1]
 FullName,Value
 
-Controller.1 gain.i1,
-Controller.1 gain.o1,
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE,
 Controller.Micro850.Micro850.__SYSVA_CCEXEC,
 Controller.Micro850.Micro850.__SYSVA_CYCLECNT,
