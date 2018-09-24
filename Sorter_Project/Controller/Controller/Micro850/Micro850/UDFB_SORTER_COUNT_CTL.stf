@@ -1,0 +1,31 @@
+FUNCTION_BLOCK UDFB_SORTER_COUNT_CTL
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*InputCounter*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_Count*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  XIC  [3,0] (*InputSensor*) (**)  
+ BST  OTE  [4,0] (*OutputKicker*) (**)
+   NXB  FB  [4,1] (*R_TRIG*) (*R_TRIG_2*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  FB  [7,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_Count*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_Count*) (**) )
+ BND
+
+EOR [10,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_Count*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*OutputCounter*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_FUNCTION_BLOCK

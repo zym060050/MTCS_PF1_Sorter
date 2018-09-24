@@ -56,11 +56,12 @@ COUNTER_LONG_REJECTED := (  0) ;
 END_IF ;
 __MO_1GAIN_8 := __EDTB15 ;
 __EDTB16 := __EDTB15 ;
-__EDTB17 := HMI_COUNTERRESET ;
-IF __EDTB17 THEN
-(*Reset coil*)
-HMI_COUNTERRESET := FALSE ;
-END_IF ;
+__EDTB17 := (__EDTB14 OR __EDTB16) ;
+__EDTB18 := (__EDTB12 OR __EDTB17) ;
+__EDTB19 := (__EDTB10 OR __EDTB18) ;
+__EDTB20 := (__EDTB8 OR __EDTB19) ;
+__EDTB21 := (__EDTB6 OR __EDTB20) ;
+__EDTB22 := (__EDTB4 OR __EDTB21) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -88,4 +89,9 @@ __GL __LG0000 ;
 (* __EDTB15 *)
 (* __EDTB16 *)
 (* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
 

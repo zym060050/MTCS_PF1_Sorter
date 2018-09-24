@@ -19,11 +19,7 @@ SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_CounterReset*) (**)
  BST  FB  [2,10] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Long_G*) (**) )
    NXB  
  BST  FB  [2,12] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Long_B*) (**) )
-   NXB  
- BST  FB  [2,14] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Long_Rejected*) (**) )
-   NXB  OTR  [2,16] (*HMI_CounterReset*) (**)
- BND
-
+   NXB  FB  [2,14] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Counter_Long_Rejected*) (**) )
  BND
 
  BND

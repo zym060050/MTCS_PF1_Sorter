@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProjectElements>
   <AcfElementGuid Guid="041105eb-9b26-427b-a83a-2be30fc138b5">
-    <File>Sorter_06_Axis_2.AcfMlge</File>
+    <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="1538f17e-ed9b-4402-927d-8a62f7f11c8c">
     <File>Sorter_04_FwdRevControl.AcfMlge</File>
@@ -41,6 +41,9 @@
   </AcfElementGuid>
   <AcfElementGuid Guid="ed586f39-7f82-4c75-a47c-5954472a651f">
     <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="f4bbc88f-b894-424a-8af3-1ac05e36a837">
+    <File>UDFB_SORTER_COUNT_CTL.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="fc92fe5f-0d35-4dff-b472-4652ab6564e8">
     <File>Sorter_03_StartLogic.AcfMlge</File>
