@@ -1,0 +1,99 @@
+PROGRAM Sorter_04_FwdRevControl
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*UDFB_FWD_REV_CTL*) (*UDFB_FWD_REV_CTL_1*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*UDFB_CONVEYOR_DIR_CTL_IO:*)(*LOCAL_CONVEYOR_DIR_CTL_IO*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_00*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,6] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Infeed_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_01*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_02*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Infeed_Incline_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_03*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_04*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,14] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Incline_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_05*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_06*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,18] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Outfeed_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_07*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,20] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_08*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Short_Sorter_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_09*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,24] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_12*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,26] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Size_Sorter_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_13*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,28] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_1*) (**)  OTE  [2,0] (*_IO_X1_DO_14*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,30] (**) (**)  XIC  [1,0] (*LOCAL_CONVEYOR_DIR_CTL_IO.IO_Long_Sorter_Conveyor_2*) (**)  OTE  [2,0] (*_IO_X1_DO_15*) (**)
+EOR [3,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=4
+#end_info
+END_PROGRAM

@@ -1,0 +1,103 @@
+PROGRAM Sorter_02_StopLogic
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_Stop*) (**)  
+ BST  OTR  [2,0] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  OTR  [2,1] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  
+ BST  OTR  [2,2] (*HMI_VIS_REV*) (**)
+   NXB  OTS  [2,3] (*b_StartHoming*) (**)
+ BND
+
+   NXB  
+ BST  FB  [2,4] (*>=*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,4] (*b_LiftHomed*) (**)
+   NXB  
+ BST  
+ BST  OTR  [5,5] (*b_MoveLiftDown*) (**)
+   NXB  OTS  [5,6] (*b_MoveLiftUp*) (**)
+ BND
+
+   NXB  
+ BST  OTR  [5,7] (*b_StartLiftMoveVelocity*) (**)
+   NXB  OTS  [5,8] (*b_StopLift*) (**)
+ BND
+
+ BND
+
+ BND
+
+   NXB  FB  [2,9] (*<*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,9] (*b_LiftHomed*) (**)
+   NXB  
+ BST  
+ BST  OTS  [5,10] (*b_MoveLiftDown*) (**)
+   NXB  OTR  [5,11] (*b_MoveLiftUp*) (**)
+ BND
+
+   NXB  OTS  [5,12] (*b_StartLiftMoveVelocity*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,15] (**) (**)  XIC  [1,0] (*b_StartHoming*) (**)  
+ BST  XIC  [2,0] (*b_LiftHomed*) (**)  OTS  [3,0] (*b_SYS_Stopped*) (**)
+   NXB  XIO  [2,1] (*b_LiftHomed*) (**)  OTR  [3,1] (*b_SYS_Stopped*) (**)
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,18] (**) (**)  XIC  [1,0] (*b_SYS_Stopped*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTR  [5,0] (*HMI_Stop*) (**)
+   NXB  
+ BST  OTS  [5,1] (*HMI_VIS_START*) (**)
+   NXB  
+ BST  OTS  [5,2] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  OTS  [5,3] (*HMI_VIS_REV*) (**)
+   NXB  
+ BST  OTR  [5,4] (*HMI_VIS_STOP*) (**)
+   NXB  
+ BST  OTR  [5,5] (*b_StartHoming*) (**)
+   NXB  FB  [5,6] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [8,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=5
+#end_info
+END_PROGRAM

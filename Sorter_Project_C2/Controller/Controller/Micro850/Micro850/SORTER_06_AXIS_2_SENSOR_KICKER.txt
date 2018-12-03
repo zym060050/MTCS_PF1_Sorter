@@ -1,0 +1,243 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_1(_IO_EM_DI_12, COUNTER_SHORT_R) ;
+COUNTER_SHORT_R := UDFB_SORTER_COUNT_CTL_1.OutputCounter ;
+_IO_EM_DO_11 := UDFB_SORTER_COUNT_CTL_1.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,5
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_2(_IO_EM_DI_15, COUNTER_LONG_R) ;
+COUNTER_LONG_R := UDFB_SORTER_COUNT_CTL_2.OutputCounter ;
+_IO_EM_DO_17 := UDFB_SORTER_COUNT_CTL_2.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_2 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := TRUE ;
+IF __EDTB3 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_3(_IO_EM_DI_14, COUNTER_SHORT_G) ;
+COUNTER_SHORT_G := UDFB_SORTER_COUNT_CTL_3.OutputCounter ;
+_IO_EM_DO_07 := UDFB_SORTER_COUNT_CTL_3.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_3 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_4(_IO_EM_DI_17, COUNTER_LONG_G) ;
+COUNTER_LONG_G := UDFB_SORTER_COUNT_CTL_4.OutputCounter ;
+_IO_EM_DO_13 := UDFB_SORTER_COUNT_CTL_4.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_4 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,17
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_5(_IO_EM_DI_13, COUNTER_SHORT_B) ;
+COUNTER_SHORT_B := UDFB_SORTER_COUNT_CTL_5.OutputCounter ;
+_IO_EM_DO_09 := UDFB_SORTER_COUNT_CTL_5.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_5 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,21
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB6 := TRUE ;
+IF __EDTB6 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_6(_IO_EM_DI_16, COUNTER_LONG_B) ;
+COUNTER_LONG_B := UDFB_SORTER_COUNT_CTL_6.OutputCounter ;
+_IO_EM_DO_15 := UDFB_SORTER_COUNT_CTL_6.OutputKicker ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_6 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB7 := TRUE ;
+IF __EDTB7 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_7(_IO_EM_DI_19, COUNTER_SHORT_REJECTED) ;
+COUNTER_SHORT_REJECTED := UDFB_SORTER_COUNT_CTL_7.OutputCounter ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_7 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,29
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* FB call: UDFB_SORTER_COUNT_CTL *)
+UDFB_SORTER_COUNT_CTL_8(_IO_EM_DI_18, COUNTER_LONG_REJECTED) ;
+COUNTER_LONG_REJECTED := UDFB_SORTER_COUNT_CTL_8.OutputCounter ;
+END_IF ;
+__MO_UDFB_SORTER_COUNT_CTL_8 := __EDTB8 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,33
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB9 := TRUE ;
+IF __EDTB9 THEN
+LOCAL_AXIS_2_MC_CTL.MC_POWERED := (  B_SYS_INITIALIZED) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,36
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+LOCAL_AXIS_2_MC_CTL.DUTY_CYCLE := (  HMI_DUTYCYCLESORTERS) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,39
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB11 := TRUE ;
+IF __EDTB11 THEN
+LOCAL_AXIS_2_MC_CTL.EXEC_MOTION := (  HMI_STARTEXECUTEMOTION) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,42
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := TRUE ;
+IF __EDTB12 THEN
+(* FB call: UDFB_EXEC_MC_MOVE_VELOCITY *)
+UDFB_EXEC_MOTION_1(LOCAL_AXIS_2_MC_CTL, AXIS2) ;
+END_IF ;
+__MO_UDFB_EXEC_MC_MOVE_VELOCITY_1 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,46
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := B_AXIS2_POWERED ;
+IF __EDTB13 THEN
+(* FB call: UDFB_EXEC_MC_HALT *)
+UDFB_EXEC_MC_HALT_1(AXIS2, HMI_STOP) ;
+END_IF ;
+__MO_UDFB_EXEC_MC_HALT_1 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+

@@ -1,0 +1,97 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := HMI_COUNTERRESET ;
+IF __EDTB1 THEN
+COUNTER_SHORT_R := (  0) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+__EDTB2 := __EDTB1 ;
+__EDTB3 := HMI_COUNTERRESET ;
+IF __EDTB3 THEN
+COUNTER_SHORT_G := (  0) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+__EDTB5 := HMI_COUNTERRESET ;
+IF __EDTB5 THEN
+COUNTER_SHORT_B := (  0) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB5 ;
+__EDTB6 := __EDTB5 ;
+__EDTB7 := HMI_COUNTERRESET ;
+IF __EDTB7 THEN
+COUNTER_SHORT_REJECTED := (  0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB7 ;
+__EDTB8 := __EDTB7 ;
+__EDTB9 := HMI_COUNTERRESET ;
+IF __EDTB9 THEN
+COUNTER_LONG_R := (  0) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB9 ;
+__EDTB10 := __EDTB9 ;
+__EDTB11 := HMI_COUNTERRESET ;
+IF __EDTB11 THEN
+COUNTER_LONG_G := (  0) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB11 ;
+__EDTB12 := __EDTB11 ;
+__EDTB13 := HMI_COUNTERRESET ;
+IF __EDTB13 THEN
+COUNTER_LONG_B := (  0) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+__EDTB15 := HMI_COUNTERRESET ;
+IF __EDTB15 THEN
+COUNTER_LONG_REJECTED := (  0) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB15 ;
+__EDTB16 := __EDTB15 ;
+__EDTB17 := (__EDTB14 OR __EDTB16) ;
+__EDTB18 := (__EDTB12 OR __EDTB17) ;
+__EDTB19 := (__EDTB10 OR __EDTB18) ;
+__EDTB20 := (__EDTB8 OR __EDTB19) ;
+__EDTB21 := (__EDTB6 OR __EDTB20) ;
+__EDTB22 := (__EDTB4 OR __EDTB21) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+

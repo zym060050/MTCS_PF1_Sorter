@@ -1,0 +1,183 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+(* FB call: UDFB_FWD_REV_CTL *)
+UDFB_FWD_REV_CTL_1() ;
+LOCAL_CONVEYOR_DIR_CTL_IO := UDFB_FWD_REV_CTL_1.UDFB_CONVEYOR_DIR_CTL_IO ;
+END_IF ;
+__MO_UDFB_FWD_REV_CTL_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_00 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,6
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_01 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,8
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_02 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_INCLINE_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_03 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INFEED_INCLINE_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,12
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_04 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INCLINE_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,14
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_05 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_INCLINE_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_06 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_OUTFEED_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_07 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_OUTFEED_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,20
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_08 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_SHORT_SORTER_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_09 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_SHORT_SORTER_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,24
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_12 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_SIZE_SORTER_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,26
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_13 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_SIZE_SORTER_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,28
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_14 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_LONG_SORTER_CONVEYOR_1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,30
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_X1_DO_15 := LOCAL_CONVEYOR_DIR_CTL_IO.IO_LONG_SORTER_CONVEYOR_2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+

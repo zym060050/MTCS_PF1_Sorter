@@ -1,0 +1,87 @@
+PROGRAM Sorter_06_Axis_2_Sensor_Kicker
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_1*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_12*) (**)  , (*InputCounter:*)(*Counter_Short_R*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Short_R*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_11*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_2*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_15*) (**)  , (*InputCounter:*)(*Counter_Long_R*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Long_R*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_17*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_3*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_14*) (**)  , (*InputCounter:*)(*Counter_Short_G*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Short_G*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_07*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_4*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_17*) (**)  , (*InputCounter:*)(*Counter_Long_G*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Long_G*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_13*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,17] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_5*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_13*) (**)  , (*InputCounter:*)(*Counter_Short_B*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Short_B*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_09*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_6*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_16*) (**)  , (*InputCounter:*)(*Counter_Long_B*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Long_B*) (**)  , (*OutputKicker:*)(*_IO_EM_DO_15*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_7*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_19*) (**)  , (*InputCounter:*)(*Counter_Short_Rejected*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Short_Rejected*) (**)  , (*OutputKicker:*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,29] (**) (**)  FB  [1,0] (*UDFB_SORTER_COUNT_CTL*) (*UDFB_SORTER_COUNT_CTL_8*) ( (*EN:EN*)(**) (**)  , (*InputSensor:*)(*_IO_EM_DI_18*) (**)  , (*InputCounter:*)(*Counter_Long_Rejected*) (**) ; (*ENO:ENO*)(**) (**)  , (*OutputCounter:*)(*Counter_Long_Rejected*) (**)  , (*OutputKicker:*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,33] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b_SYS_Initialized*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.MC_POWERED*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,36] (**) (**)  FB  [1,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_DutyCycleSorters*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.DUTY_CYCLE*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,39] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HMI_StartExecuteMotion*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_AXIS_2_MC_CTL.EXEC_MOTION*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,42] (**) (**)  FB  [1,0] (*UDFB_EXEC_MC_MOVE_VELOCITY*) (*UDFB_EXEC_MOTION_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_MOTION_CTL:*)(*LOCAL_AXIS_2_MC_CTL*) (**)  , (*UDFB_IN_AXIS:*)(*Axis2*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,46] (**) (**)  XIC  [1,0] (*b_Axis2_Powered*) (**)  FB  [2,0] (*UDFB_EXEC_MC_HALT*) (*UDFB_EXEC_MC_HALT_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_AXIS:*)(*Axis2*) (**)  , (*UDFB_IN_HALT:*)(*HMI_Stop*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [5,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=8
+#end_info
+END_PROGRAM

@@ -1,0 +1,45 @@
+PROGRAM Sorter_03_StartLogic
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*HMI_StartExecuteMotion*) (**)  XIC  [2,0] (*b_LiftHomed*) (**)  
+ BST  OTR  [3,0] (*HMI_Stop*) (**)
+   NXB  
+ BST  OTS  [3,1] (*HMI_VIS_STOP*) (**)
+   NXB  
+ BST  OTS  [3,2] (*HMI_VIS_FWD*) (**)
+   NXB  
+ BST  OTS  [3,3] (*HMI_VIS_REV*) (**)
+   NXB  
+ BST  OTR  [3,4] (*HMI_VIS_START*) (**)
+   NXB  
+ BST  OTR  [3,5] (*b_SYS_Stopped*) (**)
+   NXB  OTS  [3,6] (*b_StartLiftMoveVelocity*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  XIC  [1,0] (*HMI_StartExecuteMotion*) (**)  XIO  [2,0] (*b_LiftHomed*) (**)  OTR  [3,0] (*HMI_StartExecuteMotion*) (**)
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_PROGRAM

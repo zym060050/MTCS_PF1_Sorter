@@ -1,0 +1,109 @@
+PROGRAM Sorter_20_SetupAndTest
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  
+ BST  OTR  [2,0] (*LOCAL_b_Cfg_LiftMoveToTop*) (**)
+   NXB  OTR  [2,1] (*LOCAL_b_Cfg_LiftMoveToBottom*) (**)
+ BND
+
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*LOCAL_b_Cfg_LiftMoveToTop*) (**)  XIC  [2,0] (*b_Axis3_Powered*) (**)  
+ BST  OTS  [3,0] (*_IO_EM_DO_18*) (**)
+   NXB  
+ BST  OTR  [3,1] (*_IO_EM_DO_19*) (**)
+   NXB  
+ BST  OTR  [3,2] (*b_HSC_ENABLE*) (**)
+   NXB  
+ BST  OTS  [3,3] (*b_StartLiftMoveVelocity*) (**)
+   NXB  
+ BST  FB  [3,4] (*HSC*) (*HSC_1*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*2*) (**)  , (*HscAppData:HscA*)(*HSC_AppData*) (**)  , (*HscStsInfo:HscS*)(*HSC_Info*) (**)  , (*PlsData:PlsD*)(*HSC_PLS*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*HSC_Status*) (**) )
+   NXB  OTR  [3,10] (*LOCAL_b_Cfg_LiftMoveToTop*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIC  [1,0] (*LOCAL_b_Cfg_LiftMoveToBottom*) (**)  XIC  [2,0] (*b_Axis3_Powered*) (**)  
+ BST  OTS  [3,0] (*_IO_EM_DO_19*) (**)
+   NXB  
+ BST  OTR  [3,1] (*_IO_EM_DO_18*) (**)
+   NXB  
+ BST  OTR  [3,2] (*b_HSC_ENABLE*) (**)
+   NXB  
+ BST  OTS  [3,3] (*b_StartLiftMoveVelocity*) (**)
+   NXB  
+ BST  FB  [3,4] (*HSC*) (*HSC_2*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*2*) (**)  , (*HscAppData:HscA*)(*HSC_AppData*) (**)  , (*HscStsInfo:HscS*)(*HSC_Info*) (**)  , (*PlsData:PlsD*)(*HSC_PLS*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*HSC_Status*) (**) )
+   NXB  OTR  [3,10] (*LOCAL_b_Cfg_LiftMoveToBottom*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,28] (**) (**)  XIC  [1,0] (*LOCAL_b_Cfg_LiftStop*) (**)  
+ BST  OTR  [2,0] (*_IO_EM_DO_18*) (**)
+   NXB  
+ BST  OTR  [2,1] (*_IO_EM_DO_19*) (**)
+   NXB  OTR  [2,2] (*b_StartLiftMoveVelocity*) (**)
+ BND
+
+ BND
+
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,32] (**) (**)  FB  [1,0] (*MC_Halt*) (*MC_Halt_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis3*) (**)  , (*Execute:Exec*)(*LOCAL_b_Cfg_LiftStop*) (**)  , (*Deceleration:Dece*)(*5000.0*) (**)  , (*Jerk:Jerk*)(*0.0*) (**)  , (*BufferMode:Buf*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Done:Done*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*CommandAborted:CmdA*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,41] (**) (**)  XIC  [1,0] (*LOCAL_b_Cfg_LiftStop*) (**)  XIC  [2,0] (*MC_Halt_1.Done*) (*Done*)  
+ BST  OTR  [3,0] (*LOCAL_b_Cfg_LiftStop*) (**)
+   NXB  
+ BST  FB  [3,1] (*1 gain*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HSC_AppData.Accumulator*) (**) )
+   NXB  
+ BST  FB  [3,3] (*HSC*) (*HSC_3*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*4*) (**)  , (*HscAppData:HscA*)(*HSC_AppData*) (**)  , (*HscStsInfo:HscS*)(*HSC_Info*) (**)  , (*PlsData:PlsD*)(*HSC_PLS*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*HSC_Status*) (**) )
+   NXB  OTS  [3,9] (*b_HSC_ENABLE*) (**)
+ BND
+
+ BND
+
+ BND
+
+EOR [6,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=12
+#end_info
+END_PROGRAM
