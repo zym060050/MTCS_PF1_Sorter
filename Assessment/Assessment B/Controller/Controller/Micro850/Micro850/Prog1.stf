@@ -1,0 +1,303 @@
+PROGRAM Prog1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*8*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_COUNTER*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIO  [1,0] (*b_Toggle*) (**)  FB  [2,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#1s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+ BST  OTE  [5,0] (*b_Toggle*) (**)
+   NXB  FB  [5,1] (*+*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_COUNTER*) (**) )
+ BND
+
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*>*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*15*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*8*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_COUNTER*) (**) )
+EOR [7,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*8*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*9*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTS  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,31] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*10*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTS  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,40] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTS  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,49] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*12*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTS  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,58] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*13*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTS  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,67] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*14*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTS  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTR  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,76] (**) (**)  FB  [1,0] (*=*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_COUNTER*) (**)  , (*i2:*)(*15*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [4,0] (*_IO_X2_DO_08*) (**)
+   NXB  
+ BST  OTR  [4,1] (*_IO_X2_DO_09*) (**)
+   NXB  
+ BST  OTR  [4,2] (*_IO_X2_DO_10*) (**)
+   NXB  
+ BST  OTR  [4,3] (*_IO_X2_DO_11*) (**)
+   NXB  
+ BST  OTR  [4,4] (*_IO_X2_DO_12*) (**)
+   NXB  
+ BST  OTR  [4,5] (*_IO_X2_DO_13*) (**)
+   NXB  
+ BST  OTR  [4,6] (*_IO_X2_DO_14*) (**)
+   NXB  OTS  [4,7] (*_IO_X2_DO_15*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=5
+#end_info
+END_PROGRAM
