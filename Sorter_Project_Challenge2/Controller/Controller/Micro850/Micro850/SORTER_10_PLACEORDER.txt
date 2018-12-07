@@ -1,0 +1,142 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_1(B_SYS_INITIALIZED AND HMI_PLACEORDER) ;
+__EDTB1 := R_TRIG_1.Q ;
+__EDTB2 := __EDTB1 AND NOT(B_ORDERFIFOFULL) ;
+__EDTB3 := __EDTB2 ;
+IF __EDTB3 THEN
+(*Set coil*)
+B_EXEC_ORDER_FFL := TRUE ;
+END_IF ;
+__EDTB4 := __EDTB2 ;
+IF __EDTB4 THEN
+(*Set coil*)
+LOCAL_B_CHECKFORORDEREMPTY := TRUE ;
+END_IF ;
+__EDTB5 := __EDTB2 ;
+IF __EDTB5 THEN
+(*Reset coil*)
+HMI_B_ORDERLISTFULL := FALSE ;
+END_IF ;
+__EDTB6 := __EDTB1 AND B_ORDERFIFOFULL ;
+IF __EDTB6 THEN
+(*Set coil*)
+HMI_B_ORDERLISTFULL := TRUE ;
+END_IF ;
+__EDTB7 := __EDTB1 ;
+IF __EDTB7 THEN
+(*Reset coil*)
+HMI_PLACEORDER := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := LOCAL_B_CHECKFORORDEREMPTY ;
+IF __EDTB8 THEN
+(* FB call: UDFB_ORDER_NOT_EMPTY *)
+UDFB_ORDER_NOT_EMPTY_1(ARRAY_ORDERTOBEPLACED) ;
+__EDTB9 := UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
+ELSE
+__EDTB9 := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := LOCAL_B_CHECKFORORDEREMPTY ;
+__EDTB11 := __EDTB10 AND UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
+IF __EDTB11 THEN
+(*Reset coil*)
+HMI_B_ORDEREMPTYINVALID := FALSE ;
+END_IF ;
+__EDTB12 := __EDTB10 AND NOT(UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY) ;
+__EDTB13 := __EDTB12 ;
+IF __EDTB13 THEN
+(*Set coil*)
+HMI_B_ORDEREMPTYINVALID := TRUE ;
+END_IF ;
+__EDTB14 := __EDTB12 ;
+IF __EDTB14 THEN
+(*Reset coil*)
+B_EXEC_ORDER_FFL := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,14
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB15 := TRUE ;
+IF __EDTB15 THEN
+(*Reset coil*)
+LOCAL_B_CHECKFORORDEREMPTY := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB16 := TRUE ;
+IF __EDTB16 THEN
+(* FB call: UDFB_ORDER_FFL *)
+UDFB_ORDER_FFL_1(ARRAY_ORDERTOBEPLACED) ;
+END_IF ;
+__MO_UDFB_ORDER_FFL_1 := __EDTB16 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+

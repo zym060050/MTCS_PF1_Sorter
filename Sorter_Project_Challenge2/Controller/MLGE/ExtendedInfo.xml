@@ -1,51 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProjectElements>
-  <AcfElementGuid Guid="041105eb-9b26-427b-a83a-2be30fc138b5">
-    <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
+  <AcfElementGuid Guid="09ae7f98-1a04-4b87-91ea-bd0e079510cf">
+    <File>Sorter_03_StartLogic.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="1538f17e-ed9b-4402-927d-8a62f7f11c8c">
-    <File>Sorter_04_FwdRevControl.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="340b8bc5-d156-47ea-af8d-8224e8195fb5">
-    <File>UDFB_EXEC_MC_STOP.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="438c4309-f8ea-464a-a16d-d4063a891489">
-    <File>UDFB_EXEC_MC_MOVE_VELOCITY.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="53c59e4e-9a93-4c3a-954e-40484510a068">
-    <File>Sorter_08_HSC.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="7d4ce94e-e054-4ed3-9134-029e600ee6ab">
+  <AcfElementGuid Guid="0e3ec975-700c-4eb5-b570-3f2b90f60479">
     <File>Sorter_20_SetupAndTest.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="8098a0b8-fb1a-4a95-914c-6ca2a4d89255">
-    <File>UDFB_FWD_REV_CTL.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="b5718a2b-1472-4d18-ab36-f5df2453ad70">
-    <File>UDFB_EXEC_MC_HALT.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="cdd83f53-4252-4c30-8e92-ac013f4dbef4">
-    <File>Sorter_01_Initialize.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="d276f8e0-8aef-4dbb-932f-ef281839ce2e">
-    <File>Sorter_02_StopLogic.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="d5e27e5d-cb89-4123-86d8-1b6e13108b53">
-    <File>Sorter_07_CounterReset.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="e543d382-db59-4481-870b-5665946dde81">
-    <File>UDFB_EXEC_MC_MOVE_ABSOLUTE.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="e66d7e27-c75a-4bf8-8e3c-b9497fd468e6">
+  <AcfElementGuid Guid="21fac3e5-d9b8-43a4-bb24-8bb8c171a3ce">
     <File>Sorter_09_Axis_3_Lift.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="ed586f39-7f82-4c75-a47c-5954472a651f">
-    <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
+  <AcfElementGuid Guid="39190175-53e0-41b9-86ce-f3b9909a66ce">
+    <File>UDFB_EXEC_MC_HALT.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="f4bbc88f-b894-424a-8af3-1ac05e36a837">
+  <AcfElementGuid Guid="4d2b1526-d4fd-4078-b9d1-7e362fd72479">
+    <File>UDFB_ORDER_HISTORY_FFU.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="504228d5-66fd-446b-bfd0-d53096bf9cae">
     <File>UDFB_SORTER_COUNT_CTL.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="fc92fe5f-0d35-4dff-b472-4652ab6564e8">
-    <File>Sorter_03_StartLogic.AcfMlge</File>
+  <AcfElementGuid Guid="552da775-1051-487d-a31a-58f8c6cc9971">
+    <File>UDFB_EXEC_MC_MOVE_VELOCITY.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="5ef34015-ca00-4702-9cdd-167267311fe1">
+    <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="6d9ca0e5-275a-4cef-b899-ec5bc3009df2">
+    <File>Sorter_11_ArchiveOrder.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="8452a3b0-b5ad-4bc8-a49f-d628d09d658e">
+    <File>Sorter_08_HSC.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="845fda76-81ee-4077-9b13-c2288be13c45">
+    <File>Sorter_01_Initialize.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="849f4f09-f58a-4f7a-b1b9-12a834d28abf">
+    <File>Sorter_07_CounterReset.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="88c99fc7-fa13-4b20-b90e-3e7816307b65">
+    <File>Sorter_02_StopLogic.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="8b86b752-d5af-4fe8-aa92-658fb3d867e8">
+    <File>UDFB_ORDER_FFU.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="99283fc1-2bd7-48ff-823e-4ebb803a104b">
+    <File>Sorter_10_PlaceOrder.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="afcb142e-94f3-4836-8192-447b271cf204">
+    <File>UDFB_FWD_REV_CTL.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="b0e84860-abc7-4dd7-9384-76a25d2d34af">
+    <File>UDFB_ORDER_HISTORY_FFL.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="b5d97c1f-1c30-468c-ace9-ea2245e84fa2">
+    <File>Sorter_04_FwdRevControl.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="b8a9176e-2236-4b8c-be3f-c14f5cabd648">
+    <File>UDFB_ORDER_NOT_EMPTY.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="d2149196-5860-49f1-a5dc-fecd67c5d69a">
+    <File>UDFB_ORDER_FFL.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="e0ed1b75-60a3-4176-89d1-0380485094e4">
+    <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>

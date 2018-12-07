@@ -1,0 +1,191 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := B_EXEC_ORDER_FFL ;
+(* FB call: FFL *)
+FFL_1(__EDTB1, UDFB_IN_ORDER_ARRAY[1], ARRAY_ORDER_FIFO_1, ORDER_FIFOCONTROL_1, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[1] := FFL_1.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[1] := FFL_1.Empty ;
+__EDTB2 := FFL_1.Done ;
+(* FB call: FFL *)
+FFL_2(__EDTB1, UDFB_IN_ORDER_ARRAY[2], ARRAY_ORDER_FIFO_2, ORDER_FIFOCONTROL_2, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[2] := FFL_2.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[2] := FFL_2.Empty ;
+__EDTB3 := FFL_2.Done ;
+(* FB call: FFL *)
+FFL_3(__EDTB1, UDFB_IN_ORDER_ARRAY[3], ARRAY_ORDER_FIFO_3, ORDER_FIFOCONTROL_3, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[3] := FFL_3.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[3] := FFL_3.Empty ;
+__EDTB4 := FFL_3.Done ;
+(* FB call: FFL *)
+FFL_4(__EDTB1, UDFB_IN_ORDER_ARRAY[4], ARRAY_ORDER_FIFO_4, ORDER_FIFOCONTROL_4, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[4] := FFL_4.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[4] := FFL_4.Empty ;
+__EDTB5 := FFL_4.Done ;
+(* FB call: FFL *)
+FFL_5(__EDTB1, UDFB_IN_ORDER_ARRAY[5], ARRAY_ORDER_FIFO_5, ORDER_FIFOCONTROL_5, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[5] := FFL_5.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[5] := FFL_5.Empty ;
+__EDTB6 := FFL_5.Done ;
+(* FB call: FFL *)
+FFL_6(__EDTB1, UDFB_IN_ORDER_ARRAY[6], ARRAY_ORDER_FIFO_6, ORDER_FIFOCONTROL_6, 0, 0, 0) ;
+LOCAL_ARRAY_FIFO_FULL[6] := FFL_6.Full ;
+LOCAL_ARRAY_FIFO_EMPTY[6] := FFL_6.Empty ;
+__EDTB7 := FFL_6.Done ;
+__EDTB8 := (__EDTB6 OR __EDTB7) ;
+__EDTB9 := (__EDTB5 OR __EDTB8) ;
+__EDTB10 := (__EDTB4 OR __EDTB9) ;
+__EDTB11 := (__EDTB3 OR __EDTB10) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,44
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := B_EXEC_ORDER_FFL ;
+__EDTB13 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[1] ;
+__EDTB14 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[2] ;
+__EDTB15 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[3] ;
+__EDTB16 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[4] ;
+__EDTB17 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[5] ;
+__EDTB18 := __EDTB12 AND LOCAL_ARRAY_FIFO_FULL[6] ;
+__EDTB19 := (__EDTB17 OR __EDTB18) ;
+__EDTB20 := (__EDTB16 OR __EDTB19) ;
+__EDTB21 := (__EDTB15 OR __EDTB20) ;
+__EDTB22 := (__EDTB14 OR __EDTB21) ;
+__EDTB23 := (__EDTB13 OR __EDTB22) ;
+IF __EDTB23 THEN
+(*Set coil*)
+B_ORDERFIFOFULL := TRUE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,51
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB24 := B_EXEC_ORDER_FFL AND NOT(LOCAL_ARRAY_FIFO_FULL[1]) AND NOT(LOCAL_ARRAY_FIFO_FULL[2]) AND NOT(LOCAL_ARRAY_FIFO_FULL[3]) AND NOT(LOCAL_ARRAY_FIFO_FULL[4]) AND NOT(LOCAL_ARRAY_FIFO_FULL[5]) AND NOT(LOCAL_ARRAY_FIFO_FULL[6]) ;
+IF __EDTB24 THEN
+(*Reset coil*)
+B_ORDERFIFOFULL := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,53
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB25 := B_EXEC_ORDER_FFL ;
+__EDTB26 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[1] ;
+__EDTB27 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[2] ;
+__EDTB28 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[3] ;
+__EDTB29 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[4] ;
+__EDTB30 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[5] ;
+__EDTB31 := __EDTB25 AND LOCAL_ARRAY_FIFO_EMPTY[6] ;
+__EDTB32 := (__EDTB30 OR __EDTB31) ;
+__EDTB33 := (__EDTB29 OR __EDTB32) ;
+__EDTB34 := (__EDTB28 OR __EDTB33) ;
+__EDTB35 := (__EDTB27 OR __EDTB34) ;
+__EDTB36 := (__EDTB26 OR __EDTB35) ;
+IF __EDTB36 THEN
+(*Set coil*)
+B_ORDERFIFOEMPTY := TRUE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,60
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB37 := B_EXEC_ORDER_FFL AND NOT(LOCAL_ARRAY_FIFO_EMPTY[1]) AND NOT(LOCAL_ARRAY_FIFO_EMPTY[2]) AND NOT(LOCAL_ARRAY_FIFO_EMPTY[3]) AND NOT(LOCAL_ARRAY_FIFO_EMPTY[4]) AND NOT(LOCAL_ARRAY_FIFO_EMPTY[5]) AND NOT(LOCAL_ARRAY_FIFO_EMPTY[6]) ;
+IF __EDTB37 THEN
+(*Reset coil*)
+B_ORDERFIFOEMPTY := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,62
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB38 := TRUE ;
+IF __EDTB38 THEN
+(*Reset coil*)
+B_EXEC_ORDER_FFL := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+(* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
+(* __EDTB35 *)
+(* __EDTB36 *)
+(* __EDTB37 *)
+(* __EDTB38 *)
+

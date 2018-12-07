@@ -1,0 +1,117 @@
+FUNCTION_BLOCK UDFB_ORDER_HISTORY_FFU
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFU*) (**)  
+ BST  FB  [2,0] (*FFU*) (*FFU_1*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[1]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_1*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_1*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[1]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,9] (*FFU*) (*FFU_2*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[2]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_2*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_2*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[2]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,18] (*FFU*) (*FFU_3*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[3]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_3*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_3*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[3]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,27] (*FFU*) (*FFU_4*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[4]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_4*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_4*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[4]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,36] (*FFU*) (*FFU_5*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[5]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_5*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_5*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[5]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,45] (*FFU*) (*FFU_6*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[6]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_6*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_6*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[6]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  FB  [2,54] (*FFU*) (*FFU_7*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderHistoryUnloaded[7]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_OrderHistoryFIFO_7*) (**)  , (*FIFOCon:*)(*OrderHistory_FIFOControl_7*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[7]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[7]*) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,65] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFU*) (**)  
+ BST  XIC  [2,0] (*LOCAL_ARRAY_FIFO_FULL[1]*) (**)
+   NXB  
+ BST  XIC  [2,1] (*LOCAL_ARRAY_FIFO_FULL[2]*) (**)
+   NXB  
+ BST  XIC  [2,2] (*LOCAL_ARRAY_FIFO_FULL[3]*) (**)
+   NXB  
+ BST  XIC  [2,3] (*LOCAL_ARRAY_FIFO_FULL[4]*) (**)
+   NXB  
+ BST  XIC  [2,4] (*LOCAL_ARRAY_FIFO_FULL[5]*) (**)
+   NXB  
+ BST  XIC  [2,5] (*LOCAL_ARRAY_FIFO_FULL[6]*) (**)
+   NXB  XIC  [2,6] (*LOCAL_ARRAY_FIFO_FULL[7]*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+  OTS  [3,0] (*b_OrderHistoryFIFOFull*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,73] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFU*) (**)  XIO  [2,0] (*LOCAL_ARRAY_FIFO_FULL[1]*) (**)  XIO  [3,0] (*LOCAL_ARRAY_FIFO_FULL[2]*) (**)  XIO  [4,0] (*LOCAL_ARRAY_FIFO_FULL[3]*) (**)  XIO  [5,0] (*LOCAL_ARRAY_FIFO_FULL[4]*) (**)  XIO  [6,0] (*LOCAL_ARRAY_FIFO_FULL[5]*) (**)  XIO  [7,0] (*LOCAL_ARRAY_FIFO_FULL[6]*) (**)  XIO  [8,0] (*LOCAL_ARRAY_FIFO_FULL[7]*) (**)  OTR  [9,0] (*b_OrderHistoryFIFOFull*) (**)
+EOR [10,0]
+
+
+(**)
+
+SOR  [0,75] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFU*) (**)  
+ BST  XIC  [2,0] (*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)
+   NXB  
+ BST  XIC  [2,1] (*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)
+   NXB  
+ BST  XIC  [2,2] (*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)
+   NXB  
+ BST  XIC  [2,3] (*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)
+   NXB  
+ BST  XIC  [2,4] (*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)
+   NXB  
+ BST  XIC  [2,5] (*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)
+   NXB  XIC  [2,6] (*LOCAL_ARRAY_FIFO_EMPTY[7]*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+  OTS  [3,0] (*b_OrderHistoryFIFOEmpty*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,83] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFU*) (**)  XIO  [2,0] (*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)  XIO  [3,0] (*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)  XIO  [4,0] (*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)  XIO  [5,0] (*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)  XIO  [6,0] (*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)  XIO  [7,0] (*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)  XIO  [8,0] (*LOCAL_ARRAY_FIFO_EMPTY[7]*) (**)  OTR  [9,0] (*b_OrderHistoryFIFOEmpty*) (**)
+EOR [10,0]
+
+
+(**)
+
+SOR  [0,85] (**) (**)  OTR  [1,0] (*b_Exec_Order_History_FFU*) (**)
+EOR [2,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_FUNCTION_BLOCK

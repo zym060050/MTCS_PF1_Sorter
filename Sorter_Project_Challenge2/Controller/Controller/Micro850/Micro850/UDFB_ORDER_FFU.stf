@@ -1,0 +1,137 @@
+FUNCTION_BLOCK UDFB_ORDER_FFU
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  
+ BST  OTS  [1,0] (*LOCAL_ERROR[1]*) (**)
+   NXB  
+ BST  OTS  [1,1] (*LOCAL_ERROR[2]*) (**)
+   NXB  
+ BST  OTS  [1,2] (*LOCAL_ERROR[3]*) (**)
+   NXB  
+ BST  OTS  [1,3] (*LOCAL_ERROR[4]*) (**)
+   NXB  
+ BST  OTS  [1,4] (*LOCAL_ERROR[5]*) (**)
+   NXB  OTS  [1,5] (*LOCAL_ERROR[6]*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [2,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  
+ BST  FB  [2,0] (*FFU*) (*FFU_1*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[1]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_1*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_1*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[1]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)  , (*Error:*)(*LOCAL_ERROR[1]*) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,9] (*FFU*) (*FFU_2*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[2]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_2*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_2*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[2]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)  , (*Error:*)(*LOCAL_ERROR[2]*) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,18] (*FFU*) (*FFU_3*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[3]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_3*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_3*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[3]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)  , (*Error:*)(*LOCAL_ERROR[3]*) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,27] (*FFU*) (*FFU_4*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[4]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_4*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_4*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[4]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)  , (*Error:*)(*LOCAL_ERROR[4]*) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  
+ BST  FB  [2,36] (*FFU*) (*FFU_5*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[5]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_5*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_5*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[5]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)  , (*Error:*)(*LOCAL_ERROR[5]*) (**)  , (*ErrorID:*)(**) (**) )
+   NXB  FB  [2,45] (*FFU*) (*FFU_6*) ( (*Execute:*)(**) (**)  , (*Dest:*)(*Array_OrderUnloaded[6]*) (**)  , (*DestOffset:*)(*0*) (**)  , (*FIFO:*)(*Array_Order_FIFO_6*) (**)  , (*FIFOCon:*)(*Order_FIFOControl_6*) (**)  , (*__ADI_Dest:*)(*0*) (**)  , (*__ADI_FIFO:*)(*0*) (**)  , (*__DTI_Dest:*)(*0*) (**)  , (*__DTI_FIFO:*)(*0*) (**) ; (*Done:*)(**) (**)  , (*Full:*)(*LOCAL_ARRAY_FIFO_FULL[6]*) (**)  , (*Empty:*)(*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)  , (*Error:*)(*LOCAL_ERROR[6]*) (**)  , (*ErrorID:*)(**) (**) )
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,63] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  
+ BST  XIC  [2,0] (*LOCAL_ARRAY_FIFO_FULL[1]*) (**)
+   NXB  
+ BST  XIC  [2,1] (*LOCAL_ARRAY_FIFO_FULL[2]*) (**)
+   NXB  
+ BST  XIC  [2,2] (*LOCAL_ARRAY_FIFO_FULL[3]*) (**)
+   NXB  
+ BST  XIC  [2,3] (*LOCAL_ARRAY_FIFO_FULL[4]*) (**)
+   NXB  
+ BST  XIC  [2,4] (*LOCAL_ARRAY_FIFO_FULL[5]*) (**)
+   NXB  XIC  [2,5] (*LOCAL_ARRAY_FIFO_FULL[6]*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+  OTS  [3,0] (*b_OrderFIFOFull*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,70] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  XIO  [2,0] (*LOCAL_ARRAY_FIFO_FULL[1]*) (**)  XIO  [3,0] (*LOCAL_ARRAY_FIFO_FULL[2]*) (**)  XIO  [4,0] (*LOCAL_ARRAY_FIFO_FULL[3]*) (**)  XIO  [5,0] (*LOCAL_ARRAY_FIFO_FULL[4]*) (**)  XIO  [6,0] (*LOCAL_ARRAY_FIFO_FULL[5]*) (**)  XIO  [7,0] (*LOCAL_ARRAY_FIFO_FULL[6]*) (**)  OTR  [8,0] (*b_OrderFIFOFull*) (**)
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,72] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  
+ BST  XIC  [2,0] (*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)
+   NXB  
+ BST  XIC  [2,1] (*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)
+   NXB  
+ BST  XIC  [2,2] (*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)
+   NXB  
+ BST  XIC  [2,3] (*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)
+   NXB  
+ BST  XIC  [2,4] (*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)
+   NXB  XIC  [2,5] (*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+  OTS  [3,0] (*b_OrderFIFOEmpty*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,79] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  XIO  [2,0] (*LOCAL_ARRAY_FIFO_EMPTY[1]*) (**)  XIO  [3,0] (*LOCAL_ARRAY_FIFO_EMPTY[2]*) (**)  XIO  [4,0] (*LOCAL_ARRAY_FIFO_EMPTY[3]*) (**)  XIO  [5,0] (*LOCAL_ARRAY_FIFO_EMPTY[4]*) (**)  XIO  [6,0] (*LOCAL_ARRAY_FIFO_EMPTY[5]*) (**)  XIO  [7,0] (*LOCAL_ARRAY_FIFO_EMPTY[6]*) (**)  OTR  [8,0] (*b_OrderFIFOEmpty*) (**)
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,81] (**) (**)  OTS  [1,0] (*UDFB_OUT_ERROR*) (**)
+EOR [2,0]
+
+
+(**)
+
+SOR  [0,83] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  XIO  [2,0] (*LOCAL_ERROR[1]*) (**)  XIO  [3,0] (*LOCAL_ERROR[2]*) (**)  XIO  [4,0] (*LOCAL_ERROR[3]*) (**)  XIO  [5,0] (*LOCAL_ERROR[4]*) (**)  XIO  [6,0] (*LOCAL_ERROR[5]*) (**)  XIO  [7,0] (*LOCAL_ERROR[6]*) (**)  OTR  [8,0] (*UDFB_OUT_ERROR*) (**)
+EOR [9,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_FUNCTION_BLOCK

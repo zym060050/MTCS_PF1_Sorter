@@ -1,0 +1,55 @@
+PROGRAM Sorter_11_ArchiveOrder
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_ArchiveOrder*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_2*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  OTS  [5,0] (*b_Exec_Order_FFU*) (**)
+   NXB  OTR  [5,1] (*b_ArchiveOrder*) (**)
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (*UDFB_ORDER_FFU*) (*UDFB_ORDER_FFU_1*) ( (*EN:EN*)(**) (**) ; (*UDFB_OUT_ERROR:*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,6] (**) (**)  XIC  [1,0] (*b_Exec_Order_FFU*) (**)  XIO  [2,0] (*UDFB_ORDER_FFU_1.UDFB_OUT_ERROR*) (**)  OTS  [3,0] (*b_Exec_Order_History_FFL*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*b_Exec_Order_History_FFL*) (**)  XIC  [2,0] (*b_OrderHistoryFIFOFull*) (**)  OTS  [3,0] (*b_Exec_Order_History_FFU*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  FB  [1,0] (*UDFB_ORDER_HISTORY_FFU*) (*UDFB_ORDER_HISTORY_FFU_1*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  FB  [1,0] (*UDFB_ORDER_HISTORY_FFL*) (*UDFB_ORDER_HISTORY_FFL_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_ORDER_ARRAY:*)(*Array_OrderUnloaded*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,15] (**) (**)  OTR  [1,0] (*b_Exec_Order_FFU*) (**)
+EOR [2,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=5
+#end_info
+END_PROGRAM

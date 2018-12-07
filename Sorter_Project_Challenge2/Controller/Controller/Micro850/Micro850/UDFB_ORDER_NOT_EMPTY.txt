@@ -1,0 +1,102 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+(* Operator output on : > with __EDTB1 *)
+__EDTB1 := (UDFB_IN_ORDER_ARRAY[1] > 0) ;
+ELSE
+__EDTB1 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB1 ;
+__EDTB3 := __EDTB1 ;
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* Operator output on : > with __EDTB4 *)
+__EDTB4 := (UDFB_IN_ORDER_ARRAY[2] > 0) ;
+ELSE
+__EDTB4 := FALSE ;
+END_IF ;
+__MO_GREAT_2 := __EDTB4 ;
+__EDTB6 := __EDTB4 ;
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* Operator output on : > with __EDTB7 *)
+__EDTB7 := (UDFB_IN_ORDER_ARRAY[3] > 0) ;
+ELSE
+__EDTB7 := FALSE ;
+END_IF ;
+__MO_GREAT_3 := __EDTB7 ;
+__EDTB9 := __EDTB7 ;
+__EDTB11 := TRUE ;
+IF __EDTB11 THEN
+(* Operator output on : > with __EDTB10 *)
+__EDTB10 := (UDFB_IN_ORDER_ARRAY[4] > 0) ;
+ELSE
+__EDTB10 := FALSE ;
+END_IF ;
+__MO_GREAT_4 := __EDTB10 ;
+__EDTB12 := __EDTB10 ;
+__EDTB14 := TRUE ;
+IF __EDTB14 THEN
+(* Operator output on : > with __EDTB13 *)
+__EDTB13 := (UDFB_IN_ORDER_ARRAY[5] > 0) ;
+ELSE
+__EDTB13 := FALSE ;
+END_IF ;
+__MO_GREAT_5 := __EDTB13 ;
+__EDTB15 := __EDTB13 ;
+__EDTB17 := TRUE ;
+IF __EDTB17 THEN
+(* Operator output on : > with __EDTB16 *)
+__EDTB16 := (UDFB_IN_ORDER_ARRAY[6] > 0) ;
+ELSE
+__EDTB16 := FALSE ;
+END_IF ;
+__MO_GREAT_6 := __EDTB16 ;
+__EDTB18 := __EDTB16 ;
+__EDTB19 := (__EDTB15 OR __EDTB18) ;
+__EDTB20 := (__EDTB12 OR __EDTB19) ;
+__EDTB21 := (__EDTB9 OR __EDTB20) ;
+__EDTB22 := (__EDTB6 OR __EDTB21) ;
+UDFB_OUT_ORDER_NOT_EMPTY := (__EDTB3 OR __EDTB22) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+

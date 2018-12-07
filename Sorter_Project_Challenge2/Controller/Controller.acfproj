@@ -3,19 +3,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{999759e3-255b-49c9-a792-bc54fd7563eb}</ProjectGuid>
+    <ProjectGuid>{f10739b4-54e7-41e0-b29d-a9064e642500}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MyRootNamespace</RootNamespace>
     <AssemblyName>MyAssemblyName</AssemblyName>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <CAMProjectFile>Controller\PrjLibrary.mdb</CAMProjectFile>
     <CAMProjectVersion>5.50.9</CAMProjectVersion>
-    <UniqueProjectId>{999759e3-255b-49c9-a792-bc54fd7563eb}</UniqueProjectId>
+    <UniqueProjectId>{f10739b4-54e7-41e0-b29d-a9064e642500}</UniqueProjectId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Online' ">
     <OutputPath>bin\Online\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Simulation' " />
   <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.ISaGRAF5.targets" />
   <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.CCW.targets" />
 </Project>
