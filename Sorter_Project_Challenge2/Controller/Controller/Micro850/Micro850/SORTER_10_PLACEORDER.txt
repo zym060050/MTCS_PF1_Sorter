@@ -28,12 +28,18 @@ IF __EDTB5 THEN
 HMI_B_ORDERLISTFULL := FALSE ;
 END_IF ;
 __EDTB6 := __EDTB1 AND B_ORDERFIFOFULL ;
-IF __EDTB6 THEN
+__EDTB7 := __EDTB6 ;
+IF __EDTB7 THEN
 (*Set coil*)
 HMI_B_ORDERLISTFULL := TRUE ;
 END_IF ;
-__EDTB7 := __EDTB1 ;
-IF __EDTB7 THEN
+__EDTB8 := __EDTB6 ;
+IF __EDTB8 THEN
+(*Reset coil*)
+HMI_ACKALARM := FALSE ;
+END_IF ;
+__EDTB9 := __EDTB1 ;
+IF __EDTB9 THEN
 (*Reset coil*)
 HMI_PLACEORDER := FALSE ;
 END_IF ;
@@ -44,43 +50,16 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,7
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB8 := LOCAL_B_CHECKFORORDEREMPTY ;
-IF __EDTB8 THEN
-(* FB call: UDFB_ORDER_NOT_EMPTY *)
-UDFB_ORDER_NOT_EMPTY_1(ARRAY_ORDERTOBEPLACED) ;
-__EDTB9 := UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
-ELSE
-__EDTB9 := FALSE ;
-END_IF ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,10
+0,8
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB10 := LOCAL_B_CHECKFORORDEREMPTY ;
-__EDTB11 := __EDTB10 AND UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
-IF __EDTB11 THEN
-(*Reset coil*)
-HMI_B_ORDEREMPTYINVALID := FALSE ;
-END_IF ;
-__EDTB12 := __EDTB10 AND NOT(UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY) ;
-__EDTB13 := __EDTB12 ;
-IF __EDTB13 THEN
-(*Set coil*)
-HMI_B_ORDEREMPTYINVALID := TRUE ;
-END_IF ;
-__EDTB14 := __EDTB12 ;
-IF __EDTB14 THEN
-(*Reset coil*)
-B_EXEC_ORDER_FFL := FALSE ;
+IF __EDTB10 THEN
+(* FB call: UDFB_ORDER_NOT_EMPTY *)
+UDFB_ORDER_NOT_EMPTY_1(ARRAY_ORDERTOBEPLACED) ;
+__EDTB11 := UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
+ELSE
+__EDTB11 := FALSE ;
 END_IF ;
 
 (*************** Code for the end of Rung **************)
@@ -89,13 +68,30 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,14
+0,11
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB15 := TRUE ;
-IF __EDTB15 THEN
+__EDTB12 := LOCAL_B_CHECKFORORDEREMPTY ;
+__EDTB13 := __EDTB12 AND UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY ;
+IF __EDTB13 THEN
 (*Reset coil*)
-LOCAL_B_CHECKFORORDEREMPTY := FALSE ;
+HMI_B_ORDEREMPTYINVALID := FALSE ;
+END_IF ;
+__EDTB14 := __EDTB12 AND NOT(UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY) ;
+__EDTB15 := __EDTB14 ;
+IF __EDTB15 THEN
+(*Set coil*)
+HMI_B_ORDEREMPTYINVALID := TRUE ;
+END_IF ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
+(*Reset coil*)
+HMI_ACKALARM := FALSE ;
+END_IF ;
+__EDTB17 := __EDTB14 ;
+IF __EDTB17 THEN
+(*Reset coil*)
+B_EXEC_ORDER_FFL := FALSE ;
 END_IF ;
 
 (*************** Code for the end of Rung **************)
@@ -107,12 +103,27 @@ __STEPPRAGMA
 0,16
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB16 := TRUE ;
-IF __EDTB16 THEN
+__EDTB18 := TRUE ;
+IF __EDTB18 THEN
+(*Reset coil*)
+LOCAL_B_CHECKFORORDEREMPTY := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB19 := TRUE ;
+IF __EDTB19 THEN
 (* FB call: UDFB_ORDER_FFL *)
 UDFB_ORDER_FFL_1(ARRAY_ORDERTOBEPLACED) ;
 END_IF ;
-__MO_UDFB_ORDER_FFL_1 := __EDTB16 ;
+__MO_UDFB_ORDER_FFL_1 := __EDTB19 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -139,4 +150,7 @@ __GL __LG0000 ;
 (* __EDTB14 *)
 (* __EDTB15 *)
 (* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
 

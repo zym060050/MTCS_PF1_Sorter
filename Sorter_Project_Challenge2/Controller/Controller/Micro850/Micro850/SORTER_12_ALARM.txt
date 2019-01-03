@@ -1,0 +1,49 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_1(HMI_ALARM_ACK_BUTTON) ;
+__EDTB1 := R_TRIG_1.Q ;
+__EDTB2 := __EDTB1 ;
+IF __EDTB2 THEN
+(*Set coil*)
+HMI_ACKALARM := TRUE ;
+END_IF ;
+__EDTB3 := __EDTB1 ;
+IF __EDTB3 THEN
+(*Reset coil*)
+HMI_ALARM_ACK_BUTTON := FALSE ;
+END_IF ;
+__EDTB4 := __EDTB1 AND HMI_B_ORDERLISTFULL ;
+IF __EDTB4 THEN
+(*Reset coil*)
+HMI_B_ORDERLISTFULL := FALSE ;
+END_IF ;
+__EDTB5 := __EDTB1 AND HMI_B_ORDEREMPTYINVALID ;
+IF __EDTB5 THEN
+(*Reset coil*)
+HMI_B_ORDEREMPTYINVALID := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+

@@ -60,6 +60,9 @@
   <AcfElementGuid Guid="d2149196-5860-49f1-a5dc-fecd67c5d69a">
     <File>UDFB_ORDER_FFL.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="d2730de4-4231-481b-a903-6cf49da1f7d0">
+    <File>Sorter_12_Alarm.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="e0ed1b75-60a3-4176-89d1-0380485094e4">
     <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
   </AcfElementGuid>
