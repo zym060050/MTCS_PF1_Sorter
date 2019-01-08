@@ -16,7 +16,7 @@
     <File>UDFB_ORDER_HISTORY_FFU.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="504228d5-66fd-446b-bfd0-d53096bf9cae">
-    <File>UDFB_SORTER_COUNT_CTL.AcfMlge</File>
+    <File>UDFB_COLOR_SORTER_COUNT_CTL.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="552da775-1051-487d-a31a-58f8c6cc9971">
     <File>UDFB_EXEC_MC_MOVE_VELOCITY.AcfMlge</File>

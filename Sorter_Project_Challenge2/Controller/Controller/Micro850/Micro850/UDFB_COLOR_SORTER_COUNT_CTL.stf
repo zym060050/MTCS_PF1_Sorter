@@ -1,0 +1,37 @@
+FUNCTION_BLOCK UDFB_COLOR_SORTER_COUNT_CTL
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*InputCounter*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_InputCounter*) (**) )  FB  [4,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*OrderFromFIFO*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_OrderFromFIFO*) (**) )
+EOR [7,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  XIO  [3,0] (*bRejectSensor*) (**)  FB  [4,0] (*>*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_OrderFromFIFO*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*LOCAL_OrderFromFIFO*) (**) ; (*o1:*)(**) (**) )  XIC  [10,0] (*InputSensor*) (**)  
+ BST  OTE  [11,0] (*OutputKicker*) (**)
+   NXB  FB  [11,1] (*R_TRIG*) (*R_TRIG_3*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  FB  [14,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_InputCounter*) (**) )
+ BND
+
+EOR [17,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  XIC  [3,0] (*bRejectSensor*) (**)  XIC  [4,0] (*InputSensor*) (**)  FB  [5,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  FB  [8,0] (*+*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_InputCounter*) (**) )
+EOR [11,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*OutputCounter*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=10
+#end_info
+END_FUNCTION_BLOCK
