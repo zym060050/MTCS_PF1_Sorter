@@ -6,6 +6,9 @@
   <AcfElementGuid Guid="0e3ec975-700c-4eb5-b570-3f2b90f60479">
     <File>Sorter_20_SetupAndTest.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="18d6bdad-c2c3-4ab0-92b9-662a0b2d6cf4">
+    <File>Sorter_13_ProcessOrder.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="21fac3e5-d9b8-43a4-bb24-8bb8c171a3ce">
     <File>Sorter_09_Axis_3_Lift.AcfMlge</File>
   </AcfElementGuid>
@@ -25,7 +28,7 @@
     <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="6d9ca0e5-275a-4cef-b899-ec5bc3009df2">
-    <File>Sorter_11_ArchiveOrder.AcfMlge</File>
+    <File>Sorter_14_ArchiveOrder.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="8452a3b0-b5ad-4bc8-a49f-d628d09d658e">
     <File>Sorter_08_HSC.AcfMlge</File>
@@ -43,7 +46,7 @@
     <File>UDFB_ORDER_FFU.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="99283fc1-2bd7-48ff-823e-4ebb803a104b">
-    <File>Sorter_10_PlaceOrder.AcfMlge</File>
+    <File>Sorter_12_PlaceOrder.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="afcb142e-94f3-4836-8192-447b271cf204">
     <File>UDFB_FWD_REV_CTL.AcfMlge</File>
@@ -57,13 +60,22 @@
   <AcfElementGuid Guid="b8a9176e-2236-4b8c-be3f-c14f5cabd648">
     <File>UDFB_ORDER_NOT_EMPTY.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="b95b450c-c8aa-4d6a-bc9e-95df1a2671f1">
+    <File>Sorter_10_EmergencyStop.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="d2149196-5860-49f1-a5dc-fecd67c5d69a">
     <File>UDFB_ORDER_FFL.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="d2730de4-4231-481b-a903-6cf49da1f7d0">
-    <File>Sorter_12_Alarm.AcfMlge</File>
+    <File>Sorter_15_Alarm.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="e0704ad4-da30-4446-821c-90d5606f97f9">
+    <File>UDFB_RESET_CUR_ORDER_COUNT.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="e0ed1b75-60a3-4176-89d1-0380485094e4">
     <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="e76ffaf4-9e43-4a21-964f-d0d7481a225f">
+    <File>Sorter_11_StateMachine.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>

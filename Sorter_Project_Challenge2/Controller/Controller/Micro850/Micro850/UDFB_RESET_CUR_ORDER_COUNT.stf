@@ -1,0 +1,51 @@
+FUNCTION_BLOCK UDFB_RESET_CUR_ORDER_COUNT
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[1]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[2]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[3]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[4]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[5]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[6]*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Array_CurrentOrderCounter[7]*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_FUNCTION_BLOCK

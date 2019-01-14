@@ -1,0 +1,162 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := _IO_EM_DI_05 ;
+__EDTB2 := __EDTB1 ;
+IF __EDTB2 THEN
+HMI_CURRENT_SCREEN := (  4) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB2 ;
+__EDTB3 := __EDTB2 ;
+__EDTB4 := __EDTB1 ;
+IF __EDTB4 THEN
+SYSTEM_STATE := (  1) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB4 ;
+__EDTB5 := __EDTB4 ;
+__EDTB6 := __EDTB1 ;
+IF __EDTB6 THEN
+(*Reset coil*)
+HMI_VIS_EMERGENCY := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: F_TRIG *)
+F_TRIG_1(_IO_EM_DI_05) ;
+__EDTB7 := F_TRIG_1.Q ;
+IF __EDTB7 THEN
+(*Set coil*)
+HMI_VIS_EMERGENCY := TRUE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_1(B_HMI_EMERGENCY_KEEP) ;
+__EDTB9 := R_TRIG_1.Q ;
+IF __EDTB9 THEN
+(* Operator output on : = with __EDTB8 *)
+__EDTB8 := (1 = SYSTEM_STATE) ;
+ELSE
+__EDTB8 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB8 ;
+__EDTB10 := __EDTB8 ;
+IF __EDTB10 THEN
+HMI_CURRENT_SCREEN := (  2) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB10 ;
+__EDTB11 := __EDTB10 ;
+__EDTB12 := __EDTB8 ;
+IF __EDTB12 THEN
+(*Reset coil*)
+B_HMI_EMERGENCY_KEEP := FALSE ;
+END_IF ;
+__EDTB13 := __EDTB8 ;
+IF __EDTB13 THEN
+SYSTEM_STATE := (  0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,15
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: R_TRIG *)
+R_TRIG_2(B_HMI_EMERGENCY_RESET) ;
+__EDTB16 := R_TRIG_2.Q ;
+IF __EDTB16 THEN
+(* Operator output on : = with __EDTB15 *)
+__EDTB15 := (1 = SYSTEM_STATE) ;
+ELSE
+__EDTB15 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB15 ;
+__EDTB17 := __EDTB15 ;
+IF __EDTB17 THEN
+HMI_CURRENT_SCREEN := (  2) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB17 ;
+__EDTB18 := __EDTB17 ;
+__EDTB19 := __EDTB15 ;
+IF __EDTB19 THEN
+(*Reset coil*)
+B_HMI_EMERGENCY_RESET := FALSE ;
+END_IF ;
+__EDTB20 := __EDTB15 ;
+IF __EDTB20 THEN
+(* FB call: UDFB_RESET_CUR_ORDER_COUNT *)
+UDFB_RESET_CUR_ORDER_COUNT_1() ;
+END_IF ;
+__MO_UDFB_RESET_CUR_ORDER_COUNT_1 := __EDTB20 ;
+__EDTB21 := __EDTB20 ;
+__EDTB22 := __EDTB15 ;
+IF __EDTB22 THEN
+SYSTEM_STATE := (  0) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB22 ;
+__EDTB23 := __EDTB22 ;
+__EDTB24 := (__EDTB21 OR __EDTB23) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+
