@@ -67,37 +67,41 @@ SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)
  BST  
  BST  OTR  [2,38] (*b_StopLift*) (**)
    NXB  
+ BST  
  BST  OTR  [2,39] (*b_StartHoming*) (**)
-   NXB  FB  [2,40] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
+   NXB  FB  [2,40] (*1 gain*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*uCurStackLightState*) (**) )
+ BND
+
+   NXB  FB  [2,42] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
  BND
 
  BND
 
    NXB  
- BST  FB  [2,42] (*>=*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
- BST  OTS  [5,42] (*b_LiftHomed*) (**)
-   NXB  
- BST  
- BST  OTS  [5,43] (*b_MoveLiftUp*) (**)
-   NXB  OTR  [5,44] (*b_MoveLiftDown*) (**)
- BND
-
-   NXB  OTR  [5,45] (*b_StartLiftMoveVelocity*) (**)
- BND
-
- BND
-
-   NXB  FB  [2,46] (*<*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
- BST  OTR  [5,46] (*b_LiftHomed*) (**)
+ BST  FB  [2,44] (*>=*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,44] (*b_LiftHomed*) (**)
    NXB  
  BST  
- BST  OTR  [5,47] (*b_MoveLiftUp*) (**)
-   NXB  OTS  [5,48] (*b_MoveLiftDown*) (**)
+ BST  OTS  [5,45] (*b_MoveLiftUp*) (**)
+   NXB  OTR  [5,46] (*b_MoveLiftDown*) (**)
+ BND
+
+   NXB  OTR  [5,47] (*b_StartLiftMoveVelocity*) (**)
+ BND
+
+ BND
+
+   NXB  FB  [2,48] (*<*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HSC_Info.Accumulator*) (**)  , (*i2:*)(*CONST_BOTTOM_HSC_COUNT*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,48] (*b_LiftHomed*) (**)
+   NXB  
+ BST  
+ BST  OTR  [5,49] (*b_MoveLiftUp*) (**)
+   NXB  OTS  [5,50] (*b_MoveLiftDown*) (**)
  BND
 
    NXB  
- BST  OTS  [5,49] (*b_StartLiftMoveVelocity*) (**)
-   NXB  OTS  [5,50] (*b_StartHoming*) (**)
+ BST  OTS  [5,51] (*b_StartLiftMoveVelocity*) (**)
+   NXB  OTS  [5,52] (*b_StartHoming*) (**)
  BND
 
  BND
@@ -167,43 +171,43 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,53] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis1*) (**)  , (*Enable:En*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:EnPO*)(*true*) (**)  , (*Enable_Negative:EnNE*)(*true*) (**)  , (*__DTI_AxisIn:_DTI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Status:Stat*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+SOR  [0,55] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_1*) ( (*EN:EN*)(**) (**)  , (*AxisIn:*)(*Axis1*) (**)  , (*Enable:*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:*)(*true*) (**)  , (*Enable_Negative:*)(*true*) (**)  , (*__DTI_AxisIn:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:*)(**) (**)  , (*Status:*)(**) (**)  , (*Busy:*)(**) (**)  , (*Active:*)(**) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,61] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_2*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis2*) (**)  , (*Enable:En*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:EnPO*)(*true*) (**)  , (*Enable_Negative:EnNE*)(*true*) (**)  , (*__DTI_AxisIn:_DTI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Status:Stat*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+SOR  [0,63] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_2*) ( (*EN:EN*)(**) (**)  , (*AxisIn:*)(*Axis2*) (**)  , (*Enable:*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:*)(*true*) (**)  , (*Enable_Negative:*)(*true*) (**)  , (*__DTI_AxisIn:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:*)(**) (**)  , (*Status:*)(**) (**)  , (*Busy:*)(**) (**)  , (*Active:*)(**) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,69] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_3*) ( (*EN:EN*)(**) (**)  , (*AxisIn:Axis*)(*Axis3*) (**)  , (*Enable:En*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:EnPO*)(*true*) (**)  , (*Enable_Negative:EnNE*)(*true*) (**)  , (*__DTI_AxisIn:_DTI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:Axis*)(**) (**)  , (*Status:Stat*)(**) (**)  , (*Busy:Busy*)(**) (**)  , (*Active:Act*)(**) (**)  , (*Error:Err*)(**) (**)  , (*ErrorID:ErID*)(**) (**) )
+SOR  [0,71] (**) (**)  FB  [1,0] (*MC_Power*) (*MC_Power_3*) ( (*EN:EN*)(**) (**)  , (*AxisIn:*)(*Axis3*) (**)  , (*Enable:*)(*HMI_InitEnablePower*) (**)  , (*Enable_Positive:*)(*true*) (**)  , (*Enable_Negative:*)(*true*) (**)  , (*__DTI_AxisIn:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Axis:*)(**) (**)  , (*Status:*)(**) (**)  , (*Busy:*)(**) (**)  , (*Active:*)(**) (**)  , (*Error:*)(**) (**)  , (*ErrorID:*)(**) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,77] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_1.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis1_Powered*) (**) )
+SOR  [0,79] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_1.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis1_Powered*) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,80] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_2.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis2_Powered*) (**) )
+SOR  [0,82] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_2.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis2_Powered*) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,83] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_3.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis3_Powered*) (**) )
+SOR  [0,85] (**) (**)  FB  [1,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MC_Power_3.Status*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b_Axis3_Powered*) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,86] (**) (**)  XIC  [1,0] (*b_Axis1_Powered*) (**)  XIC  [2,0] (*b_Axis2_Powered*) (**)  XIC  [3,0] (*b_Axis3_Powered*) (**)  
+SOR  [0,88] (**) (**)  XIC  [1,0] (*b_Axis1_Powered*) (**)  XIC  [2,0] (*b_Axis2_Powered*) (**)  XIC  [3,0] (*b_Axis3_Powered*) (**)  
  BST  OTS  [4,0] (*b_SYS_Initialized*) (**)
    NXB  OTR  [4,1] (*HMI_VIS_INIT*) (**)
  BND
@@ -213,7 +217,7 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,89] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+SOR  [0,91] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
  BST  OTS  [5,0] (*HMI_VIS_START*) (**)
    NXB  
  BST  OTS  [5,1] (*HMI_VIS_FWD*) (**)
@@ -234,6 +238,6 @@ EOR [6,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=10
+NextId=11
 #end_info
 END_PROGRAM

@@ -1,0 +1,117 @@
+PROGRAM Sorter_11_StackLights
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  OTR  [5,2] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  OTR  [5,2] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*2*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTS  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  OTR  [5,2] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_03*) (*Red Stacklight*)
+   NXB  
+ BST  XIO  [5,2] (*TON_4.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_4*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  
+ BST  XIC  [5,4] (*TON_4.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTS  [7,4] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  XIO  [5,5] (*TON_4.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTR  [7,5] (*_IO_X2_DO_04*) (*Green Stacklight*)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,20] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_03*) (*Red Stacklight*)
+   NXB  
+ BST  XIO  [5,2] (*TON_1.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  
+ BST  XIC  [5,4] (*TON_1.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTS  [7,4] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  XIO  [5,5] (*TON_1.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTR  [7,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*5*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  
+ BST  XIO  [5,2] (*TON_2.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_2*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  
+ BST  XIC  [5,4] (*TON_2.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTS  [7,4] (*_IO_X2_DO_03*) (*Red Stacklight*)
+   NXB  XIO  [5,5] (*TON_2.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTR  [7,5] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [9,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_PROGRAM

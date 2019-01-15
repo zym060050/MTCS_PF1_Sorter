@@ -30,6 +30,9 @@
   <AcfElementGuid Guid="6d9ca0e5-275a-4cef-b899-ec5bc3009df2">
     <File>Sorter_14_ArchiveOrder.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="7f63be14-a313-4b82-8b52-463ecdf96d71">
+    <File>Sorter_11_StackLights.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="8452a3b0-b5ad-4bc8-a49f-d628d09d658e">
     <File>Sorter_08_HSC.AcfMlge</File>
   </AcfElementGuid>
@@ -74,8 +77,5 @@
   </AcfElementGuid>
   <AcfElementGuid Guid="e0ed1b75-60a3-4176-89d1-0380485094e4">
     <File>Sorter_06_Axis_2_Sensor_Kicker.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="e76ffaf4-9e43-4a21-964f-d0d7481a225f">
-    <File>Sorter_11_StateMachine.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>
