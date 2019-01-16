@@ -1,15 +1,6 @@
 [Version1]
 FullName,Value
 
-Controller.-.i1,
-Controller.-.i2,
-Controller.-.o1,
-Controller.1 gain.i1,
-Controller.1 gain.o1,
-Controller.ANY_TO_BOOL.i1,
-Controller.ANY_TO_BOOL.o1,
-Controller.ANY_TO_DINT.i1,
-Controller.ANY_TO_DINT.o1,
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE,
 Controller.Micro850.Micro850.__SYSVA_CCEXEC,
 Controller.Micro850.Micro850.__SYSVA_CYCLECNT,
@@ -1401,6 +1392,9 @@ Controller.Micro850.Micro850.Sorter_12_PlaceOrder.UDFB_ORDER_NOT_EMPTY_1.UDFB_IN
 Controller.Micro850.Micro850.Sorter_12_PlaceOrder.UDFB_ORDER_NOT_EMPTY_1.UDFB_IN_ORDER_ARRAY[5],
 Controller.Micro850.Micro850.Sorter_12_PlaceOrder.UDFB_ORDER_NOT_EMPTY_1.UDFB_IN_ORDER_ARRAY[6],
 Controller.Micro850.Micro850.Sorter_12_PlaceOrder.UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY,
+Controller.Micro850.Micro850.Sorter_13_ProcessOrder.LOCAL_I,
+Controller.Micro850.Micro850.Sorter_13_ProcessOrder.LOCAL_OrderCurrentCountAddedTogether,
+Controller.Micro850.Micro850.Sorter_13_ProcessOrder.LOCAL_OrderNumberAddedTogether,
 Controller.Micro850.Micro850.Sorter_14_ArchiveOrder.R_TRIG_2.CLK,
 Controller.Micro850.Micro850.Sorter_14_ArchiveOrder.R_TRIG_2.Q,
 Controller.Micro850.Micro850.Sorter_14_ArchiveOrder.R_TRIG_2.Redge,

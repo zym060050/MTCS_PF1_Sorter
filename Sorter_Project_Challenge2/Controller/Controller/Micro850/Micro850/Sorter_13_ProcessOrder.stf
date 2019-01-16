@@ -1,3 +1,19 @@
 PROGRAM Sorter_13_ProcessOrder
+LOCAL_OrderNumberAddedTogether:=0;
+LOCAL_OrderCurrentCountAddedTogether:=0;
 
+LOCAL_OrderNumberAddedTogether:=(LOCAL_OrderCurrentCountAddedTogether+Array_Order_FIFO_1[1]+Array_Order_FIFO_2[1]+
+                                 Array_Order_FIFO_3[1]+Array_Order_FIFO_4[1]+
+                                 Array_Order_FIFO_5[1]+Array_Order_FIFO_6[1]);
+
+FOR LOCAL_I := 1 TO 6 DO
+LOCAL_OrderCurrentCountAddedTogether:=(LOCAL_OrderCurrentCountAddedTogether+Array_CurrentOrderCounter[LOCAL_I]);
+END_FOR;
+
+IF LOCAL_OrderNumberAddedTogether > 0 THEN
+(* if order number added together is not 0 *)
+HMI_Order_Percentage:=ANY_TO_REAL(LOCAL_OrderCurrentCountAddedTogether)*100.0/ANY_TO_REAL(LOCAL_OrderNumberAddedTogether);
+ELSE
+HMI_Order_Percentage:=0.0;
+END_IF;
 END_PROGRAM

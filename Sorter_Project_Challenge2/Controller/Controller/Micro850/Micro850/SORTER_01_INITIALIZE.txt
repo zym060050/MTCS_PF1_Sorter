@@ -394,6 +394,12 @@ IF __EDTB73 THEN
 (*Set coil*)
 HMI_IND_FWDDIR := TRUE ;
 END_IF ;
+__EDTB74 := __EDTB68 ;
+IF __EDTB74 THEN
+UCURSTACKLIGHTSTATE := (  1) ;
+END_IF ;
+__MO_1GAIN_16 := __EDTB74 ;
+__EDTB75 := __EDTB74 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -477,4 +483,6 @@ __GL __LG0000 ;
 (* __EDTB71 *)
 (* __EDTB72 *)
 (* __EDTB73 *)
+(* __EDTB74 *)
+(* __EDTB75 *)
 
