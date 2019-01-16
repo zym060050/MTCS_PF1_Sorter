@@ -1,15 +1,18 @@
 [__DEFIO_CPXDVC]
-Nb = 2
+Nb = 3
 NotMDF = 0, 1, AB_, OPTIMUS_, IO_Base
 MDF = -1
 RIdx = 0
 NotMDF = 201, 1, AB_, OPTIMUS_, IOEX_Digit
 MDF = -1
 RIdx = 0
+NotMDF = 202, 1, AB_, OPTIMUS_, IOEX_Digit
+MDF = -1
+RIdx = 0
 
 
 [__DEFIO_SPLDVC]
-Nb = 4
+Nb = 6
 NotMDF = 0, 0, 1, AB_, OPTIMUS_, digitOut_Base
 MDF = -1
 RIdx = 0, 0
@@ -22,6 +25,12 @@ RIdx = 0, 1
 NotMDF = 201, 1, 1, AB_, OPTIMUS_, digitIn_EX
 MDF = -1
 RIdx = 0, 1
+NotMDF = 202, 0, 1, AB_, OPTIMUS_, digitOut_EX
+MDF = -1
+RIdx = 0, 2
+NotMDF = 202, 1, 1, AB_, OPTIMUS_, digitIn_EX
+MDF = -1
+RIdx = 0, 2
 
 
 [__DEFIO_CHAN]
@@ -113,6 +122,42 @@ MDF = 1\1, 0, 0, 12, -1, _IO_X1_ST_12
 MDF = 1\1, 0, 0, 13, -1, _IO_X1_ST_13
 MDF = 1\1, 0, 0, 14, -1, _IO_X1_ST_14
 MDF = 1\1, 0, 0, 15, -1, _IO_X1_ST_15
+RIdx = 0, 2, 4
+Nb = 16
+MDF = 1\1, 0, 0, 0, -1, _IO_X2_DO_00
+MDF = 1\1, 0, 0, 1, -1, _IO_X2_DO_01
+MDF = 1\1, 0, 0, 2, -1, _IO_X2_DO_02
+MDF = 1\1, 0, 0, 3, -1, _IO_X2_DO_03
+MDF = 1\1, 0, 0, 4, -1, _IO_X2_DO_04
+MDF = 1\1, 0, 0, 5, -1, _IO_X2_DO_05
+MDF = 1\1, 0, 0, 6, -1, _IO_X2_DO_06
+MDF = 1\1, 0, 0, 7, -1, _IO_X2_DO_07
+MDF = 1\1, 0, 0, 8, -1, _IO_X2_DO_08
+MDF = 1\1, 0, 0, 9, -1, _IO_X2_DO_09
+MDF = 1\1, 0, 0, 10, -1, _IO_X2_DO_10
+MDF = 1\1, 0, 0, 11, -1, _IO_X2_DO_11
+MDF = 1\1, 0, 0, 12, -1, _IO_X2_DO_12
+MDF = 1\1, 0, 0, 13, -1, _IO_X2_DO_13
+MDF = 1\1, 0, 0, 14, -1, _IO_X2_DO_14
+MDF = 1\1, 0, 0, 15, -1, _IO_X2_DO_15
+RIdx = 0, 2, 5
+Nb = 16
+MDF = 1\1, 0, 0, 0, -1, _IO_X2_ST_00
+MDF = 1\1, 0, 0, 1, -1, _IO_X2_ST_01
+MDF = 1\1, 0, 0, 2, -1, _IO_X2_ST_02
+MDF = 1\1, 0, 0, 3, -1, _IO_X2_ST_03
+MDF = 1\1, 0, 0, 4, -1, _IO_X2_ST_04
+MDF = 1\1, 0, 0, 5, -1, _IO_X2_ST_05
+MDF = 1\1, 0, 0, 6, -1, _IO_X2_ST_06
+MDF = 1\1, 0, 0, 7, -1, _IO_X2_ST_07
+MDF = 1\1, 0, 0, 8, -1, _IO_X2_ST_08
+MDF = 1\1, 0, 0, 9, -1, _IO_X2_ST_09
+MDF = 1\1, 0, 0, 10, -1, _IO_X2_ST_10
+MDF = 1\1, 0, 0, 11, -1, _IO_X2_ST_11
+MDF = 1\1, 0, 0, 12, -1, _IO_X2_ST_12
+MDF = 1\1, 0, 0, 13, -1, _IO_X2_ST_13
+MDF = 1\1, 0, 0, 14, -1, _IO_X2_ST_14
+MDF = 1\1, 0, 0, 15, -1, _IO_X2_ST_15
 
 
 [__READONLY_VALUES]

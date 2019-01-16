@@ -225,7 +225,9 @@ SOR  [0,91] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG
  BST  OTS  [5,2] (*HMI_VIS_REV*) (**)
    NXB  
  BST  OTS  [5,3] (*HMI_MoveFwd*) (**)
-   NXB  OTS  [5,4] (*HMI_IND_FwdDir*) (**)
+   NXB  
+ BST  OTS  [5,4] (*HMI_IND_FwdDir*) (**)
+   NXB  FB  [5,5] (*1 gain*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*uCurStackLightState*) (**) )
  BND
 
  BND
@@ -234,10 +236,12 @@ SOR  [0,91] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG
 
  BND
 
-EOR [6,0]
+ BND
+
+EOR [8,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=11
+NextId=13
 #end_info
 END_PROGRAM

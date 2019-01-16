@@ -48,14 +48,28 @@ EOR [6,0]
 (**)
 
 SOR  [0,13] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  
+ BST  OTR  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  OTS  [5,2] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BND
+
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,17] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )  
  BST  OTR  [5,0] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
    NXB  
  BST  OTR  [5,1] (*_IO_X2_DO_03*) (*Red Stacklight*)
    NXB  
- BST  XIO  [5,2] (*TON_4.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_4*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+ BST  XIO  [5,2] (*bGreenFlashing*) (**)  FB  [6,2] (*TONOFF*) (*TONOFF_1*) ( (*IN:*)(**) (**)  , (*PT:*)(*T#500ms*) (**)  , (*PTOF:*)(*T#500ms*) (**) ; (*Q:*)(**) (**)  , (*ET:*)(**) (**) )  OTE  [9,2] (*bGreenFlashing*) (**)
    NXB  
- BST  XIC  [5,4] (*TON_4.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTS  [7,4] (*_IO_X2_DO_04*) (*Green Stacklight*)
-   NXB  XIO  [5,5] (*TON_4.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTR  [7,5] (*_IO_X2_DO_04*) (*Green Stacklight*)
+ BST  XIC  [5,5] (*bGreenFlashing*) (**)  XIO  [6,5] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTS  [7,5] (*_IO_X2_DO_04*) (*Green Stacklight*)
+   NXB  XIO  [5,6] (*bGreenFlashing*) (**)  XIC  [6,6] (*_IO_X2_DO_04*) (*Green Stacklight*)  OTR  [7,6] (*_IO_X2_DO_04*) (*Green Stacklight*)
  BND
 
  BND
@@ -64,20 +78,20 @@ SOR  [0,13] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*
 
  BND
 
-EOR [9,0]
+EOR [10,0]
 
 
 (**)
 
-SOR  [0,20] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )  
+SOR  [0,25] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*5*) (**) ; (*o1:*)(**) (**) )  
  BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
    NXB  
  BST  OTR  [5,1] (*_IO_X2_DO_03*) (*Red Stacklight*)
    NXB  
- BST  XIO  [5,2] (*TON_1.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+ BST  XIO  [5,2] (*bYellowFlashing*) (**)  FB  [6,2] (*TONOFF*) (*TONOFF_2*) ( (*IN:*)(**) (**)  , (*PT:*)(*T#500ms*) (**)  , (*PTOF:*)(*T#500ms*) (**) ; (*Q:*)(**) (**)  , (*ET:*)(**) (**) )  OTE  [9,2] (*bYellowFlashing*) (**)
    NXB  
- BST  XIC  [5,4] (*TON_1.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTS  [7,4] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
-   NXB  XIO  [5,5] (*TON_1.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTR  [7,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+ BST  XIC  [5,5] (*bYellowFlashing*) (**)  XIO  [6,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTS  [7,5] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
+   NXB  XIO  [5,6] (*bYellowFlashing*) (**)  XIC  [6,6] (*_IO_X2_DO_02*) (*Yellow Stacklight*)  OTR  [7,6] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
  BND
 
  BND
@@ -86,20 +100,20 @@ SOR  [0,20] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*
 
  BND
 
-EOR [9,0]
+EOR [10,0]
 
 
 (**)
 
-SOR  [0,27] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*5*) (**) ; (*o1:*)(**) (**) )  
+SOR  [0,33] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*uCurStackLightState*) (**)  , (*i2:*)(*6*) (**) ; (*o1:*)(**) (**) )  
  BST  OTR  [5,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
    NXB  
  BST  OTR  [5,1] (*_IO_X2_DO_02*) (*Yellow Stacklight*)
    NXB  
- BST  XIO  [5,2] (*TON_2.Q*) (*Q*)  FB  [6,2] (*TON*) (*TON_2*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+ BST  XIO  [5,2] (*bRedFlashing*) (**)  FB  [6,2] (*TONOFF*) (*TONOFF_3*) ( (*IN:*)(**) (**)  , (*PT:*)(*T#500ms*) (**)  , (*PTOF:*)(*T#500ms*) (**) ; (*Q:*)(**) (**)  , (*ET:*)(**) (**) )  OTE  [9,2] (*bRedFlashing*) (**)
    NXB  
- BST  XIC  [5,4] (*TON_2.Q*) (*Q*)  XIO  [6,4] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTS  [7,4] (*_IO_X2_DO_03*) (*Red Stacklight*)
-   NXB  XIO  [5,5] (*TON_2.Q*) (*Q*)  XIC  [6,5] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTR  [7,5] (*_IO_X2_DO_03*) (*Red Stacklight*)
+ BST  XIC  [5,5] (*bRedFlashing*) (**)  XIO  [6,5] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTS  [7,5] (*_IO_X2_DO_03*) (*Red Stacklight*)
+   NXB  XIO  [5,6] (*bRedFlashing*) (**)  XIC  [6,6] (*_IO_X2_DO_03*) (*Red Stacklight*)  OTR  [7,6] (*_IO_X2_DO_03*) (*Red Stacklight*)
  BND
 
  BND
@@ -108,7 +122,7 @@ SOR  [0,27] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*=*) (*
 
  BND
 
-EOR [9,0]
+EOR [10,0]
 EOF
 #end_info
 #info= ID_MAX
