@@ -12,6 +12,9 @@
   <AcfElementGuid Guid="21fac3e5-d9b8-43a4-bb24-8bb8c171a3ce">
     <File>Sorter_09_Axis_3_Lift.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="260e677f-68e6-482a-b778-d3c99e7f41e5">
+    <File>Sorter_16_Stacklight_STM_Handle.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="39190175-53e0-41b9-86ce-f3b9909a66ce">
     <File>UDFB_EXEC_MC_HALT.AcfMlge</File>
   </AcfElementGuid>

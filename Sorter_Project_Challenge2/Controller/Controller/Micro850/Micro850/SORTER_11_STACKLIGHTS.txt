@@ -8,10 +8,10 @@ __STEPPRAGMA
 0,1
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB2 := B_SYS_INITIALIZED ;
+__EDTB2 := B_SYS_INITIALIZED AND NOT(BISERROREMERGENCY) ;
 IF __EDTB2 THEN
 (* Operator output on : = with __EDTB1 *)
-__EDTB1 := (UCURSTACKLIGHTSTATE = 0) ;
+__EDTB1 := (SYSTEM_STATE = 0) ;
 ELSE
 __EDTB1 := FALSE ;
 END_IF ;
@@ -41,62 +41,41 @@ __STEPPRAGMA
 0,5
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB7 := B_SYS_INITIALIZED ;
-IF __EDTB7 THEN
-(* Operator output on : = with __EDTB6 *)
-__EDTB6 := (UCURSTACKLIGHTSTATE = 1) ;
-ELSE
-__EDTB6 := FALSE ;
-END_IF ;
-__MO_EQUAL_2 := __EDTB6 ;
+__EDTB6 := B_SYS_INITIALIZED AND NOT(BISERROREMERGENCY) ;
 __EDTB8 := __EDTB6 ;
 IF __EDTB8 THEN
+(* Operator output on : = with __EDTB7 *)
+__EDTB7 := (UCURSTACKLIGHTSTATE = 2) ;
+ELSE
+__EDTB7 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB7 ;
+__EDTB9 := __EDTB7 ;
+__EDTB11 := __EDTB6 ;
+IF __EDTB11 THEN
+(* Operator output on : = with __EDTB10 *)
+__EDTB10 := (UCURSTACKLIGHTSTATE = 6) ;
+ELSE
+__EDTB10 := FALSE ;
+END_IF ;
+__MO_EQUAL_3 := __EDTB10 ;
+__EDTB12 := __EDTB10 ;
+__EDTB13 := (__EDTB9 OR __EDTB12) ;
+__EDTB14 := __EDTB13 ;
+IF __EDTB14 THEN
 (*Set coil*)
 _IO_X2_DO_04 := TRUE ;
 END_IF ;
-__EDTB9 := __EDTB6 ;
-IF __EDTB9 THEN
-(*Reset coil*)
-_IO_X2_DO_02 := FALSE ;
-END_IF ;
-__EDTB10 := __EDTB6 ;
-IF __EDTB10 THEN
-(*Reset coil*)
-_IO_X2_DO_03 := FALSE ;
-END_IF ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,9
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB12 := B_SYS_INITIALIZED ;
-IF __EDTB12 THEN
-(* Operator output on : = with __EDTB11 *)
-__EDTB11 := (UCURSTACKLIGHTSTATE = 2) ;
-ELSE
-__EDTB11 := FALSE ;
-END_IF ;
-__MO_EQUAL_3 := __EDTB11 ;
-__EDTB13 := __EDTB11 ;
-IF __EDTB13 THEN
-(*Reset coil*)
-_IO_X2_DO_04 := FALSE ;
-END_IF ;
-__EDTB14 := __EDTB11 ;
-IF __EDTB14 THEN
-(*Set coil*)
-_IO_X2_DO_02 := TRUE ;
-END_IF ;
-__EDTB15 := __EDTB11 ;
+__EDTB15 := __EDTB13 ;
 IF __EDTB15 THEN
 (*Reset coil*)
 _IO_X2_DO_03 := FALSE ;
 END_IF ;
+__EDTB16 := __EDTB13 ;
+IF __EDTB16 THEN
+(*Reset coil*)
+_IO_X2_DO_02 := FALSE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -104,29 +83,29 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,13
+0,12
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB17 := B_SYS_INITIALIZED ;
-IF __EDTB17 THEN
-(* Operator output on : = with __EDTB16 *)
-__EDTB16 := (UCURSTACKLIGHTSTATE = 3) ;
-ELSE
-__EDTB16 := FALSE ;
-END_IF ;
-__MO_EQUAL_4 := __EDTB16 ;
-__EDTB18 := __EDTB16 ;
+__EDTB18 := B_SYS_INITIALIZED AND NOT(BISERROREMERGENCY) ;
 IF __EDTB18 THEN
+(* Operator output on : = with __EDTB17 *)
+__EDTB17 := (UCURSTACKLIGHTSTATE = 5) ;
+ELSE
+__EDTB17 := FALSE ;
+END_IF ;
+__MO_EQUAL_4 := __EDTB17 ;
+__EDTB19 := __EDTB17 ;
+IF __EDTB19 THEN
 (*Reset coil*)
 _IO_X2_DO_04 := FALSE ;
 END_IF ;
-__EDTB19 := __EDTB16 ;
-IF __EDTB19 THEN
+__EDTB20 := __EDTB17 ;
+IF __EDTB20 THEN
 (*Reset coil*)
 _IO_X2_DO_02 := FALSE ;
 END_IF ;
-__EDTB20 := __EDTB16 ;
-IF __EDTB20 THEN
+__EDTB21 := __EDTB17 ;
+IF __EDTB21 THEN
 (*Set coil*)
 _IO_X2_DO_03 := TRUE ;
 END_IF ;
@@ -137,37 +116,37 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,17
+0,16
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB22 := B_SYS_INITIALIZED ;
-IF __EDTB22 THEN
-(* Operator output on : = with __EDTB21 *)
-__EDTB21 := (UCURSTACKLIGHTSTATE = 4) ;
-ELSE
-__EDTB21 := FALSE ;
-END_IF ;
-__MO_EQUAL_5 := __EDTB21 ;
-__EDTB23 := __EDTB21 ;
+__EDTB23 := B_SYS_INITIALIZED AND NOT(BISERROREMERGENCY) ;
 IF __EDTB23 THEN
+(* Operator output on : = with __EDTB22 *)
+__EDTB22 := (UCURSTACKLIGHTSTATE = 7) ;
+ELSE
+__EDTB22 := FALSE ;
+END_IF ;
+__MO_EQUAL_5 := __EDTB22 ;
+__EDTB24 := __EDTB22 ;
+IF __EDTB24 THEN
 (*Reset coil*)
 _IO_X2_DO_02 := FALSE ;
 END_IF ;
-__EDTB24 := __EDTB21 ;
-IF __EDTB24 THEN
+__EDTB25 := __EDTB22 ;
+IF __EDTB25 THEN
 (*Reset coil*)
 _IO_X2_DO_03 := FALSE ;
 END_IF ;
 (* FB call: TONOFF *)
-TONOFF_1(__EDTB21 AND NOT(BGREENFLASHING), T#500MS, T#500MS) ;
+TONOFF_1(__EDTB22 AND NOT(BGREENFLASHING), T#500MS, T#500MS) ;
 BGREENFLASHING := TONOFF_1.Q ;
-__EDTB25 := __EDTB21 AND BGREENFLASHING AND NOT(_IO_X2_DO_04) ;
-IF __EDTB25 THEN
+__EDTB26 := __EDTB22 AND BGREENFLASHING AND NOT(_IO_X2_DO_04) ;
+IF __EDTB26 THEN
 (*Set coil*)
 _IO_X2_DO_04 := TRUE ;
 END_IF ;
-__EDTB26 := __EDTB21 AND NOT(BGREENFLASHING) AND _IO_X2_DO_04 ;
-IF __EDTB26 THEN
+__EDTB27 := __EDTB22 AND NOT(BGREENFLASHING) AND _IO_X2_DO_04 ;
+IF __EDTB27 THEN
 (*Reset coil*)
 _IO_X2_DO_04 := FALSE ;
 END_IF ;
@@ -178,36 +157,29 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,25
+0,24
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB28 := B_SYS_INITIALIZED ;
-IF __EDTB28 THEN
-(* Operator output on : = with __EDTB27 *)
-__EDTB27 := (UCURSTACKLIGHTSTATE = 5) ;
-ELSE
-__EDTB27 := FALSE ;
-END_IF ;
-__MO_EQUAL_6 := __EDTB27 ;
-__EDTB29 := __EDTB27 ;
+__EDTB28 := B_SYS_INITIALIZED AND BISERROREMERGENCY ;
+__EDTB29 := __EDTB28 ;
 IF __EDTB29 THEN
 (*Reset coil*)
 _IO_X2_DO_04 := FALSE ;
 END_IF ;
-__EDTB30 := __EDTB27 ;
+__EDTB30 := __EDTB28 ;
 IF __EDTB30 THEN
 (*Reset coil*)
 _IO_X2_DO_03 := FALSE ;
 END_IF ;
 (* FB call: TONOFF *)
-TONOFF_2(__EDTB27 AND NOT(BYELLOWFLASHING), T#500MS, T#500MS) ;
-BYELLOWFLASHING := TONOFF_2.Q ;
-__EDTB31 := __EDTB27 AND BYELLOWFLASHING AND NOT(_IO_X2_DO_02) ;
+TONOFF_2(__EDTB28 AND NOT(BREDFLASHING), T#500MS, T#500MS) ;
+BREDFLASHING := TONOFF_2.Q ;
+__EDTB31 := __EDTB28 AND BREDFLASHING AND NOT(_IO_X2_DO_02) ;
 IF __EDTB31 THEN
 (*Set coil*)
 _IO_X2_DO_02 := TRUE ;
 END_IF ;
-__EDTB32 := __EDTB27 AND NOT(BYELLOWFLASHING) AND _IO_X2_DO_02 ;
+__EDTB32 := __EDTB28 AND NOT(BREDFLASHING) AND _IO_X2_DO_02 ;
 IF __EDTB32 THEN
 (*Reset coil*)
 _IO_X2_DO_02 := FALSE ;
@@ -219,17 +191,17 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,33
+0,32
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB34 := B_SYS_INITIALIZED ;
+__EDTB34 := B_SYS_INITIALIZED AND NOT(BISERROREMERGENCY) ;
 IF __EDTB34 THEN
 (* Operator output on : = with __EDTB33 *)
-__EDTB33 := (UCURSTACKLIGHTSTATE = 6) ;
+__EDTB33 := (UCURSTACKLIGHTSTATE = 8) ;
 ELSE
 __EDTB33 := FALSE ;
 END_IF ;
-__MO_EQUAL_7 := __EDTB33 ;
+__MO_EQUAL_6 := __EDTB33 ;
 __EDTB35 := __EDTB33 ;
 IF __EDTB35 THEN
 (*Reset coil*)
@@ -241,14 +213,14 @@ IF __EDTB36 THEN
 _IO_X2_DO_02 := FALSE ;
 END_IF ;
 (* FB call: TONOFF *)
-TONOFF_3(__EDTB33 AND NOT(BREDFLASHING), T#500MS, T#500MS) ;
-BREDFLASHING := TONOFF_3.Q ;
-__EDTB37 := __EDTB33 AND BREDFLASHING AND NOT(_IO_X2_DO_03) ;
+TONOFF_3(__EDTB33 AND NOT(BYELLOWFLASHING), T#500MS, T#500MS) ;
+BYELLOWFLASHING := TONOFF_3.Q ;
+__EDTB37 := __EDTB33 AND BYELLOWFLASHING AND NOT(_IO_X2_DO_03) ;
 IF __EDTB37 THEN
 (*Set coil*)
 _IO_X2_DO_03 := TRUE ;
 END_IF ;
-__EDTB38 := __EDTB33 AND NOT(BREDFLASHING) AND _IO_X2_DO_03 ;
+__EDTB38 := __EDTB33 AND NOT(BYELLOWFLASHING) AND _IO_X2_DO_03 ;
 IF __EDTB38 THEN
 (*Reset coil*)
 _IO_X2_DO_03 := FALSE ;

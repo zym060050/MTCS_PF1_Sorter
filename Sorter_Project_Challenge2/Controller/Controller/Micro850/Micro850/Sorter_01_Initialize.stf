@@ -227,7 +227,11 @@ SOR  [0,91] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG
  BST  OTS  [5,3] (*HMI_MoveFwd*) (**)
    NXB  
  BST  OTS  [5,4] (*HMI_IND_FwdDir*) (**)
-   NXB  FB  [5,5] (*1 gain*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*uCurStackLightState*) (**) )
+   NXB  
+ BST  FB  [5,5] (*1 gain*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_IDLE*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
+   NXB  OTR  [5,7] (*bIsErrorEmergency*) (**)
+ BND
+
  BND
 
  BND

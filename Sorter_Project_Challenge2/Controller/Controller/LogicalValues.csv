@@ -1,6 +1,15 @@
 [Version1]
 FullName,Value
 
+Controller.<>.i1,
+Controller.<>.i2,
+Controller.<>.o1,
+Controller.=.i1,
+Controller.=.i2,
+Controller.=.o1,
+Controller.>=.i1,
+Controller.>=.i2,
+Controller.>=.o1,
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE,
 Controller.Micro850.Micro850.__SYSVA_CCEXEC,
 Controller.Micro850.Micro850.__SYSVA_CYCLECNT,
@@ -296,6 +305,7 @@ Controller.Micro850.Micro850.b_StartLiftMoveVelocity,
 Controller.Micro850.Micro850.b_StopLift,
 Controller.Micro850.Micro850.b_SYS_Initialized,
 Controller.Micro850.Micro850.b_SYS_Stopped,
+Controller.Micro850.Micro850.bIsErrorEmergency,
 Controller.Micro850.Micro850.CONST_BOTTOM_HSC_COUNT,
 Controller.Micro850.Micro850.CONST_DEFAULT_DC_CONVEYORS,
 Controller.Micro850.Micro850.CONST_DEFAULT_DC_SORTERS,
