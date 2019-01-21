@@ -69,13 +69,17 @@ EOR [4,0]
 
 SOR  [0,21] (**) (**)  XIO  [1,0] (*b_OrderFIFOEmpty*) (**)  
  BST  FB  [2,0] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_RUNNING_ORDER*) (**) ; (*o1:*)(**) (**) )  FB  [5,0] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_RUNNING_ORDER*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
-   NXB  FB  [2,3] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_ERROR*) (**) ; (*o1:*)(**) (**) )  OTS  [5,3] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  FB  [2,3] (*=*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_RUNNING_ORDER*) (**) ; (*o1:*)(**) (**) )
+   NXB  FB  [2,6] (*=*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_RUNNING_ORDER_WITH_WARNING*) (**) ; (*o1:*)(**) (**) )
+ BND
+  OTS  [5,3] (*HMI_StartExecuteMotion*) (**)
  BND
 
 EOR [8,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=7
+NextId=8
 #end_info
 END_PROGRAM

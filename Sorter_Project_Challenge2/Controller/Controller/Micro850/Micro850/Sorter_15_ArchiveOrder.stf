@@ -47,6 +47,12 @@ EOR [4,0]
 
 SOR  [0,15] (**) (**)  OTR  [1,0] (*b_Exec_Order_FFU*) (**)
 EOR [2,0]
+
+
+(**)
+
+SOR  [0,17] (**) (**)  XIC  [1,0] (*b_OrderFIFOEmpty*) (**)  OTR  [2,0] (*HMI_StartExecuteMotion*) (**)
+EOR [3,0]
 EOF
 #end_info
 #info= ID_MAX

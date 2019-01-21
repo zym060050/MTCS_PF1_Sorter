@@ -1,0 +1,13 @@
+Controller.Micro850.Micro850.b_RunningOrderWithWarning
+Controller.Micro850.Micro850.b_OrderWarningAcked
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_1
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_2
+Controller.Micro850.Micro850.b_OrderErrorOccurred
+Controller.Micro850.Micro850.b_OrderErrorAcked
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_3
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_4
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.TON_1
+Controller.Micro850.Micro850.b_OrderCompleteAcked
+Controller.Micro850.Micro850.b_OrderCompleted
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_5
+Controller.Micro850.Micro850.Sorter_14_ProcessOrder.R_TRIG_6

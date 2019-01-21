@@ -69,7 +69,7 @@ SOR  [0,1] (**) (**)  XIC  [1,0] (*__SYSVA_FIRST_SCAN*) (**)
    NXB  
  BST  
  BST  OTR  [2,39] (*b_StartHoming*) (**)
-   NXB  FB  [2,40] (*1 gain*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_WAIT_TO_START_NEW_ORDER*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
+   NXB  FB  [2,40] (*1 gain*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_STANDBY*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
  BND
 
    NXB  FB  [2,42] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HMI_IND_Lift_Dir*) (**) )
@@ -228,7 +228,7 @@ SOR  [0,91] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*R_TRIG
    NXB  
  BST  OTS  [5,4] (*HMI_IND_FwdDir*) (**)
    NXB  
- BST  FB  [5,5] (*1 gain*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_WAIT_TO_START_NEW_ORDER*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
+ BST  FB  [5,5] (*1 gain*) (*13*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_STANDBY*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
    NXB  OTR  [5,7] (*bIsErrorEmergency*) (**)
  BND
 

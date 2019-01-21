@@ -5,7 +5,7 @@ BOF
 
 (**)
 
-SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*bIsErrorEmergency*) (**)  FB  [3,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_WAIT_TO_START_NEW_ORDER*) (**) ; (*o1:*)(**) (**) )  
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*bIsErrorEmergency*) (**)  FB  [3,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_STANDBY*) (**) ; (*o1:*)(**) (**) )  
  BST  OTS  [6,0] (*_IO_X2_DO_04*) (*Green Stacklight*)
    NXB  
  BST  OTR  [6,1] (*_IO_X2_DO_03*) (*Yellow Stacklight*)
@@ -33,7 +33,7 @@ EOR [7,0]
 
 (**)
 
-SOR  [0,9] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*bIsErrorEmergency*) (**)  FB  [3,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_ORDER_COMPLETE*) (**) ; (*o1:*)(**) (**) )  
+SOR  [0,9] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIO  [2,0] (*bIsErrorEmergency*) (**)  FB  [3,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_WAIT_TO_START_NEW_ORDER*) (**) ; (*o1:*)(**) (**) )  
  BST  OTR  [6,0] (*_IO_X2_DO_02*) (*Red Stacklight*)
    NXB  
  BST  OTR  [6,1] (*_IO_X2_DO_03*) (*Yellow Stacklight*)

@@ -151,14 +151,24 @@ __MO_1GAIN_1 := __EDTB23 ;
 __EDTB24 := __EDTB23 ;
 __EDTB26 := __EDTB20 ;
 IF __EDTB26 THEN
-(* Operator output on : < with __EDTB25 *)
-__EDTB25 := (SYSTEM_STATE < 5) ;
+(* Operator output on : = with __EDTB25 *)
+__EDTB25 := (SYSTEM_STATE = 2) ;
 ELSE
 __EDTB25 := FALSE ;
 END_IF ;
-__MO_LESS_2 := __EDTB25 ;
+__MO_EQUAL_1 := __EDTB25 ;
 __EDTB27 := __EDTB25 ;
-IF __EDTB27 THEN
+__EDTB29 := __EDTB20 ;
+IF __EDTB29 THEN
+(* Operator output on : = with __EDTB28 *)
+__EDTB28 := (SYSTEM_STATE = 3) ;
+ELSE
+__EDTB28 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB28 ;
+__EDTB30 := __EDTB28 ;
+__EDTB31 := (__EDTB27 OR __EDTB30) ;
+IF __EDTB31 THEN
 (*Set coil*)
 HMI_STARTEXECUTEMOTION := TRUE ;
 END_IF ;
@@ -199,4 +209,8 @@ __GL __LG0000 ;
 (* __EDTB25 *)
 (* __EDTB26 *)
 (* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
 

@@ -17,10 +17,93 @@ ELSE
 HMI_Order_Percentage:=0.0;
 END_IF;
 
+(* check for error *)
+IF ( ((Array_CurrentOrderCounter[7]) >= 5) AND (LOCAL_OrderNumberAddedTogether > 0) ) THEN
+b_OrderErrorOccurred := TRUE;
+ELSE
+b_OrderErrorOccurred := FALSE;
+END_IF;
+
+R_TRIG_3(b_OrderErrorOccurred);
+IF ( R_TRIG_3.Q ) THEN
+b_OrderErrorAcked := FALSE;
+END_IF;
+
+TON_1( (NOT b_OrderErrorAcked), T#10S);
+IF TON_1.Q THEN
+_IO_X2_DO_01 := TRUE;
+END_IF;
+
+IF ( b_OrderErrorOccurred AND (SYSTEM_STATE <= STATE_ERROR) ) THEN
+SYSTEM_STATE := STATE_ERROR;
+HMI_StartExecuteMotion := FALSE;
+IF (b_OrderErrorAcked = FALSE) THEN
+HMI_CURRENT_SCREEN := 7;
+END_IF;
+END_IF;
+
+R_TRIG_4(b_HMI_Button_Ack_Order_Error);
+IF ( R_TRIG_4.Q ) THEN
+_IO_X2_DO_01 := FALSE;
+b_OrderErrorAcked := TRUE;
+HMI_CURRENT_SCREEN := 2;
+b_HMI_Button_Ack_Order_Error := FALSE;
+SYSTEM_STATE := STATE_DEFAULT;
+b_ArchiveOrder := TRUE;
+END_IF;
+
 (* check for warning *)
 IF ( ((Array_CurrentOrderCounter[7]*2) >= LOCAL_OrderNumberAddedTogether) AND (LOCAL_OrderNumberAddedTogether > 0) ) THEN
-IF (SYSTEM_STATE < STATE_RUNNING_ORDER_WITH_WARNING) THEN
-SYSTEM_STATE := STATE_RUNNING_ORDER_WITH_WARNING;
+b_RunningOrderWithWarning := TRUE;
+ELSE
+b_RunningOrderWithWarning := FALSE;
 END_IF;
+
+R_TRIG_1(b_RunningOrderWithWarning);
+IF ( R_TRIG_1.Q ) THEN
+b_OrderWarningAcked := FALSE;
+END_IF;
+
+IF ( b_RunningOrderWithWarning AND (SYSTEM_STATE <= STATE_RUNNING_ORDER_WITH_WARNING) ) THEN
+SYSTEM_STATE := STATE_RUNNING_ORDER_WITH_WARNING;
+IF (b_OrderWarningAcked = FALSE) THEN
+HMI_CURRENT_SCREEN := 6;
+END_IF;
+END_IF;
+
+R_TRIG_2(b_HMI_Button_Ack_Order_Warning);
+IF ( R_TRIG_2.Q ) THEN
+b_OrderWarningAcked := TRUE;
+HMI_CURRENT_SCREEN := 2;
+b_HMI_Button_Ack_Order_Warning := FALSE;
+SYSTEM_STATE := STATE_DEFAULT;
+END_IF;
+
+(* check for order complete *)
+IF ( (LOCAL_OrderCurrentCountAddedTogether = LOCAL_OrderNumberAddedTogether) AND (LOCAL_OrderNumberAddedTogether > 0) ) THEN
+b_OrderCompleted := TRUE;
+ELSE
+b_OrderCompleted := FALSE;
+END_IF;
+
+R_TRIG_5(b_OrderCompleted);
+IF ( R_TRIG_5.Q ) THEN
+b_OrderCompleteAcked := FALSE;
+END_IF;
+
+IF ( (b_OrderCompleted) AND (SYSTEM_STATE < STATE_RUNNING_ORDER_WITH_WARNING) ) THEN
+SYSTEM_STATE := STATE_WAIT_TO_START_NEW_ORDER;
+HMI_StartExecuteMotion := FALSE;
+IF (b_OrderCompleteAcked = FALSE) THEN
+HMI_CURRENT_SCREEN := 5;
+END_IF;
+END_IF;
+
+R_TRIG_6(b_HMI_Proceed_Next_Order);
+IF ( R_TRIG_6.Q ) THEN
+b_OrderCompleteAcked := TRUE;
+HMI_CURRENT_SCREEN := 2;
+b_HMI_Proceed_Next_Order := FALSE;
+SYSTEM_STATE := STATE_DEFAULT;
 END_IF;
 END_PROGRAM
