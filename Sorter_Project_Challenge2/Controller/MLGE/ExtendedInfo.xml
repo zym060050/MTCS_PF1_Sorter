@@ -7,13 +7,13 @@
     <File>Sorter_20_SetupAndTest.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="18d6bdad-c2c3-4ab0-92b9-662a0b2d6cf4">
-    <File>Sorter_13_ProcessOrder.AcfMlge</File>
+    <File>Sorter_14_ProcessOrder.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="21fac3e5-d9b8-43a4-bb24-8bb8c171a3ce">
     <File>Sorter_09_Axis_3_Lift.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="260e677f-68e6-482a-b778-d3c99e7f41e5">
-    <File>Sorter_16_Stacklight_STM_Handle.AcfMlge</File>
+    <File>Sorter_11_Stacklight_STM_Handle.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="39190175-53e0-41b9-86ce-f3b9909a66ce">
     <File>UDFB_EXEC_MC_HALT.AcfMlge</File>
@@ -31,10 +31,10 @@
     <File>Sorter_05_Axis_1_Conveyor.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="6d9ca0e5-275a-4cef-b899-ec5bc3009df2">
-    <File>Sorter_14_ArchiveOrder.AcfMlge</File>
+    <File>Sorter_15_ArchiveOrder.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="7f63be14-a313-4b82-8b52-463ecdf96d71">
-    <File>Sorter_11_StackLights.AcfMlge</File>
+    <File>Sorter_12_StackLights.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="8452a3b0-b5ad-4bc8-a49f-d628d09d658e">
     <File>Sorter_08_HSC.AcfMlge</File>
@@ -52,7 +52,7 @@
     <File>UDFB_ORDER_FFU.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="99283fc1-2bd7-48ff-823e-4ebb803a104b">
-    <File>Sorter_12_PlaceOrder.AcfMlge</File>
+    <File>Sorter_13_PlaceOrder.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="afcb142e-94f3-4836-8192-447b271cf204">
     <File>UDFB_FWD_REV_CTL.AcfMlge</File>
@@ -73,7 +73,7 @@
     <File>UDFB_ORDER_FFL.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="d2730de4-4231-481b-a903-6cf49da1f7d0">
-    <File>Sorter_15_Alarm.AcfMlge</File>
+    <File>Sorter_16_Alarm.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="e0704ad4-da30-4446-821c-90d5606f97f9">
     <File>UDFB_RESET_CUR_ORDER_COUNT.AcfMlge</File>

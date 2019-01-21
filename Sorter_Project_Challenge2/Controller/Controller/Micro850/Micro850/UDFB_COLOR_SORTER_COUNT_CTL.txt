@@ -45,15 +45,23 @@ __EDTB5 := FALSE ;
 END_IF ;
 __MO_LESS_1 := __EDTB5 ;
 __EDTB7 := __EDTB5 AND INPUTSENSOR ;
-OUTPUTKICKER := __EDTB7 ;
+__EDTB9 := __EDTB7 ;
+IF __EDTB9 THEN
+(* Operator output on : <= with __EDTB8 *)
+__EDTB8 := (LOCAL_INPUTCOUNTER <= LOCAL_ORDERFROMFIFO) ;
+ELSE
+__EDTB8 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB8 ;
+OUTPUTKICKER := __EDTB8 ;
 (* FB call: R_TRIG *)
 R_TRIG_3(__EDTB7) ;
-__EDTB8 := R_TRIG_3.Q ;
-IF __EDTB8 THEN
+__EDTB10 := R_TRIG_3.Q ;
+IF __EDTB10 THEN
 LOCAL_INPUTCOUNTER := (LOCAL_INPUTCOUNTER + 1) ;
 END_IF ;
-__MO_PLUS_1 := __EDTB8 ;
-__EDTB9 := __EDTB8 ;
+__MO_PLUS_1 := __EDTB10 ;
+__EDTB11 := __EDTB10 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -61,16 +69,16 @@ __EDTB9 := __EDTB8 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,9
+0,11
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: R_TRIG *)
 R_TRIG_1(B_SYS_INITIALIZED AND HMI_STARTEXECUTEMOTION AND BREJECTSENSOR AND INPUTSENSOR) ;
-__EDTB10 := R_TRIG_1.Q ;
-IF __EDTB10 THEN
+__EDTB12 := R_TRIG_1.Q ;
+IF __EDTB12 THEN
 LOCAL_INPUTCOUNTER := (LOCAL_INPUTCOUNTER + 1) ;
 END_IF ;
-__MO_PLUS_2 := __EDTB10 ;
+__MO_PLUS_2 := __EDTB12 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -78,14 +86,14 @@ __MO_PLUS_2 := __EDTB10 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,13
+0,15
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB11 := TRUE ;
-IF __EDTB11 THEN
+__EDTB13 := TRUE ;
+IF __EDTB13 THEN
 OUTPUTCOUNTER := (  LOCAL_INPUTCOUNTER) ;
 END_IF ;
-__MO_1GAIN_3 := __EDTB11 ;
+__MO_1GAIN_3 := __EDTB13 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -107,4 +115,6 @@ __GL __LG0000 ;
 (* __EDTB9 *)
 (* __EDTB10 *)
 (* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
 

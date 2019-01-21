@@ -17,7 +17,7 @@ __MO_1GAIN_1 := __EDTB2 ;
 __EDTB3 := __EDTB2 ;
 __EDTB4 := __EDTB1 ;
 IF __EDTB4 THEN
-SYSTEM_STATE := (  98) ;
+SYSTEM_STATE := (  6) ;
 END_IF ;
 __MO_1GAIN_2 := __EDTB4 ;
 __EDTB5 := __EDTB4 ;
@@ -58,7 +58,7 @@ R_TRIG_1(B_HMI_EMERGENCY_KEEP) ;
 __EDTB9 := R_TRIG_1.Q ;
 IF __EDTB9 THEN
 (* Operator output on : = with __EDTB8 *)
-__EDTB8 := (98 = SYSTEM_STATE) ;
+__EDTB8 := (6 = SYSTEM_STATE) ;
 ELSE
 __EDTB8 := FALSE ;
 END_IF ;
@@ -95,7 +95,7 @@ R_TRIG_2(B_HMI_EMERGENCY_RESET) ;
 __EDTB16 := R_TRIG_2.Q ;
 IF __EDTB16 THEN
 (* Operator output on : = with __EDTB15 *)
-__EDTB15 := (98 = SYSTEM_STATE) ;
+__EDTB15 := (6 = SYSTEM_STATE) ;
 ELSE
 __EDTB15 := FALSE ;
 END_IF ;

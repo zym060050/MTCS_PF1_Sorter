@@ -1,0 +1,25 @@
+PROGRAM Sorter_11_Stacklight_STM_Handle
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  
+ BST  FB  [2,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_EMERGENCY_STOP*) (**) ; (*o1:*)(**) (**) )
+   NXB  FB  [2,3] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_ERROR*) (**) ; (*o1:*)(**) (**) )
+ BND
+  OTS  [5,0] (*bIsErrorEmergency*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  FB  [2,0] (*<>*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_EMERGENCY_STOP*) (**) ; (*o1:*)(**) (**) )  FB  [5,0] (*<>*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_ERROR*) (**) ; (*o1:*)(**) (**) )  OTR  [8,0] (*bIsErrorEmergency*) (**)
+EOR [9,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=6
+#end_info
+END_PROGRAM

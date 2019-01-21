@@ -1,0 +1,81 @@
+PROGRAM Sorter_13_PlaceOrder
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*HMI_PlaceOrder*) (**)  FB  [3,0] (*R_TRIG*) (*R_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  
+ BST  XIO  [6,0] (*b_OrderFIFOFull*) (**)  
+ BST  OTS  [7,0] (*b_Exec_Order_FFL*) (**)
+   NXB  
+ BST  OTS  [7,1] (*LOCAL_b_CheckForOrderEmpty*) (**)
+   NXB  OTR  [7,2] (*HMI_b_OrderListFull*) (**)
+ BND
+
+ BND
+
+   NXB  
+ BST  XIC  [6,3] (*b_OrderFIFOFull*) (**)  
+ BST  OTS  [7,3] (*HMI_b_OrderListFull*) (**)
+   NXB  OTR  [7,4] (*HMI_AckAlarm*) (**)
+ BND
+
+   NXB  OTR  [6,5] (*HMI_PlaceOrder*) (**)
+ BND
+
+ BND
+
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*LOCAL_b_CheckForOrderEmpty*) (**)  FB  [2,0] (*UDFB_ORDER_NOT_EMPTY*) (*UDFB_ORDER_NOT_EMPTY_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_ORDER_ARRAY:*)(*Array_OrderToBePlaced*) (**) ; (*UDFB_OUT_ORDER_NOT_EMPTY:*)(**) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,11] (**) (**)  XIC  [1,0] (*LOCAL_b_CheckForOrderEmpty*) (**)  
+ BST  XIC  [2,0] (*UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY*) (**)  OTR  [3,0] (*HMI_b_OrderEmptyInvalid*) (**)
+   NXB  XIO  [2,1] (*UDFB_ORDER_NOT_EMPTY_1.UDFB_OUT_ORDER_NOT_EMPTY*) (**)  
+ BST  OTS  [3,1] (*HMI_b_OrderEmptyInvalid*) (**)
+   NXB  
+ BST  OTR  [3,2] (*HMI_AckAlarm*) (**)
+   NXB  OTR  [3,3] (*b_Exec_Order_FFL*) (**)
+ BND
+
+ BND
+
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  OTR  [1,0] (*LOCAL_b_CheckForOrderEmpty*) (**)
+EOR [2,0]
+
+
+(**)
+
+SOR  [0,18] (**) (**)  FB  [1,0] (*UDFB_ORDER_FFL*) (*UDFB_ORDER_FFL_1*) ( (*EN:EN*)(**) (**)  , (*UDFB_IN_ORDER_ARRAY:*)(*Array_OrderToBePlaced*) (**) ; (*ENO:ENO*)(**) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  XIO  [1,0] (*b_OrderFIFOEmpty*) (**)  
+ BST  FB  [2,0] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_RUNNING_ORDER*) (**) ; (*o1:*)(**) (**) )  FB  [5,0] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_RUNNING_ORDER*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
+   NXB  FB  [2,3] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_ERROR*) (**) ; (*o1:*)(**) (**) )  OTS  [5,3] (*HMI_StartExecuteMotion*) (**)
+ BND
+
+EOR [8,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=7
+#end_info
+END_PROGRAM
