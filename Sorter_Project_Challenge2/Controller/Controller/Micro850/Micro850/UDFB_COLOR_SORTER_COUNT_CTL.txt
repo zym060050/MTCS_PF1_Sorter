@@ -46,9 +46,9 @@ END_IF ;
 __MO_LESS_1 := __EDTB5 ;
 __EDTB7 := __EDTB5 AND INPUTSENSOR ;
 OUTPUTKICKER := __EDTB7 ;
-(* FB call: R_TRIG *)
-R_TRIG_3(__EDTB7) ;
-__EDTB8 := R_TRIG_3.Q ;
+(* FB call: F_TRIG *)
+F_TRIG_2(__EDTB7) ;
+__EDTB8 := F_TRIG_2.Q ;
 IF __EDTB8 THEN
 LOCAL_INPUTCOUNTER := (LOCAL_INPUTCOUNTER + 1) ;
 END_IF ;
@@ -65,8 +65,8 @@ __STEPPRAGMA
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: R_TRIG *)
-R_TRIG_1(B_SYS_INITIALIZED AND HMI_STARTEXECUTEMOTION AND BREJECTSENSOR AND INPUTSENSOR) ;
-__EDTB10 := R_TRIG_1.Q ;
+R_TRIG_3(B_SYS_INITIALIZED AND HMI_STARTEXECUTEMOTION AND BREJECTSENSOR AND INPUTSENSOR) ;
+__EDTB10 := R_TRIG_3.Q ;
 IF __EDTB10 THEN
 LOCAL_INPUTCOUNTER := (LOCAL_INPUTCOUNTER + 1) ;
 END_IF ;
@@ -86,6 +86,16 @@ IF __EDTB11 THEN
 OUTPUTCOUNTER := (  LOCAL_INPUTCOUNTER) ;
 END_IF ;
 __MO_1GAIN_3 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
 
 (*************** Code for the end of Rung **************)
 

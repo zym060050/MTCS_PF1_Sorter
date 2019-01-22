@@ -127,10 +127,30 @@ __STEPPRAGMA
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB11 := B_ORDERFIFOEMPTY ;
-IF __EDTB11 THEN
+__EDTB12 := __EDTB11 ;
+IF __EDTB12 THEN
 (*Reset coil*)
 HMI_STARTEXECUTEMOTION := FALSE ;
 END_IF ;
+__EDTB13 := __EDTB11 ;
+IF __EDTB13 THEN
+(*Set coil*)
+B_ORDERSTOPCONVEYOR := TRUE ;
+END_IF ;
+__EDTB15 := __EDTB11 ;
+IF __EDTB15 THEN
+(* Operator output on : < with __EDTB14 *)
+__EDTB14 := (SYSTEM_STATE < 1) ;
+ELSE
+__EDTB14 := FALSE ;
+END_IF ;
+__MO_LESS_1 := __EDTB14 ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
+SYSTEM_STATE := (  1) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB16 ;
+__EDTB17 := __EDTB16 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -152,4 +172,10 @@ __GL __LG0000 ;
 (* __EDTB9 *)
 (* __EDTB10 *)
 (* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
 

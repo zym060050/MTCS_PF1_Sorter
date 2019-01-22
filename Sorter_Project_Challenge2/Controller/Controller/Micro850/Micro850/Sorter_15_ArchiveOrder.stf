@@ -51,11 +51,19 @@ EOR [2,0]
 
 (**)
 
-SOR  [0,17] (**) (**)  XIC  [1,0] (*b_OrderFIFOEmpty*) (**)  OTR  [2,0] (*HMI_StartExecuteMotion*) (**)
-EOR [3,0]
+SOR  [0,17] (**) (**)  XIC  [1,0] (*b_OrderFIFOEmpty*) (**)  
+ BST  OTR  [2,0] (*HMI_StartExecuteMotion*) (**)
+   NXB  
+ BST  OTS  [2,1] (*b_OrderStopConveyor*) (**)
+   NXB  FB  [2,2] (*<*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SYSTEM_STATE*) (**)  , (*i2:*)(*STATE_STANDBY*) (**) ; (*o1:*)(**) (**) )  FB  [5,2] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*STATE_STANDBY*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SYSTEM_STATE*) (**) )
+ BND
+
+ BND
+
+EOR [8,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=5
+NextId=7
 #end_info
 END_PROGRAM

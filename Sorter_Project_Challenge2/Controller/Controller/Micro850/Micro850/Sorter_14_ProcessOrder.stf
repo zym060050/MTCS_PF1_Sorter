@@ -29,14 +29,24 @@ IF ( R_TRIG_3.Q ) THEN
 b_OrderErrorAcked := FALSE;
 END_IF;
 
-TON_1( (NOT b_OrderErrorAcked), T#10S);
-IF TON_1.Q THEN
+IF (b_OrderErrorOccurred AND (NOT b_OrderErrorAcked)) OR (SYSTEM_STATE = STATE_EMERGENCY_STOP) THEN
+b_Alarm := TRUE;
+ELSE
+b_Alarm := FALSE;
+END_IF;
+TON_1(b_Alarm, T#10S);
+IF (b_OrderErrorOccurred OR (SYSTEM_STATE = STATE_EMERGENCY_STOP)) AND TON_1.Q THEN
 _IO_X2_DO_01 := TRUE;
+END_IF;
+
+IF (SYSTEM_STATE <> STATE_EMERGENCY_STOP) AND (NOT b_OrderErrorOccurred) THEN
+_IO_X2_DO_01 := FALSE;
 END_IF;
 
 IF ( b_OrderErrorOccurred AND (SYSTEM_STATE <= STATE_ERROR) ) THEN
 SYSTEM_STATE := STATE_ERROR;
 HMI_StartExecuteMotion := FALSE;
+b_OrderStopConveyor := TRUE;
 IF (b_OrderErrorAcked = FALSE) THEN
 HMI_CURRENT_SCREEN := 7;
 END_IF;
@@ -49,7 +59,9 @@ b_OrderErrorAcked := TRUE;
 HMI_CURRENT_SCREEN := 2;
 b_HMI_Button_Ack_Order_Error := FALSE;
 SYSTEM_STATE := STATE_DEFAULT;
+UDFB_RESET_CUR_ORDER_COUNT_2();
 b_ArchiveOrder := TRUE;
+Order_Status := 3;
 END_IF;
 
 (* check for warning *)
@@ -91,7 +103,7 @@ IF ( R_TRIG_5.Q ) THEN
 b_OrderCompleteAcked := FALSE;
 END_IF;
 
-IF ( (b_OrderCompleted) AND (SYSTEM_STATE < STATE_RUNNING_ORDER_WITH_WARNING) ) THEN
+IF ( (b_OrderCompleted) AND ((SYSTEM_STATE < STATE_RUNNING_ORDER_WITH_WARNING) OR ((SYSTEM_STATE = STATE_RUNNING_ORDER_WITH_WARNING) AND (b_OrderWarningAcked))) ) THEN
 SYSTEM_STATE := STATE_WAIT_TO_START_NEW_ORDER;
 HMI_StartExecuteMotion := FALSE;
 IF (b_OrderCompleteAcked = FALSE) THEN
@@ -105,5 +117,11 @@ b_OrderCompleteAcked := TRUE;
 HMI_CURRENT_SCREEN := 2;
 b_HMI_Proceed_Next_Order := FALSE;
 SYSTEM_STATE := STATE_DEFAULT;
+b_ArchiveOrder := TRUE;
+Order_Status := 1;
+IF b_RunningOrderWithWarning THEN
+Order_Status := 2;
+END_IF;
+UDFB_RESET_CUR_ORDER_COUNT_1();
 END_IF;
 END_PROGRAM

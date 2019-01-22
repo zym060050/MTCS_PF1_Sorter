@@ -39,9 +39,20 @@ __ENDSTEPPRAGMA
 (* FB call: F_TRIG *)
 F_TRIG_1(_IO_EM_DI_05) ;
 __EDTB7 := F_TRIG_1.Q ;
-IF __EDTB7 THEN
+__EDTB8 := __EDTB7 ;
+IF __EDTB8 THEN
 (*Set coil*)
 HMI_VIS_EMERGENCY := TRUE ;
+END_IF ;
+__EDTB9 := __EDTB7 ;
+IF __EDTB9 THEN
+(*Set coil*)
+B_ORDERSTOPCONVEYOR := TRUE ;
+END_IF ;
+__EDTB10 := __EDTB7 ;
+IF __EDTB10 THEN
+(*Reset coil*)
+HMI_STARTEXECUTEMOTION := FALSE ;
 END_IF ;
 
 (*************** Code for the end of Rung **************)
@@ -50,36 +61,41 @@ END_IF ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,9
+0,11
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: R_TRIG *)
 R_TRIG_1(B_HMI_EMERGENCY_KEEP) ;
-__EDTB9 := R_TRIG_1.Q ;
-IF __EDTB9 THEN
-(* Operator output on : = with __EDTB8 *)
-__EDTB8 := (6 = SYSTEM_STATE) ;
+__EDTB12 := R_TRIG_1.Q ;
+IF __EDTB12 THEN
+(* Operator output on : = with __EDTB11 *)
+__EDTB11 := (6 = SYSTEM_STATE) ;
 ELSE
-__EDTB8 := FALSE ;
+__EDTB11 := FALSE ;
 END_IF ;
-__MO_EQUAL_1 := __EDTB8 ;
-__EDTB10 := __EDTB8 ;
-IF __EDTB10 THEN
+__MO_EQUAL_1 := __EDTB11 ;
+__EDTB13 := __EDTB11 ;
+IF __EDTB13 THEN
 HMI_CURRENT_SCREEN := (  2) ;
 END_IF ;
-__MO_1GAIN_3 := __EDTB10 ;
-__EDTB11 := __EDTB10 ;
-__EDTB12 := __EDTB8 ;
-IF __EDTB12 THEN
+__MO_1GAIN_3 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+__EDTB15 := __EDTB11 ;
+IF __EDTB15 THEN
 (*Reset coil*)
 B_HMI_EMERGENCY_KEEP := FALSE ;
 END_IF ;
-__EDTB13 := __EDTB8 ;
-IF __EDTB13 THEN
+__EDTB16 := __EDTB11 ;
+IF __EDTB16 THEN
 SYSTEM_STATE := (  0) ;
 END_IF ;
-__MO_1GAIN_4 := __EDTB13 ;
-__EDTB14 := __EDTB13 ;
+__MO_1GAIN_4 := __EDTB16 ;
+__EDTB17 := __EDTB16 ;
+__EDTB18 := __EDTB11 ;
+IF __EDTB18 THEN
+(*Reset coil*)
+_IO_X2_DO_01 := FALSE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -87,44 +103,48 @@ __EDTB14 := __EDTB13 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,15
+0,18
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: R_TRIG *)
 R_TRIG_2(B_HMI_EMERGENCY_RESET) ;
-__EDTB16 := R_TRIG_2.Q ;
-IF __EDTB16 THEN
-(* Operator output on : = with __EDTB15 *)
-__EDTB15 := (6 = SYSTEM_STATE) ;
+__EDTB20 := R_TRIG_2.Q ;
+IF __EDTB20 THEN
+(* Operator output on : = with __EDTB19 *)
+__EDTB19 := (6 = SYSTEM_STATE) ;
 ELSE
-__EDTB15 := FALSE ;
+__EDTB19 := FALSE ;
 END_IF ;
-__MO_EQUAL_2 := __EDTB15 ;
-__EDTB17 := __EDTB15 ;
-IF __EDTB17 THEN
+__MO_EQUAL_2 := __EDTB19 ;
+__EDTB21 := __EDTB19 ;
+IF __EDTB21 THEN
 HMI_CURRENT_SCREEN := (  2) ;
 END_IF ;
-__MO_1GAIN_5 := __EDTB17 ;
-__EDTB18 := __EDTB17 ;
-__EDTB19 := __EDTB15 ;
-IF __EDTB19 THEN
+__MO_1GAIN_5 := __EDTB21 ;
+__EDTB22 := __EDTB21 ;
+__EDTB23 := __EDTB19 ;
+IF __EDTB23 THEN
 (*Reset coil*)
 B_HMI_EMERGENCY_RESET := FALSE ;
 END_IF ;
-__EDTB20 := __EDTB15 ;
-IF __EDTB20 THEN
+__EDTB24 := __EDTB19 ;
+IF __EDTB24 THEN
 (* FB call: UDFB_RESET_CUR_ORDER_COUNT *)
 UDFB_RESET_CUR_ORDER_COUNT_1() ;
 END_IF ;
-__MO_UDFB_RESET_CUR_ORDER_COUNT_1 := __EDTB20 ;
-__EDTB21 := __EDTB20 ;
-__EDTB22 := __EDTB15 ;
-IF __EDTB22 THEN
+__MO_UDFB_RESET_CUR_ORDER_COUNT_1 := __EDTB24 ;
+__EDTB25 := __EDTB24 ;
+__EDTB26 := __EDTB19 ;
+IF __EDTB26 THEN
 SYSTEM_STATE := (  0) ;
 END_IF ;
-__MO_1GAIN_6 := __EDTB22 ;
-__EDTB23 := __EDTB22 ;
-__EDTB24 := (__EDTB21 OR __EDTB23) ;
+__MO_1GAIN_6 := __EDTB26 ;
+__EDTB27 := __EDTB26 ;
+__EDTB28 := __EDTB19 ;
+IF __EDTB28 THEN
+(*Reset coil*)
+_IO_X2_DO_01 := FALSE ;
+END_IF ;
 
 (*************** Code for the end of Rung **************)
 
@@ -159,4 +179,8 @@ __GL __LG0000 ;
 (* __EDTB22 *)
 (* __EDTB23 *)
 (* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
 
