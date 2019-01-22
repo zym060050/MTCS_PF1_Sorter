@@ -13,7 +13,7 @@ EOR [7,0]
 
 SOR  [0,4] (**) (**)  XIC  [1,0] (*b_SYS_Initialized*) (**)  XIC  [2,0] (*HMI_StartExecuteMotion*) (**)  XIO  [3,0] (*bRejectSensor*) (**)  FB  [4,0] (*>*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_OrderFromFIFO*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<*) (*14*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*LOCAL_OrderFromFIFO*) (**) ; (*o1:*)(**) (**) )  XIC  [10,0] (*InputSensor*) (**)  
  BST  OTE  [11,0] (*OutputKicker*) (**)
-   NXB  FB  [11,1] (*R_TRIG*) (*R_TRIG_3*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  FB  [14,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_InputCounter*) (**) )
+   NXB  FB  [11,1] (*F_TRIG*) (*F_TRIG_1*) ( (*CLK:CLK*)(**) (**) ; (*Q:Q*)(**) (**) )  FB  [14,1] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*LOCAL_InputCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*LOCAL_InputCounter*) (**) )
  BND
 
 EOR [17,0]
